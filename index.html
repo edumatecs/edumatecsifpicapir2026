@@ -20,7 +20,7 @@
 
     <!-- ABA 1: INÍCIO -->
     <div id="aba-inicio">
-        <!-- SEÇÃO HERO DO EVENTO (LOGO SOLTA À ESQUERDA E TEXTO RICO À DIREITA) -->
+        <!-- SEÇÃO HERO DO EVENTO (Logo à esquerda no notebook, em cima no mobile) -->
         <div class="hero-evento">
             <div class="hero-grid">
                 <div class="hero-logo-col">
@@ -38,30 +38,30 @@
             </div>
         </div>
 
+        <!-- SEÇÃO INSCRIÇÃO: Foto/Kit à Esquerda, Texto à Direita -->
         <section class="flex-container">
+            <div class="imagem"><img src="assets/images/outros/kit.png" alt="Kit EDUMATEC'S" class="kit-img" /></div>
             <div class="texto">
                 <h2>Faça já sua inscrição!</h2>
                 <p>Participe do maior evento que articula Educação, Matemática e Tecnologia. Inscreva-se agora e garanta
                     seu <strong>Kit Exclusivo EDUMATEC'S</strong>.</p>
                 <button type="button" class="btn" onclick="abrirModalInscricao()">Garantir Minha Vaga</button>
             </div>
-            <div class="imagem"><img src="assets/images/outros/kit.png" alt="Kit EDUMATEC'S" class="kit-img" /></div>
         </section>
 
-        <section class="flex-container inverter-mobile">
+        <!-- SEÇÃO CAMISA: Foto da Camisa à Esquerda, Texto à Direita -->
+        <section class="flex-container">
+            <div class="imagem"><img src="assets/images/outros/camisa.png" alt="Camisa EDUMATEC'S" class="camisa-img" /></div>
             <div class="texto">
                 <h2>Vista essa Ideia!</h2>
                 <p>Garanta sua camisa oficial do evento e mostre que você faz parte da inovação! Design exclusivo em
                     preto com detalhes dourados.</p>
                 <button type="button" class="btn" onclick="abrirModal()">Pedir Camisa</button>
             </div>
-            <div class="imagem"><img src="assets/images/outros/camisa.png" alt="Camisa EDUMATEC'S" class="camisa-img" />
-            </div>
         </section>
 
         <section class="flex-container">
-            <div class="imagem"><img src="assets/images/outros/certificado.png" alt="Certificado EDUMATEC'S"
-                    class="certificado-img" /></div>
+            <div class="imagem"><img src="assets/images/outros/certificado.png" alt="Certificado EDUMATEC'S" class="certificado-img" /></div>
             <div class="texto">
                 <h2>Certificados Disponíveis!</h2>
                 <p>Todos os certificados de participação, apresentação de trabalhos, minicursos e oficinas já estão
@@ -259,7 +259,7 @@
                     <div class="form-group">
                         <label>E-mail (Gmail)*</label>
                         <div class="input-gmail">
-                            <input type="text" id="gmail_user" required placeholder="seu usuario">
+                            <input type="text" id="gmail_user" required placeholder="seuusuario">
                             <span>@gmail.com</span>
                         </div>
                     </div>
@@ -384,9 +384,8 @@
                                     onclick="copiarTexto('gt4interdisciplinar.capir@ifpi.edu.br')">Copiar</button></div>
                         </div>
                         <div class="item-gt"><strong>GT5 - Ensino, Pesquisa e Extensão</strong>
-                            <div class="gt-email-row"><code>gt5extensao.capir@ifpi.edu.br</code><button type="button"
-                                    class="btn-copiar-peq"
-                                    onclick="copiarTexto('gt5extensao.capir@ifpi.edu.br')">Copiar</button></div>
+                            <div class="gt-email-row"><code style="color: #888;">gt5extensao.capir@ifpi.edu.br</code>
+                            </div>
                         </div>
                     </div>
 
@@ -550,9 +549,8 @@
         style="text-align: center; padding: 20px; background: #000; color: #666; border-top: 1px solid #333; font-size: 14px;">
         <p>© 2026 EDUMATEC'S - IFPI Piripiri. Todos os direitos reservados.</p>
     </footer>
+
     <script src="script.js"></script>
-
-
 </body>
 
 </html>

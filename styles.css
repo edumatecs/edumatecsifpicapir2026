@@ -156,7 +156,7 @@ h2 {
     filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
-/* Estilo da nova seção hero sem caixa limitadora (logo solta à esquerda e textos à direita) */
+/* Hero / Início do site */
 .hero-evento {
     padding: 50px 20px;
     max-width: 1200px;
@@ -772,6 +772,7 @@ h2 {
     }
 }
 
+/* RESPONSIVIDADE MOBILE PERFEITA (Empilha os elementos organizados em celular sem alterar o notebook) */
 @media (max-width: 768px) {
     nav {
         padding: 12px 20px;
@@ -796,12 +797,34 @@ h2 {
         padding: 40px 15px;
     }
 
-    .flex-container,
-    .mural-header-container,
-    .hero-grid {
-        flex-direction: column;
+    /* Empilhamento elegante para celular: Foto em cima, texto em baixo */
+    .hero-grid,
+    .flex-container {
+        flex-direction: column !important;
         text-align: center;
         gap: 25px;
+    }
+
+    .hero-logo-col {
+        order: 1;
+    }
+
+    .hero-text-col {
+        order: 2;
+    }
+
+    .hero-logo-col img {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    /* Ajuste de imagens e botões no mobile */
+    .imagem {
+        order: 1;
+    }
+
+    .texto {
+        order: 2;
     }
 
     h2 {
@@ -810,5 +833,11 @@ h2 {
 
     .btn {
         width: 100%;
+    }
+
+    .mural-header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
     }
 }
