@@ -2,555 +2,318 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>EDUMATEC'S - IFPI Piripiri</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDUMATEC'S 2026 - Em Manutenção</title>
+
+    <meta name="description"
+        content="O site do EDUMATEC'S 2026 está temporariamente indisponível para manutenção.">
+
+    <style>
+        :root {
+            --preto: #0f0f0f;
+            --preto-puro: #000;
+            --dourado: #FFD700;
+            --branco: #f5f5f5;
+            --cinza: #bdbdbd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at center, #1b1b1b 0%, var(--preto) 45%, #050505 100%);
+            color: var(--branco);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            padding: 18px 40px;
+
+            background: var(--preto-puro);
+            border-bottom: 2px solid var(--dourado);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+
+            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.25));
+
+            animation: aparecer 0.8s ease;
+        }
+
+        main {
+            flex: 1;
+
+            width: 100%;
+            max-width: 900px;
+
+            margin: 0 auto;
+            padding: 60px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .manutencao {
+            width: 100%;
+            max-width: 650px;
+
+            text-align: center;
+
+            background: rgba(15, 15, 15, 0.88);
+
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 18px;
+
+            padding: 55px 40px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.65),
+                0 0 35px rgba(255, 215, 0, 0.05);
+
+            animation: subir 0.8s ease;
+        }
+
+        .icone {
+            width: 90px;
+            height: 90px;
+
+            margin: 0 auto 28px;
+
+            border: 2px solid var(--dourado);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--dourado);
+            font-size: 42px;
+
+            animation: pulsar 2s infinite ease-in-out;
+        }
+
+        .codigo {
+            display: inline-block;
+
+            color: var(--dourado);
+
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 20px;
+
+            padding: 7px 16px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--dourado);
+
+            font-size: clamp(28px, 5vw, 42px);
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+
+            text-transform: uppercase;
+        }
+
+        .mensagem {
+            color: var(--branco);
+
+            font-size: 17px;
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .submensagem {
+            color: var(--cinza);
+
+            font-size: 15px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .linha {
+            width: 80px;
+            height: 2px;
+
+            background: var(--dourado);
+
+            margin: 25px auto;
+
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .evento {
+            color: var(--dourado);
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+
+            background: var(--preto-puro);
+
+            border-top: 1px solid #252525;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 13px;
+        }
+
+        @keyframes pulsar {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(255, 215, 0, 0.18);
+            }
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes subir {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                width: 75px;
+                height: 75px;
+            }
+
+            main {
+                padding: 35px 15px;
+            }
+
+            .manutencao {
+                padding: 40px 22px;
+                border-radius: 14px;
+            }
+
+            .icone {
+                width: 75px;
+                height: 75px;
+                font-size: 34px;
+            }
+
+            .mensagem {
+                font-size: 16px;
+            }
+
+            .submensagem {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo-nav"><img src="assets/images/logos/logo-2026.png" alt="Logo EDUMATEC'S 2026" /></div>
-        <div class="menu-abas">
-            <button class="ativo" onclick="mudarAba('inicio', this)">Início</button>
-            <button onclick="mudarAba('mural', this)">1ª Edição EDUMATEC'S</button>
-        </div>
-    </nav>
+    <header>
+        <img
+            src="assets/images/logos/logo-2026.png"
+            alt="Logo EDUMATEC'S 2026"
+            class="logo"
+        >
+    </header>
 
-    <!-- ABA 1: INÍCIO -->
-    <div id="aba-inicio">
-        <!-- SEÇÃO HERO DO EVENTO (Logo à esquerda no notebook, em cima no mobile) -->
-        <div class="hero-evento">
-            <div class="hero-grid">
-                <div class="hero-logo-col">
-                    <img src="assets/images/logos/logo-2026.png" alt="Logo EDUMATEC'S 2026" />
-                </div>
-                <div class="hero-text-col">
-                    <h1>EDUMATEC'S 2026</h1>
-                    <p>O <strong>EDUMATEC’S</strong> é um grandioso evento realizado pela <strong>Licenciatura em
-                            Matemática do IFPI – Campus Piripiri</strong>, que reúne a Matemática, Tecnologias e
-                        Inovação.</p>
-                    <p>O evento fomenta a troca de saberes científicos e pedagógicos, conectando estudantes, professores
-                        e pesquisadores na busca por novas práticas educacionais.</p>
-                    <div class="badge-tema">Tema: Ensino, Pesquisa e Extensão na formação</div>
-                </div>
+    <main>
+
+        <div class="manutencao">
+
+            <div class="icone">
+                ⚙
             </div>
-        </div>
 
-        <!-- SEÇÃO INSCRIÇÃO: Foto/Kit à Esquerda, Texto à Direita -->
-        <section class="flex-container">
-            <div class="imagem"><img src="assets/images/outros/kit.png" alt="Kit EDUMATEC'S" class="kit-img" /></div>
-            <div class="texto">
-                <h2>Faça já sua inscrição!</h2>
-                <p>Participe do maior evento que articula Educação, Matemática e Tecnologia. Inscreva-se agora e garanta
-                    seu <strong>Kit Exclusivo EDUMATEC'S</strong>.</p>
-                <button type="button" class="btn" onclick="abrirModalInscricao()">Garantir Minha Vaga</button>
+            <div class="codigo">
+                HTTP 503
             </div>
-        </section>
 
-        <!-- SEÇÃO CAMISA: Foto da Camisa à Esquerda, Texto à Direita -->
-        <section class="flex-container">
-            <div class="imagem"><img src="assets/images/outros/camisa.png" alt="Camisa EDUMATEC'S" class="camisa-img" /></div>
-            <div class="texto">
-                <h2>Vista essa Ideia!</h2>
-                <p>Garanta sua camisa oficial do evento e mostre que você faz parte da inovação! Design exclusivo em
-                    preto com detalhes dourados.</p>
-                <button type="button" class="btn" onclick="abrirModal()">Pedir Camisa</button>
-            </div>
-        </section>
+            <h1>
+                Site temporariamente indisponível
+            </h1>
 
-        <section class="flex-container">
-            <div class="imagem"><img src="assets/images/outros/certificado.png" alt="Certificado EDUMATEC'S" class="certificado-img" /></div>
-            <div class="texto">
-                <h2>Certificados Disponíveis!</h2>
-                <p>Todos os certificados de participação, apresentação de trabalhos, minicursos e oficinas já estão
-                    liberados.</p>
-                <a href="https://drive.google.com/drive/u/0/folders/1nRItqy93xkiOcozG0CvEKenvFgS0EQYF" target="_blank"
-                    class="btn">Acessar Certificados</a>
-            </div>
-        </section>
+            <div class="linha"></div>
 
-        <section id="secao-turismo">
-            <h2 style="text-align: center;">Guia Turístico de Piripiri!</h2>
-            <p style="text-align: center; margin-bottom: 25px;">Aproveite sua vinda e conheça nossos pontos turísticos.
+            <p class="mensagem">
+                O site do <span class="evento">EDUMATEC'S 2026</span>
+                está temporariamente fora do ar para manutenção.
             </p>
-            <div class="carrossel-container">
-                <div class="slide"><img src="assets/images/pontos/1-ponto.png" alt="Guia Turístico" /></div>
-                <div class="slide"><img src="assets/images/pontos/2-ponto.png" alt="Sete Cidades" /></div>
-                <div class="slide"><img src="assets/images/pontos/3-ponto.png" alt="Açude Caldeirão" /></div>
-                <div class="slide"><img src="assets/images/pontos/4-ponto.png" alt="Igreja Matriz" /></div>
-                <div class="slide"><img src="assets/images/pontos/5-ponto.png" alt="Praça da Bandeira" /></div>
-                <div class="slide"><img src="assets/images/pontos/6-ponto.png" alt="Rancho Guarita" /></div>
-                <button class="btn-carrossel prev" onclick="mudarSlide(-1)">❮</button>
-                <button class="btn-carrossel next" onclick="mudarSlide(1)">❯</button>
-            </div>
-        </section>
 
-        <section id="secao-delivery">
-            <h2 style="text-align: center;">Chama no Delivery</h2>
-            <p style="text-align: center; margin-bottom: 25px;">Bateu aquela fome durante o evento? Confira as melhores
-                opções de Piripiri!</p>
-            <div class="carrossel-delivery">
-                <div class="slide-del"><img src="assets/images/delivery/1-delivery.png" alt="Chama no Delivery" /></div>
-                <div class="slide-del"><img src="assets/images/delivery/2-delivery.png" alt="Jokers Burger" /><a
-                        href="https://www.instagram.com/jokersburger.piripiri" target="_blank" class="btn-foto">Pedir
-                        Agora</a></div>
-                <div class="slide-del"><img src="assets/images/delivery/3-delivery.png" alt="Big Burger" /><a
-                        href="http://app.cardapioweb.com/big_burger" target="_blank" class="btn-foto">Pedir Agora</a>
-                </div>
-                <div class="slide-del"><img src="assets/images/delivery/4-delivery.png" alt="Burger Nobre" /><a
-                        href="https://burgernobrepiripiri.menudino.com" target="_blank" class="btn-foto">Pedir Agora</a>
-                </div>
-                <div class="slide-del"><img src="assets/images/delivery/5-delivery.png" alt="Delivery 5" /><a
-                        href="https://api.whatsapp.com/message/SSAQDI73IQPDI1" target="_blank" class="btn-foto">Pedir
-                        Agora</a></div>
-                <div class="slide-del"><img src="assets/images/delivery/6-delivery.png" alt="Pizzaria Brasil" /><a
-                        href="http://app.cardapioweb.com/pizzaria_brasil__piripiri" target="_blank"
-                        class="btn-foto">Pedir Agora</a></div>
-                <div class="slide-del"><img src="assets/images/delivery/7-delivery.png" alt="Delivery 7" /><a
-                        href="http://wa.me/message/QTMWPFKIT3TFC1" target="_blank" class="btn-foto">Pedir Agora</a>
-                </div>
-                <div class="slide-del"><img src="assets/images/delivery/8-delivery.png" alt="Dayana Salgados" /><a
-                        href="https://loja.neemo.com.br/dayana-salgados" target="_blank" class="btn-foto">Pedir
-                        Agora</a></div>
-                <div class="slide-del"><img src="assets/images/delivery/9-delivery.png" alt="Delivery 9" /><a
-                        href="http://api.whatsapp.com/send?phone=5586999125920" target="_blank" class="btn-foto">Pedir
-                        Agora</a></div>
-                <div class="slide-del"><img src="assets/images/delivery/10-delivery.png" alt="Prime Açaí e Café" /><a
-                        href="https://primeacaiecafe.nox.com.br" target="_blank" class="btn-foto">Pedir Agora</a></div>
-                <div class="slide-del"><img src="assets/images/delivery/11-delivery.png" alt="Kanpai Sushi" /><a
-                        href="http://api.whatsapp.com/send?phone=5586998654386" target="_blank" class="btn-foto">Pedir
-                        Agora</a></div>
-                <button class="btn-carrossel prev" onclick="mudarSlideDel(-1)">❮</button>
-                <button class="btn-carrossel next" onclick="mudarSlideDel(1)">❯</button>
-            </div>
-        </section>
-    </div>
+            <p class="submensagem">
+                Estamos realizando algumas atualizações para melhorar
+                a experiência dos participantes. Em breve, o site estará
+                disponível novamente.
+            </p>
 
-    <!-- ABA 2: MURAL (1ª EDIÇÃO EM AZUL ESCURO COM TODAS AS FOTOS E EFEITO DE BRILHO) -->
-    <div id="aba-mural" style="display: none;">
-        <section>
-            <h2 style="text-align: center; margin-bottom: 30px;">1ª Edição EDUMATEC'S (2025)</h2>
-            <div class="mural-header-container">
-                <div style="flex: 1;">
-                    <p style="font-size: 16px; line-height: 1.7;">
-                        O <strong>EDUMATEC’S</strong> é um evento realizado pelo IFPI – Campus Piripiri, que articula
-                        Educação, Matemática e Tecnologias em contextos formativos contemporâneos.
-                    </p>
-                </div>
-                <img src="assets/images/logos/logo-2025.png" alt="Logo EDUMATEC'S 2025" class="mural-logo" />
-            </div>
-            <h3 style="color: var(--dourado); text-align: center; margin-bottom: 30px; font-size: 24px;">Memórias de
-                2025</h3>
-            <div class="fotos-vertical-container">
-                <div class="item-foto-mural"><img src="assets/images/eventos/1-mural.png" alt="Memória 1"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/2-mural.png" alt="Memória 2"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/3-mural.png" alt="Memória 3"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/4-mural.png" alt="Memória 4"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/5-mural.png" alt="Memória 5"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/6-mural.png" alt="Memória 6"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/7-mural.png" alt="Memória 7"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/8-mural.png" alt="Memória 8"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/9-mural.png" alt="Memória 9"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/10-mural.png" alt="Memória 10"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/11-mural.png" alt="Memória 11"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/12-mural.png" alt="Memória 12"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/13-mural.png" alt="Memória 13"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/14-mural.png" alt="Memória 14"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/15-mural.png" alt="Memória 15"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/16-mural.png" alt="Memória 16"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/17-mural.png" alt="Memória 17"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/18-mural.png" alt="Memória 18"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/19-mural.png" alt="Memória 19"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/20-mural.png" alt="Memória 20"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/21-mural.png" alt="Memória 21"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/22-mural.png" alt="Memória 22"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/23-mural.png" alt="Memória 23"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/24-mural.png" alt="Memória 24"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/25-mural.png" alt="Memória 25"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/26-mural.png" alt="Memória 26"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/27-mural.png" alt="Memória 27"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/28-mural.png" alt="Memória 28"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/29-mural.png" alt="Memória 29"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/30-mural.png" alt="Memória 30"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/31-mural.png" alt="Memória 31"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/32-mural.png" alt="Memória 32"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/33-mural.png" alt="Memória 33"
-                        loading="lazy" /></div>
-                <div class="item-foto-mural"><img src="assets/images/eventos/34-mural.png" alt="Memória 34"
-                        loading="lazy" /></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- MODAL DE PEDIDO DE CAMISA -->
-    <div id="modalPedido" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="fecharModal()">&times;</span>
-            <div id="box-formulario">
-                <h2 style="text-align: center; margin-bottom: 5px; font-size: 26px;">Pedido de Camisa</h2>
-                <form id="formPedidoCamisa" onsubmit="enviarPedido(event)">
-                    <div class="form-group">
-                        <label>Nome Completo*</label>
-                        <input type="text" id="nome_completo" required placeholder="Digite seu nome completo">
-                    </div>
-                    <div class="form-group">
-                        <label>Tamanho da Camisa*</label>
-                        <div class="tamanhos-box">
-                            <img src="assets/images/outros/camisa.png" alt="Camisa EDUMATEC'S" />
-                            <div class="radios-tamanho">
-                                <label><input type="radio" name="tamanho" value="PP" required
-                                        onchange="toggleTamanhoOutro()"> PP</label>
-                                <label><input type="radio" name="tamanho" value="P" onchange="toggleTamanhoOutro()">
-                                    P</label>
-                                <label><input type="radio" name="tamanho" value="M" onchange="toggleTamanhoOutro()">
-                                    M</label>
-                                <label><input type="radio" name="tamanho" value="G" onchange="toggleTamanhoOutro()">
-                                    G</label>
-                                <label><input type="radio" name="tamanho" value="GG" onchange="toggleTamanhoOutro()">
-                                    GG</label>
-                                <label><input type="radio" name="tamanho" value="Outro" onchange="toggleTamanhoOutro()">
-                                    Outro</label>
-                            </div>
-                        </div>
-                        <div id="box-tamanho-outro" class="form-group" style="display: none; margin-top: 15px;">
-                            <label style="color: var(--dourado);">Especifique o tamanho*</label>
-                            <input type="text" id="tamanho_outro" placeholder="Ex: XGG">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone*</label>
-                        <input type="text" id="telefone" required placeholder="(86) 90000-0000"
-                            oninput="mascaraTelefone(this)" maxlength="15">
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail (Gmail)*</label>
-                        <div class="input-gmail">
-                            <input type="text" id="gmail_user" required placeholder="seuusuario">
-                            <span>@gmail.com</span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Forma de Pagamento*</label>
-                        <select id="forma_pagamento" required onchange="alternarPagamento()">
-                            <option value="">Selecione...</option>
-                            <option value="especie">Em espécie</option>
-                            <option value="pix">Pix</option>
-                        </select>
-                        <div id="area-pix" class="info-pix">
-                            <img src="assets/images/outros/qrcode-camisas.png" alt="QR Code Pix" />
-                            <p style="color: var(--dourado); font-weight: bold;">NOME: EMILLY DE CARVALHO SILVA</p>
-                            <p style="color: white; font-weight: bold; font-size: 18px;">VALOR: R$ 35,00</p>
-                            <div class="chave-box" id="chavePixTexto">
-                                00020126430014br.gov.bcb.pix0114+55869999114300203Pix5204000053039865802BR5924EMILLY_DE_CARVALHO_SILVA6007BATALHA62290525MdiUxJKmHhY6LyCB8tWKqF0g163042877
-                            </div>
-                            <button type="button" class="btn" style="width: 100%; font-size: 14px; padding: 10px;"
-                                onclick="copiarPix()">Copiar chave</button>
-                        </div>
-                    </div>
-                    <div class="form-group area-comprovante-box" id="area-comprovante">
-                        <label>Envio do Comprovante*</label>
-                        <input type="file" id="comprovante" accept="image/*,.pdf">
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%; font-size: 18px; padding: 14px;">Finalizar
-                        Pedido</button>
-                </form>
-            </div>
-            <div id="box-sucesso" class="success-msg">
-                <div class="check-circle">✓</div>
-                <h3 style="color: var(--dourado); font-size: 24px;">Pedido Recebido!</h3>
-                <button type="button" class="btn" style="margin-top: 25px;" onclick="fecharModal()">OK</button>
-            </div>
         </div>
-    </div>
 
-    <!-- MODAL DE INSCRIÇÃO -->
-    <div id="modalInscricao" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="fecharModalInscricao()">&times;</span>
-            <div id="box-formulario-inscricao">
-                <div class="kit-card-box">
-                    <h4 class="kit-card-title">Kit Exclusivo Incluso*</h4>
-                    <img src="assets/images/outros/kit.png" alt="Kit EDUMATEC'S" class="kit-card-img">
-                    <p class="kit-card-sub">Inscrição com Kit EDUMATEC'S Incluso</p>
-                </div>
+    </main>
 
-                <h2 style="text-align: center; margin-bottom: 5px; font-size: 26px;">Ficha de Inscrição</h2>
-
-                <form id="formInscricao" onsubmit="enviarInscricao(event)">
-                    <div class="form-group">
-                        <label>Nome Completo*</label>
-                        <input type="text" id="insc_nome" required placeholder="Digite seu nome completo">
-                    </div>
-                    <div class="form-group">
-                        <label>CPF*</label>
-                        <input type="text" id="insc_cpf" required placeholder="000.000.000-00"
-                            oninput="mascaraCPF(this)" maxlength="14">
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone (WhatsApp)*</label>
-                        <input type="text" id="insc_telefone" required placeholder="(86) 90000-0000"
-                            oninput="mascaraTelefone(this)" maxlength="15">
-                    </div>
-                    <div class="form-group">
-                        <label>Cidade*</label>
-                        <input type="text" id="insc_cidade" required placeholder="Piripiri - PI">
-                    </div>
-                    <div class="form-group">
-                        <label>Vai precisar de alojamento no campus?*</label>
-                        <div class="radio-group-cards">
-                            <label class="card-radio"><input type="radio" name="alojamento" value="Sim" required>
-                                <span>Sim</span></label>
-                            <label class="card-radio"><input type="radio" name="alojamento" value="Não" checked>
-                                <span>Não</span></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Possui alguma necessidade específica?*</label>
-                        <div class="radio-group-cards">
-                            <label class="card-radio"><input type="radio" name="necessidade" value="Sim" required
-                                    onchange="toggleNecessidade()"> <span>Sim</span></label>
-                            <label class="card-radio"><input type="radio" name="necessidade" value="Não" checked
-                                    onchange="toggleNecessidade()"> <span>Não</span></label>
-                        </div>
-                    </div>
-                    <div id="box-desc-necessidade" class="form-group" style="display: none;">
-                        <label style="color: var(--dourado);">Qual a sua necessidade específica?*</label>
-                        <input type="text" id="desc_necessidade" placeholder="Descreva aqui...">
-                    </div>
-                    <div class="form-group">
-                        <label>Submissão de trabalhos?*</label>
-                        <div class="radio-group-cards">
-                            <label class="card-radio"><input type="radio" name="submissao" value="Sim" required
-                                    onchange="toggleSubmissao()"> <span>Sim</span></label>
-                            <label class="card-radio"><input type="radio" name="submissao" value="Não" checked
-                                    onchange="toggleSubmissao()"> <span>Não</span></label>
-                        </div>
-                    </div>
-
-                    <div id="box-gts-lista" class="box-gts" style="display: none;">
-                        <h4>GRUPOS DE TRABALHO!</h4>
-                        <div class="item-gt"><strong>GT1 - Educação Matemática e múltiplas linguagens</strong>
-                            <div class="gt-email-row"><code>gt1matematica.capir@ifpi.edu.br</code><button type="button"
-                                    class="btn-copiar-peq"
-                                    onclick="copiarTexto('gt1matematica.capir@ifpi.edu.br')">Copiar</button></div>
-                        </div>
-                        <div class="item-gt"><strong>GT2 - Formação, trabalho docente e Didática</strong>
-                            <div class="gt-email-row"><code>gt2educacao.capir@ifpi.edu.br</code><button type="button"
-                                    class="btn-copiar-peq"
-                                    onclick="copiarTexto('gt2educacao.capir@ifpi.edu.br')">Copiar</button></div>
-                        </div>
-                        <div class="item-gt"><strong>GT3 - Tecnologias em contextos diversos</strong>
-                            <div class="gt-email-row"><code>gt3tecnologias.capir@ifpi.edu.br</code><button type="button"
-                                    class="btn-copiar-peq"
-                                    onclick="copiarTexto('gt3tecnologias.capir@ifpi.edu.br')">Copiar</button></div>
-                        </div>
-                        <div class="item-gt"><strong>GT4 - Interdisciplinaridade e Interculturalidade</strong>
-                            <div class="gt-email-row"><code>gt4interdisciplinar.capir@ifpi.edu.br</code><button
-                                    type="button" class="btn-copiar-peq"
-                                    onclick="copiarTexto('gt4interdisciplinar.capir@ifpi.edu.br')">Copiar</button></div>
-                        </div>
-                        <div class="item-gt"><strong>GT5 - Ensino, Pesquisa e Extensão</strong>
-                            <div class="gt-email-row"><code style="color: #888;">gt5extensao.capir@ifpi.edu.br</code>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ESCOLHA DE OFICINAS E MINICURSOS (10 DE DEZEMBRO) -->
-                    <h2 style="color: var(--dourado); font-size: 20px; margin: 25px 0 15px 0; text-align: center;">
-                        Escolha de Oficinas e Minicurso (10 de Dezembro)</h2>
-
-                    <!-- OFICINA 1: 14h às 16h -->
-                    <div class="bloco-atividades">
-                        <h3>Quinta-feira (14h às 16h) - Escolha 1 Oficina</h3>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina1" value="Oficina 1" required>
-                            <div class="info-ativ">
-                                <strong>Oficina 1: Do Tangram à Sala de Aula</strong>
-                                <p>Ministrantes: Prof. Me. Irismar da Silva Carvalho e Profa. Ma. Silmara Bezerra Paz
-                                    Carvalho</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina1" value="Oficina 2">
-                            <div class="info-ativ">
-                                <strong>Oficina 2: Parcelado ou à vista? Domine a HP-12C no celular</strong>
-                                <p>Ministrante: Prof. Dr. Guilherme Luiz de Oliveira Neto</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina1" value="Oficina 3">
-                            <div class="info-ativ">
-                                <strong>Oficina 3: Matemática e direitos humanos</strong>
-                                <p>Ministrantes: Profª. Dra. Rosimeyre Vieira da Silva e equipe</p>
-                            </div>
-                        </label>
-                    </div>
-
-                    <!-- OFICINA 2: 16h às 18h -->
-                    <div class="bloco-atividades">
-                        <h3>Quinta-feira (16h às 18h) - Escolha 1 Oficina</h3>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina2" value="Oficina 4" required>
-                            <div class="info-ativ">
-                                <strong>Oficina 4: Da Geometria ao Cálculo: modelagem de formas</strong>
-                                <p>Ministrante: Profa. Esp. Renata Resende Ibiapina Braga</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina2" value="Oficina 5">
-                            <div class="info-ativ">
-                                <strong>Oficina 5: Preparando aulas de Matemática do Latex ao GPT</strong>
-                                <p>Ministrante: Prof. Me. Sérgio Adriano Marques da Silva</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina2" value="Oficina 6">
-                            <div class="info-ativ">
-                                <strong>Oficina 6: A definir</strong>
-                                <p>Ministrante: Prof. Dr. Iallem Gábio Sousa</p>
-                            </div>
-                        </label>
-                    </div>
-
-                    <!-- OFICINA 3: 18h às 20h -->
-                    <div class="bloco-atividades">
-                        <h3>Quinta-feira (18h às 20h) - Escolha 1 Oficina</h3>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina3" value="Oficina 7" required>
-                            <div class="info-ativ">
-                                <strong>Oficina 7: Matemática além dos números</strong>
-                                <p>Ministrante: Profa. Esp. Cleyciane de Oliveira Melo</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina3" value="Oficina 8">
-                            <div class="info-ativ">
-                                <strong>Oficina 8: Alfabetização Matemática na Prática</strong>
-                                <p>Ministrante: Prof. Me. Pedro Alves da Silva</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="oficina3" value="Oficina 9">
-                            <div class="info-ativ">
-                                <strong>Oficina 9: Aprendendo a pesquisar e produzindo conhecimento científico</strong>
-                                <p>Ministrante: Profa. Dra. Joselma Ferreira Lima e Silva</p>
-                            </div>
-                        </label>
-                    </div>
-
-                    <!-- MINICURSO: 20h às 22h -->
-                    <div class="bloco-atividades">
-                        <h3>Quinta-feira (20h às 22h) - Escolha 1 Minicurso</h3>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="minicurso" value="Minicurso 1" required>
-                            <div class="info-ativ">
-                                <strong>Minicurso 1: Otimização Multi-objetivo</strong>
-                                <p>Ministrante: Prof. Dr. Ray Victor Guimarães Serra</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="minicurso" value="Minicurso 2">
-                            <div class="info-ativ">
-                                <strong>Minicurso 2: Sobre Pesquisa e formação</strong>
-                                <p>Ministrante: Prof. Dr. Clayton Robson Moreira da Silva</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="minicurso" value="Minicurso 3">
-                            <div class="info-ativ">
-                                <strong>Minicurso 3: Modelagem Matemática com Equações Diferenciais</strong>
-                                <p>Ministrante: Prof. Me. Francisco das Chagas Azevedo dos Reis</p>
-                            </div>
-                        </label>
-                        <label class="card-opcao-ativ">
-                            <input type="radio" name="minicurso" value="Minicurso 4">
-                            <div class="info-ativ">
-                                <strong>Minicurso 4: Educação Escolar Indígena</strong>
-                                <p>Ministrantes: Profa. Maria Cleoma da Silva Pinto Sousa</p>
-                            </div>
-                        </label>
-                    </div>
-
-                    <div class="secao-pix-fixa"
-                        style="background: #080808; border: 1px dashed var(--dourado); padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
-                        <h3
-                            style="color: var(--dourado); margin-bottom: 12px; font-size: 20px; text-transform: uppercase;">
-                            Pagamento via PIX</h3>
-                        <img src="assets/images/outros/qrcode-inscricoes.png" alt="QR Code PIX"
-                            style="width: 180px; height: 180px; object-fit: contain; border-radius: 8px; border: 1px solid var(--dourado); margin-bottom: 12px;">
-                        <div style="font-size: 18px; color: #fff; margin-bottom: 12px;">Valor: <span
-                                style="color: var(--dourado); font-weight: bold; font-size: 22px;">R$ 40,00</span></div>
-                        <div
-                            style="background: #000; border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-                            <span id="chaveInscricaoPix"
-                                style="font-size: 13px; color: #fff; font-weight: bold; word-break: break-all;">edumatecs.capir@ifpi.edu.br</span>
-                            <button type="button" class="btn-copiar-peq"
-                                onclick="copiarTexto('edumatecs.capir@ifpi.edu.br')">Copiar</button>
-                        </div>
-                        <p style="font-size: 13px; color: #ccc;">Dúvidas ou espécie: <strong>(86) 99963-4809</strong>
-                        </p>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Envio do Comprovante de Pagamento (Obrigatório)*</label>
-                        <input type="file" id="insc_comprovante" accept="image/*,.pdf" required>
-                    </div>
-
-                    <button type="submit" id="btn-submit-insc" class="btn"
-                        style="width: 100%; font-size: 18px; padding: 14px;">Finalizar Inscrição</button>
-                </form>
-            </div>
-
-            <div id="box-sucesso-inscricao" class="success-msg">
-                <div class="check-circle">✓</div>
-                <h3 style="color: var(--dourado); font-size: 24px; margin-bottom: 10px;">Inscrição Realizada com
-                    Sucesso!</h3>
-                <button type="button" class="btn" style="margin-top: 25px;"
-                    onclick="fecharModalInscricao()">Concluir</button>
-            </div>
-        </div>
-    </div>
-
-    <footer
-        style="text-align: center; padding: 20px; background: #000; color: #666; border-top: 1px solid #333; font-size: 14px;">
-        <p>© 2026 EDUMATEC'S - IFPI Piripiri. Todos os direitos reservados.</p>
+    <footer>
+        © 2026 EDUMATEC'S - IFPI Piripiri.
+        Todos os direitos reservados.
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
