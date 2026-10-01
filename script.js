@@ -1,5 +1,8 @@
-const URL_PLANILHA_CAMISA = "https://script.google.com/macros/s/AKfycbw5_L3vF3RNFY4zcm4OoNLB5d48XSYAdUYqow7ftWws5mdfUCHyWfnMbfntBpDHKT8/exec";
-const URL_PLANILHA_INSCRICAO = "https://script.google.com/macros/s/AKfycbxlP32CA3gJP0yhgDppAN1MqhGWe_HGvrvncR4AVBKBu3qfX8LyLby_-teAzcgXpmEE/exec";
+const URL_PLANILHA_CAMISA =
+    "https://script.google.com/macros/s/AKfycbw5_L3vF3RNFY4zcm4OoNLB5d48XSYAdUYqow7ftWws5mdfUCHyWfnMbfntBpDHKT8/exec";
+
+const URL_PLANILHA_INSCRICAO =
+    "https://script.google.com/macros/s/AKfycbzq_6F00yr_3GmCrPGUxbaDTgZyLKx1OtDeT7Eh7r6Tw-rGLNAH42_so3HUG6HkiEBp/exec";
 
 function mudarAba(abaId, elementoBotao) {
     const abas = ['inicio', 'programacao', 'palestrantes', 'minicursos', 'oficinas', 'mural'];
@@ -182,18 +185,32 @@ async function enviarPedido(event) {
 
 async function enviarInscricao(event) {
     event.preventDefault();
+
     const btn = document.getElementById('btn-submit-insc');
     btn.innerText = "Enviando...";
     btn.disabled = true;
 
     const file = document.getElementById('insc_comprovante').files[0];
-    let base64Data = "", fileName = "", mimeType = "";
+
+    let base64Data = "";
+    let fileName = "";
+    let mimeType = "";
 
     if (file) {
-        fileName = file.name; mimeType = file.type;
-        base64Data = await new Promise((resolve) => {
+        fileName = file.name;
+        mimeType = file.type;
+
+        base64Data = await new Promise((resolve, reject) => {
             const reader = new FileReader();
-            reader.onload = (e) => resolve(e.target.result.split(',')[1]);
+
+            reader.onload = (e) => {
+                resolve(e.target.result.split(',')[1]);
+            };
+
+            reader.onerror = () => {
+                reject(new Error("Não foi possível ler o comprovante."));
+            };
+
             reader.readAsDataURL(file);
         });
     }
@@ -203,38 +220,58 @@ async function enviarInscricao(event) {
         cpf: document.getElementById('insc_cpf').value.trim(),
         telefone: document.getElementById('insc_telefone').value.trim(),
         cidade: document.getElementById('insc_cidade').value.trim(),
-        alojamento: document.querySelector('input[name="alojamento"]:checked').value,
-        necessidade: document.querySelector('input[name="necessidade"]:checked').value,
-        desc_necessidade: document.getElementById('desc_necessidade').value.trim() || "Nenhuma",
-        submissao: document.querySelector('input[name="submissao"]:checked').value,
-        oficina1: document.querySelector('input[name="oficina1"]:checked')?.value || "Não escolheu",
-        oficina2: document.querySelector('input[name="oficina2"]:checked')?.value || "Não escolheu",
-        oficina3: document.querySelector('input[name="oficina3"]:checked')?.value || "Não escolheu",
-        minicurso: document.querySelector('input[name="minicurso"]:checked')?.value || "Não escolheu",
-        fileName, mimeType, fileData: base64Data
+
+        alojamento:
+            document.querySelector('input[name="alojamento"]:checked').value,
+
+        necessidade:
+            document.querySelector('input[name="necessidade"]:checked').value,
+
+        desc_necessidade:
+            document.getElementById('desc_necessidade').value.trim() || "Nenhuma",
+
+        submissao:
+            document.querySelector('input[name="submissao"]:checked').value,
+
+        oficina1:
+            document.querySelector('input[name="oficina1"]:checked')?.value ||
+            "Não escolheu",
+
+        oficina2:
+            document.querySelector('input[name="oficina2"]:checked')?.value ||
+            "Não escolheu",
+
+        oficina3:
+            document.querySelector('input[name="oficina3"]:checked')?.value ||
+            "Não escolheu",
+
+        minicurso:
+            document.querySelector('input[name="minicurso"]:checked')?.value ||
+            "Não escolheu",
+
+        fileName,
+        mimeType,
+        fileData: base64Data
     };
 
+    console.log("Enviando inscrição:", payload);
+
     try {
-        let resposta = await fetch(URL_PLANILHA_INSCRICAO, {
+        await fetch(URL_PLANILHA_INSCRICAO, {
             method: "POST",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
             body: JSON.stringify(payload)
         });
-        let resultado = await resposta.json();
-
-        if (resultado.status === "esgotado") {
-            alert("Ops! As vagas para a atividade " + resultado.atividade + " acabaram de esgotar. Por favor, escolha outra.");
-            verificarVagasDisponiveis();
-            btn.innerText = "Finalizar Inscrição";
-            btn.disabled = false;
-            return;
-        }
 
         document.getElementById('box-formulario-inscricao').style.display = 'none';
         document.getElementById('box-sucesso-inscricao').style.display = 'block';
+
     } catch (err) {
-        document.getElementById('box-formulario-inscricao').style.display = 'none';
-        document.getElementById('box-sucesso-inscricao').style.display = 'block';
+        console.error("Erro ao enviar inscrição:", err);
+        alert("Erro ao enviar inscrição.");
     } finally {
         btn.innerText = "Finalizar Inscrição";
         btn.disabled = false;
