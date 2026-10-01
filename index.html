@@ -2,317 +2,1142 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>EDUMATEC'S 2026 - Em Manutenção</title>
-
-    <meta name="description"
-        content="O site do EDUMATEC'S 2026 está temporariamente indisponível para manutenção.">
-
-    <style>
-        :root {
-            --preto: #0f0f0f;
-            --preto-puro: #000;
-            --dourado: #FFD700;
-            --branco: #f5f5f5;
-            --cinza: #bdbdbd;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at center, #1b1b1b 0%, var(--preto) 45%, #050505 100%);
-            color: var(--branco);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            width: 100%;
-            padding: 18px 40px;
-
-            background: var(--preto-puro);
-            border-bottom: 2px solid var(--dourado);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            width: 95px;
-            height: 95px;
-            object-fit: contain;
-
-            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.25));
-
-            animation: aparecer 0.8s ease;
-        }
-
-        main {
-            flex: 1;
-
-            width: 100%;
-            max-width: 900px;
-
-            margin: 0 auto;
-            padding: 60px 25px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .manutencao {
-            width: 100%;
-            max-width: 650px;
-
-            text-align: center;
-
-            background: rgba(15, 15, 15, 0.88);
-
-            border: 1px solid rgba(255, 215, 0, 0.35);
-            border-radius: 18px;
-
-            padding: 55px 40px;
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.65),
-                0 0 35px rgba(255, 215, 0, 0.05);
-
-            animation: subir 0.8s ease;
-        }
-
-        .icone {
-            width: 90px;
-            height: 90px;
-
-            margin: 0 auto 28px;
-
-            border: 2px solid var(--dourado);
-            border-radius: 50%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: var(--dourado);
-            font-size: 42px;
-
-            animation: pulsar 2s infinite ease-in-out;
-        }
-
-        .codigo {
-            display: inline-block;
-
-            color: var(--dourado);
-
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            border-radius: 20px;
-
-            padding: 7px 16px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: var(--dourado);
-
-            font-size: clamp(28px, 5vw, 42px);
-
-            line-height: 1.2;
-
-            margin-bottom: 20px;
-
-            text-transform: uppercase;
-        }
-
-        .mensagem {
-            color: var(--branco);
-
-            font-size: 17px;
-            line-height: 1.8;
-
-            margin-bottom: 15px;
-        }
-
-        .submensagem {
-            color: var(--cinza);
-
-            font-size: 15px;
-            line-height: 1.7;
-
-            margin-bottom: 30px;
-        }
-
-        .linha {
-            width: 80px;
-            height: 2px;
-
-            background: var(--dourado);
-
-            margin: 25px auto;
-
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-        }
-
-        .evento {
-            color: var(--dourado);
-            font-weight: bold;
-        }
-
-        footer {
-            padding: 20px;
-
-            background: var(--preto-puro);
-
-            border-top: 1px solid #252525;
-
-            text-align: center;
-
-            color: #666;
-
-            font-size: 13px;
-        }
-
-        @keyframes pulsar {
-            0%,
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 rgba(255, 215, 0, 0);
-            }
-
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 25px rgba(255, 215, 0, 0.18);
-            }
-        }
-
-        @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes subir {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 15px 20px;
-            }
-
-            .logo {
-                width: 75px;
-                height: 75px;
-            }
-
-            main {
-                padding: 35px 15px;
-            }
-
-            .manutencao {
-                padding: 40px 22px;
-                border-radius: 14px;
-            }
-
-            .icone {
-                width: 75px;
-                height: 75px;
-                font-size: 34px;
-            }
-
-            .mensagem {
-                font-size: 16px;
-            }
-
-            .submensagem {
-                font-size: 14px;
-            }
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EDUMATEC'S - IFPI Piripiri</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header>
-        <img
-            src="assets/images/logos/logo-2026.png"
-            alt="Logo EDUMATEC'S 2026"
-            class="logo"
-        >
-    </header>
+    <nav>
+        <div class="logo-nav"><img src="assets/images/logos/logo-2026.png" alt="Logo EDUMATEC'S 2026" /></div>
+        <div class="menu-abas">
+            <button class="ativo" onclick="mudarAba('inicio', this)">Início</button>
+            <button onclick="mudarAba('programacao', this)">Programação</button>
+            <button onclick="mudarAba('palestrantes', this)">Palestrantes</button>
+            <button onclick="mudarAba('minicursos', this)">Minicursos</button>
+            <button onclick="mudarAba('oficinas', this)">Oficinas</button>
+            <button onclick="mudarAba('mural', this)">1ª Edição EDUMATEC'S</button>
+        </div>
+    </nav>
 
-    <main>
-
-        <div class="manutencao">
-
-            <div class="icone">
-                ⚙
+    <!-- ABA 1: INÍCIO -->
+    <div id="aba-inicio">
+        <div class="hero-evento">
+            <div class="hero-grid">
+                <div class="hero-logo-col"><img src="assets/images/logos/logo-2026.png" alt="Logo EDUMATEC'S 2026" />
+                </div>
+                <div class="hero-text-col">
+                    <h1>EDUMATEC'S 2026</h1>
+                    <p>Mais do que um Encontro, o <strong>EDUMATEC's</strong> é um convite para expandir seus
+                        horizontes, desafiar sua mente e conectar-se com outros apaixonados por Educação, Matemática e
+                        Tecnologias em seus mais diversos contextos formativos. Em sua 2ª edição, o evento fomenta o
+                        compartilhar de saberes científicos e pedagógicos que emergem do ensino, da pesquisa e pela
+                        extensão.
+                        Aproveite cada momento, construa aprendizagens e deixe-se inspirar pela infinita beleza dessas
+                        Ciências!</p>
+                    <div class="badge-tema">Tema: Ensino, Pesquisa e Extensão na formação</div>
+                </div>
             </div>
-
-            <div class="codigo">
-                HTTP 503
-            </div>
-
-            <h1>
-                Site temporariamente indisponível
-            </h1>
-
-            <div class="linha"></div>
-
-            <p class="mensagem">
-                O site do <span class="evento">EDUMATEC'S 2026</span>
-                está temporariamente fora do ar para manutenção.
-            </p>
-
-            <p class="submensagem">
-                Estamos realizando algumas atualizações para melhorar
-                a experiência dos participantes. Em breve, o site estará
-                disponível novamente.
-            </p>
-
         </div>
 
-    </main>
+        <section class="flex-container">
+            <div class="imagem"><img src="assets/images/outros/kit.png" alt="Kit EDUMATEC'S" class="kit-img" /></div>
+            <div class="texto">
+                <h2>Faça já sua inscrição!</h2>
+                <p>Participe desse grande evento que articula Educação, Matemática e Tecnologias. Inscreva-se agora e
+                    garanta seu <strong>Kit Exclusivo EDUMATEC'S</strong>.</p>
+                <button type="button" class="btn" onclick="abrirModalInscricao()">Garantir Minha Vaga</button>
+            </div>
+        </section>
 
-    <footer>
-        © 2026 EDUMATEC'S - IFPI Piripiri.
-        Todos os direitos reservados.
+        <section class="flex-container">
+            <div class="imagem"><img src="assets/images/outros/camisa.png" alt="Camisa EDUMATEC'S" class="camisa-img" />
+            </div>
+            <div class="texto">
+                <h2>Vista essa Ideia!</h2>
+                <p>Garanta sua camisa oficial do evento e mostre que você faz parte dessa imersão! Design exclusivo em
+                    <strong>preto com detalhes dourados.</strong>
+                </p>
+                <button type="button" class="btn" onclick="abrirModal()">Pedir Camisa</button>
+            </div>
+        </section>
+
+        <section class="flex-container">
+            <div class="imagem"><img src="assets/images/outros/certificado.png" alt="Certificado EDUMATEC'S"
+                    class="certificado-img" /></div>
+            <div class="texto">
+                <h2>Certificados Disponíveis!</h2>
+                <p>Todos os certificados de participação, apresentação de trabalhos, minicursos e oficinas já estão
+                    liberados.</p>
+                <a href="https://drive.google.com/drive/u/0/folders/1nRItqy93xkiOcozG0CvEKenvFgS0EQYF" target="_blank"
+                    class="btn">Certificados 2025</a>
+            </div>
+        </section>
+
+        <section id="secao-turismo">
+            <h2 style="text-align: center;">Guia Turístico de Piripiri!</h2>
+            <p style="text-align: center; margin-bottom: 25px;">Aproveite sua vinda e conheça nossos pontos turísticos.
+            </p>
+            <div class="carrossel-container">
+                <div class="slide"><img src="assets/images/pontos/1-ponto.png" alt="Guia Turístico" /></div>
+                <div class="slide"><img src="assets/images/pontos/2-ponto.png" alt="Sete Cidades" /></div>
+                <div class="slide"><img src="assets/images/pontos/3-ponto.png" alt="Açude Caldeirão" /></div>
+                <div class="slide"><img src="assets/images/pontos/4-ponto.png" alt="Igreja Matriz" /></div>
+                <div class="slide"><img src="assets/images/pontos/5-ponto.png" alt="Praça da Bandeira" /></div>
+                <div class="slide"><img src="assets/images/pontos/6-ponto.png" alt="Rancho Guarita" /></div>
+                <button class="btn-carrossel prev" onclick="mudarSlide(-1)">❮</button>
+                <button class="btn-carrossel next" onclick="mudarSlide(1)">❯</button>
+            </div>
+        </section>
+
+        <section id="secao-delivery">
+            <h2 style="text-align: center;">Chama no Delivery</h2>
+            <p style="text-align: center; margin-bottom: 25px;">Bateu aquela fome durante o evento? Confira as melhores
+                opções de Piripiri!</p>
+            <div class="carrossel-delivery">
+                <div class="slide-del"><img src="assets/images/delivery/1-delivery.png" alt="Chama no Delivery" /></div>
+                <div class="slide-del"><img src="assets/images/delivery/2-delivery.png" alt="Jokers Burger" /><a
+                        href="https://www.instagram.com/jokersburger.piripiri" target="_blank" class="btn-foto">Pedir
+                        Agora</a></div>
+                <div class="slide-del"><img src="assets/images/delivery/3-delivery.png" alt="Big Burger" /><a
+                        href="http://app.cardapioweb.com/big_burger" target="_blank" class="btn-foto">Pedir Agora</a>
+                </div>
+                <div class="slide-del"><img src="assets/images/delivery/4-delivery.png" alt="Burger Nobre" /><a
+                        href="https://burgernobrepiripiri.menudino.com" target="_blank" class="btn-foto">Pedir Agora</a>
+                </div>
+                <div class="slide-del"><img src="assets/images/delivery/5-delivery.png" alt="Delivery 5" /><a
+                        href="https://api.whatsapp.com/message/SSAQDI73IQPDI1" target="_blank" class="btn-foto">Pedir
+                        Agora</a></div>
+                <div class="slide-del"><img src="assets/images/delivery/6-delivery.png" alt="Pizzaria Brasil" /><a
+                        href="http://app.cardapioweb.com/pizzaria_brasil__piripiri" target="_blank"
+                        class="btn-foto">Pedir Agora</a></div>
+                <div class="slide-del"><img src="assets/images/delivery/7-delivery.png" alt="Delivery 7" /><a
+                        href="http://wa.me/message/QTMWPFKIT3TFC1" target="_blank" class="btn-foto">Pedir Agora</a>
+                </div>
+                <div class="slide-del"><img src="assets/images/delivery/8-delivery.png" alt="Dayana Salgados" /><a
+                        href="https://loja.neemo.com.br/dayana-salgados" target="_blank" class="btn-foto">Pedir
+                        Agora</a></div>
+                <div class="slide-del"><img src="assets/images/delivery/9-delivery.png" alt="Delivery 9" /><a
+                        href="http://api.whatsapp.com/send?phone=5586999125920" target="_blank" class="btn-foto">Pedir
+                        Agora</a></div>
+                <div class="slide-del"><img src="assets/images/delivery/10-delivery.png" alt="Prime Açaí e Café" /><a
+                        href="https://primeacaiecafe.nox.com.br" target="_blank" class="btn-foto">Pedir Agora</a></div>
+                <div class="slide-del"><img src="assets/images/delivery/11-delivery.png" alt="Kanpai Sushi" /><a
+                        href="http://api.whatsapp.com/send?phone=5586998654386" target="_blank" class="btn-foto">Pedir
+                        Agora</a></div>
+                <button class="btn-carrossel prev" onclick="mudarSlideDel(-1)">❮</button>
+                <button class="btn-carrossel next" onclick="mudarSlideDel(1)">❯</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABA 2: PROGRAMAÇÃO -->
+    <div id="aba-programacao" style="display: none;">
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px;">Programação Geral (09 a 11 de Dezembro de 2026)</h2>
+
+            <div class="cronograma-dia">
+                <h3>09 de Dezembro (Quarta-feira - Abertura)</h3>
+                <div class="item-agenda"><span class="hora">17h00</span><span class="descricao">Credenciamento</span>
+                </div>
+                <div class="item-agenda"><span class="hora">18h00</span><span class="descricao">Jantar</span></div>
+                <div class="item-agenda"><span class="hora">18h30</span><span class="descricao">Acolhida - Aperitivo
+                        Cultural (Dj. Lipy)</span></div>
+                <div class="item-agenda"><span class="hora">19h30</span><span class="descricao">Dispositivo de
+                        Honra</span></div>
+                <div class="item-agenda"><span class="hora">20h00</span><span class="descricao"><strong>Palestra de
+                            Abertura:</strong> Profa. Dra. Emanoela Moreira Maciel (IFPI - ProfEPT)</span></div>
+                <div class="item-agenda"><span class="hora">21h00</span><span class="descricao">Lançamento de
+                        Livro</span></div>
+                <div class="item-agenda"><span class="hora">21h20</span><span class="descricao">Confraternização (Dj.
+                        Lipy)</span></div>
+            </div>
+
+            <div class="cronograma-dia">
+                <h3>10 de Dezembro (Quinta-feira)</h3>
+                <div class="item-agenda"><span class="hora">Manhã</span><span class="descricao">Livre (Sugestões no Guia
+                        Turístico de Piripiri)</span></div>
+                <div class="item-agenda">
+                    <span class="hora">14h às 16h</span>
+                    <span class="descricao">
+                        <strong>Oficina 1:</strong> Do Tangram à Sala de Aula: possibilidades para o ensino e a
+                        aprendizagem da Matemática na Educação Básica.<br>
+                        <strong>Ministrantes:</strong> Prof. Me. Irismar da Silva Carvalho e Profa. Ma. Silmara Bezerra
+                        Paz Carvalho.<br><br>
+                        <strong>Oficina 2:</strong> Parcelado ou à vista? Domine a HP-12C no celular e economize mais
+                        que em investimentos!<br>
+                        <strong>Ministrante:</strong> Prof. Dr. Guilherme Luiz de Oliveira Neto.<br><br>
+                        <strong>Oficina 3:</strong> Matemática e direitos humanos: transformando situações do cotidiano
+                        em problemas matemáticos.<br>
+                        <strong>Ministrantes:</strong> Profª. Dra. Rosimeyre Vieira da Silva, Licencianda Ana Thatila de
+                        Lima Rodrigues, Licenciando Antonio Francisco da Costa Rodrigues e a Licencianda Letícia Soares
+                        Chaves.
+                    </span>
+                </div>
+                <div class="item-agenda">
+                    <span class="hora">16h às 18h</span>
+                    <span class="descricao">
+                        <strong>Oficina 4:</strong> Da Geometria ao Cálculo: modelagem de formas, curvas e superfícies
+                        aplicada ao Design.<br>
+                        <strong>Ministrantes:</strong> Profa. Dra. Rimena Canuto Oliveira e Profa. Esp. Renata Resende
+                        Ibiapina Braga.<br><br>
+                        <strong>Oficina 5:</strong> Preparando aulas de Matemática do Latex ao GPT: um passeio por
+                        ferramentas, métodos e objetivos.<br>
+                        <strong>Ministrante:</strong> Prof. Me. Sérgio Adriano Marques da Silva.<br><br>
+                        <strong>Oficina 6:</strong> A definir.<br>
+                        <strong>Ministrante:</strong> Prof. Dr. Iallem Gábio Sousa.
+                    </span>
+                </div>
+                <div class="item-agenda">
+                    <span class="hora">18h às 20h</span>
+                    <span class="descricao">
+                        <strong>Oficina 7:</strong> Desenvolvendo o Letramento Matemático nos Anos Finais do Ensino
+                        Fundamental.<br>
+                        <strong>Ministrante:</strong> Profa. Esp. Cleyciane de Oliveira Melo.<br><br>
+                        <strong>Oficina 8:</strong> Alfabetização Matemática na Prática: experiências, estratégias e
+                        aprendizagens no Ciclo de Alfabetização.<br>
+                        <strong>Ministrante:</strong> Prof. Me. Pedro Alves da Silva.<br><br>
+                        <strong>Oficina 9:</strong> Aprendendo a pesquisar e produzindo conhecimento científico.<br>
+                        <strong>Ministrante:</strong> Profa. Dra. Joselma Ferreira Lima e Silva.
+                    </span>
+                </div>
+                <div class="item-agenda">
+                    <span class="hora">20h às 22h</span>
+                    <span class="descricao">
+                        <strong>Minicurso 1:</strong> Da Otimização Clássica à Otimização Multiobjetivo: Teoria,
+                        Algoritmos e Aplicações.<br>
+                        <strong>Ministrante:</strong> Prof. Dr. Ray Victor Guimarães Serra.<br><br>
+                        <strong>Minicurso 2:</strong> Construção de Instrumentos de Pesquisa: do Planejamento ao
+                        Campo.<br>
+                        <strong>Ministrante:</strong> Prof. Dr. Clayton Robson Moreira da Silva.<br><br>
+                        <strong>Minicurso 3:</strong> Uma Iniciação à Modelagem Matemática de Fenômenos Regidos por
+                        Equações Diferenciais Ordinárias.<br>
+                        <strong>Ministrante:</strong> Prof. Me. Francisco das Chagas Azevedo dos Reis.<br><br>
+                        <strong>Minicurso 4:</strong> Práticas Extensionistas para a Formação Humana Integral.<br>
+                        <strong>Ministrante:</strong> Prof. Me. Pablo Dias Paiva.
+                    </span>
+                </div>
+            </div>
+
+            <div class="cronograma-dia">
+                <h3>11 de Dezembro (Sexta-feira)</h3>
+                <div class="item-agenda"><span class="hora">09h às 12h</span><span class="descricao">Espaço Recreativo:
+                        Circuito Matemático! (Pibidianos) e Grupos de Trabalho (GTs)</span></div>
+                <div class="item-agenda"><span class="hora">14h às 15h30</span><span class="descricao"><strong>Palestra
+                            de Encerramento:</strong> Prof. Dr. Sandoel de Brito Vieira (UFPI) - Tema: OBMEP e a
+                        formação de professores(as).</span></div>
+                <div class="item-agenda"><span class="hora">15h30 às 18h00</span><span class="descricao"><strong>Roda de
+                            Conversa:</strong> Homens na Matemática: compartilhando saberes profissionais do ensino,
+                        pesquisa e da extensão. <br> Mediador: Prof. Me. Alberto Cunha Alves. <br> Participantes: Prof.
+                        Me. Alexsandro de Sousa Santos, Prof. Cícero dos Santos Teixeira, Prof. Gerson Misael Sousa
+                        Oliveira, Prof. Jackson de Oliveira.</span></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABA 3: PALESTRANTES -->
+    <div id="aba-palestrantes" style="display: none;">
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px;">Palestrantes e Rodas de Conversa</h2>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Emanoela.png" alt="Profa. Dra. Emanoela Moreira Maciel"></div>
+                <div class="card-info-detalhada">
+                    <h3>Profa. Dra. Emanoela Moreira Maciel</h3>
+                    <p><strong>Palestra de Abertura</strong></p>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Sandoel.png" alt="Prof. Dr. Sandoel de Brito Vieira"></div>
+                <div class="card-info-detalhada">
+                    <h3>Prof. Dr. Sandoel de Brito Vieira</h3>
+                    <p><strong>Palestra de Encerramento:</strong> OBMEP e a formação de professores(as)</p>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; margin: 40px 0 20px 0; font-size: 24px;">Roda de Conversa: Homens na
+                Matemática</h2>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Alberto.png" alt="Prof. Me. Alberto Cunha Alves"></div>
+                <div class="card-info-detalhada">
+                    <h3>Prof. Me. Alberto Cunha Alves</h3>
+                    <p><strong>Mediador da Roda de Conversa</strong></p>
+                    <div class="info-destaque">Homens na Matemática: compartilhando saberes profissionais do ensino,
+                        pesquisa e da extensão.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Alexsandro.png" alt="Prof. Me. Alexsandro de Sousa Santos">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Prof. Me. Alexsandro de Sousa Santos</h3>
+                    <p><strong>Participante da Roda de Conversa</strong></p>
+                    <div class="info-destaque">Homens na Matemática: compartilhando saberes profissionais do ensino,
+                        pesquisa e da extensão.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Cícero.png" alt="Prof. Cícero dos Santos Teixeira"></div>
+                <div class="card-info-detalhada">
+                    <h3>Prof. Cícero dos Santos Teixeira</h3>
+                    <p><strong>Participante da Roda de Conversa</strong></p>
+                    <div class="info-destaque">Homens na Matemática: compartilhando saberes profissionais do ensino,
+                        pesquisa e da extensão.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Gerson.png" alt="Prof. Gerson Misael Sousa Oliveira"></div>
+                <div class="card-info-detalhada">
+                    <h3>Prof. Gerson Misael Sousa Oliveira</h3>
+                    <p><strong>Participante da Roda de Conversa</strong></p>
+                    <div class="info-destaque">Homens na Matemática: compartilhando saberes profissionais do ensino,
+                        pesquisa e da extensão.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Jackson.png" alt="Prof. Jackson de Oliveira"></div>
+                <div class="card-info-detalhada">
+                    <h3>Prof. Jackson de Oliveira</h3>
+                    <p><strong>Participante da Roda de Conversa</strong></p>
+                    <div class="info-destaque">Homens na Matemática: compartilhando saberes profissionais do ensino,
+                        pesquisa e da extensão.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABA 4: MINICURSOS -->
+    <div id="aba-minicursos" style="display: none;">
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px;">Minicursos (10 de Dezembro - 20h às 22h)</h2>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Ray.png" alt="Prof. Dr. Ray Victor Guimarães Serra"></div>
+                <div class="card-info-detalhada">
+                    <h3>Minicurso 1: Da Otimização Clássica à Otimização Multiobjetivo: Teoria, Algoritmos e Aplicações
+                    </h3>
+                    <p><strong>Ministrante:</strong> Prof. Dr. Ray Victor Guimarães Serra</p>
+                    <div class="info-destaque"><strong>Resumo/Objetivo:</strong> A otimização matemática está presente
+                        em diversas situações nas quais é necessário tomar decisões buscando utilizar da melhor forma
+                        possível os recursos disponíveis. Problemas envolvendo minimização de custos, redução de tempo,
+                        maximização de desempenho, alocação de recursos e planejamento são exemplos naturais de
+                        problemas de otimização. Em muitos desses problemas, entretanto, não existe apenas um objetivo a
+                        ser considerado. Frequentemente, diferentes objetivos precisam ser otimizados simultaneamente e
+                        podem ser conflitantes entre si. Essa situação conduz aos chamados problemas de otimização
+                        multiobjetivo. O objetivo deste minicurso é apresentar uma introdução à otimização matemática,
+                        partindo de conceitos familiares do Cálculo Diferencial e chegando aos fundamentos da otimização
+                        multiobjetivo. Ao longo do minicurso serão discutidos aspectos teóricos, geométricos,
+                        algorítmicos e computacionais.</div>
+                    <div class="curriculo-box"><strong>Currículo:</strong> Graduado em Licenciatura Plena em Matemática
+                        pela Universidade Federal do Piauí (2014), possui mestrado em Matemática pela mesma instituição
+                        (2016) e doutorado em Matemática pela Universidade Federal de Goiás (2021). Atualmente, é
+                        professor adjunto da Universidade Federal do Piauí, coordenador dos cursos de graduação do
+                        Departamento de Matemática da UFPI no biênio 2025-2026. Além disso, é membro permanente do
+                        Programa de Pós-Graduação em Matemática (Mestrado e Doutorado). Sua pesquisa concentra-se na
+                        área de Otimização, com interesse em Otimização Vetorial, Método do Gradiente e Ponto Proximal.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Clayton.png" alt="Prof. Dr. Clayton Robson Moreira da Silva">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Minicurso 2: Construção de Instrumentos de Pesquisa: do Planejamento ao Campo</h3>
+                    <p><strong>Ministrante:</strong> Prof. Dr. Clayton Robson Moreira da Silva</p>
+                    <div class="info-destaque"><strong>Objetivo geral:</strong> Desenvolver conhecimentos
+                        teórico-práticos sobre o planejamento, a construção e a aplicação de instrumentos de pesquisa.
+                        <strong>Local:</strong> Laboratório (também é possível fazer em sala de aula)
+                        <br><strong>Recursos didáticos necessários:</strong> computador, projetor multimídia, acesso à
+                        internet, apresentação em slides e material impresso (modelos de questionários e roteiros de
+                        entrevista).
+                    </div>
+                    <div class="curriculo-box"><strong>Currículo:</strong> Professor do Instituto Federal de Educação,
+                        Ciência e Tecnologia do Piauí (IFPI). Doutor em Administração e Controladoria pela Universidade
+                        Federal do Ceará (UFC). Foi Pesquisador Visitante na Business Research Unit (BRU) do Instituto
+                        Universitário de Lisboa (ISCTE-IUL), Portugal. Atualmente, exerce a função de Coordenador
+                        Acadêmico Local e atua como Docente Permanente do Programa de Pós-Graduação em Educação
+                        Profissional e Tecnológica (ProfEPT/IFPI). Líder do Núcleo de Pesquisas em Organizações,
+                        Sustentabilidade e Sociedade (NOSSO).</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Reis.png" alt="Prof. Me. Francisco das Chagas Azevedo dos Reis">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Minicurso 3: Uma Iniciação à Modelagem Matemática de Fenômenos Regidos por Equações Diferenciais
+                        Ordinárias</h3>
+                    <p><strong>Ministrante:</strong> Prof. Me. Francisco das Chagas Azevedo dos Reis</p>
+                    <div class="info-destaque"><strong>Objetivo Geral:</strong> Desenvolver competências na
+                        interpretação de problemas do mundo real em modelos matemáticos formulados por meio de Equações
+                        Diferenciais Ordinárias (EDOs). O minicurso visa aprimorar a transposição da teoria analítica
+                        para a prática aplicada, permitindo compreender e discutir a formulação e a análise de fenômenos
+                        físicos e biológicos tais como taxas de crescimento e decaimento, a Lei do Resfriamento de
+                        Newton, problemas de vazão, escoamento de líquidos em reservatórios, além de sistemas mecânicos
+                        como o movimento de paraquedas e osciladores harmônicos. <br><strong>Público-alvo /
+                            Pré-requisitos:</strong> Acadêmicos e profissionais de Licenciatura em Matemática,
+                        Engenharias, Física, Economia e áreas afins, tendo como pré-requisito a conclusão ou o domínio
+                        dos conteúdos de Cálculo Diferencial e Integral I. <br><strong>Local e Recursos:</strong> Sala
+                        de aula. Recursos: Projetor multimídia (data show), quadro branco, pincéis e impressão de
+                        material de apoio para acompanhamento dos cursistas.</div>
+                    <div class="curriculo-box"><strong>Currículo:</strong> Graduado pela Universidade Federal do Piauí
+                        com Bacharelado em Matemática (UFPI-2005) e Licenciatura em Matemática (UFPI-2007). Possui
+                        Especialização em Metodologia do Ensino de Matemática pelo Centro Universitário Leonardo da
+                        Vinci (UNIASSELVI-2012) e Mestrado em Engenharia Civil pela Universidade Federal do Ceará
+                        (UFC-2014). Atua há mais de 25 anos no ensino de Matemática, com experiência consolidada nos
+                        níveis fundamental, médio, superior e de pós-graduação. É professor efetivo do Instituto Federal
+                        de Educação, Ciência e Tecnologia do Piauí (IFPI), lotado no Campus Piripiri desde 2010. Em sua
+                        trajetória institucional, exerceu funções de destaque como Coordenador do Curso de Licenciatura
+                        em Matemática, Coordenador de Área do PIBID/CAPES e Docente Orientador da Residência Pedagógica.
+                        Possui ampla vivência acadêmica em disciplinas avançadas da graduação tais como Análise Real,
+                        Álgebra Linear, Cálculo Diferencial e Integral, Funções de Várias Variáveis, Cálculo Numérico e
+                        Equações Diferenciais Ordinárias. Desenvolve pesquisas voltadas à Educação Matemática, com
+                        ênfase em Modelagem Matemática, Etnomatemática, Tecnologias Digitais e softwares aplicados ao
+                        ensino.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Pablo Dias.png" alt="Prof. Me. Pablo Dias Paiva"></div>
+                <div class="card-info-detalhada">
+                    <h3>Minicurso 4: Práticas Extensionistas para a Formação Humana Integral</h3>
+                    <p><strong>Ministrante:</strong> Prof. Me. Pablo Dias Paiva</p>
+                    <div class="info-destaque"><strong>Objetivo geral:</strong> Compreender as práticas extensionistas
+                        como possibilidades de articulação entre ensino, pesquisa e extensão, discutindo princípios e
+                        estratégias para o desenvolvimento de ações educativas que aproximem os conhecimentos
+                        construídos nos espaços formativos das demandas da realidade social e contribuam para a Formação
+                        Humana Integral. <br><strong>Local:</strong> Sala de aula <br><strong>Recursos didáticos
+                            necessários:</strong> Notebook, projetor multimídia, acesso à internet, quadro branco,
+                        pincéis, folhas A4 e canetas para as atividades práticas.</div>
+                    <div class="curriculo-box"><strong>Currículo:</strong> Mestre em Educação Profissional e Tecnológica
+                        pelo Instituto Federal do Piauí (IFPI), licenciado em Letras Espanhol pela Universidade Estadual
+                        do Piauí (UESPI) e especialista em Metodologia do Ensino da Língua Espanhola. É professor do
+                        Instituto Federal do Piauí, com experiência na Educação Profissional e Tecnológica, no ensino de
+                        Língua Espanhola e no desenvolvimento de ações e projetos de extensão. Sua pesquisa de mestrado
+                        investigou as práticas extensionistas no Projeto Integrador e sua relação com a Formação Humana
+                        Integral na EPT, resultando no desenvolvimento de Oficinas Pedagógicas Integradoras e de um
+                        Caderno Pedagógico Orientador.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABA 5: OFICINAS -->
+    <div id="aba-oficinas" style="display: none;">
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px;">Oficinas do Evento</h2>
+
+            <div class="card-conteudo">
+                <div style="display: flex; gap: 8px;">
+                    <div class="card-foto-espaco" style="width: 75px; height: 160px;"><img src="Irismar.png"
+                            alt="Irismar"></div>
+                    <div class="card-foto-espaco" style="width: 75px; height: 160px;"><img src="Silmara.png"
+                            alt="Silmara"></div>
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 1: Do Tangram à Sala de Aula: possibilidades para o ensino e a aprendizagem da
+                        Matemática na Educação Básica</h3>
+                    <p><strong>Ministrantes:</strong> Irismar da Silva Carvalho e Silmara Bezerra Paz Carvalho</p>
+                    <div class="info-destaque"><strong>Objetivo Geral:</strong> Potencializar o Tangram como recurso
+                        pedagógico e investigativo para o ensino e a aprendizagem da Matemática, possibilitando aos
+                        participantes desenvolver estratégias de visualização, composição e decomposição de figuras,
+                        raciocínio geométrico, resolução de problemas e pensamento matemático, articulando essas
+                        experiências à prática docente na Educação Básica. <br><strong>Recursos Didáticos
+                            Necessários:</strong> Tangram de plástico ou madeira, material impresso (sequências
+                        didáticas), pincéis e algumas cartolinas ou papel madeira, fita gomada.</div>
+                    <div class="curriculo-box"><strong>IRISMAR DA SILVA CARVALHO:</strong> Mestre em Matemática na
+                        Universidade Federal do Piauí - UFPI, especialista em PROEJA - IFPI, graduado em Matemática -
+                        UESPI. Tem experiência como professor dos Anos Finais do ensino fundamental, ensino médio e
+                        formação de professores de Matemática SEDUC-PI. É professor da educação básica da Secretaria
+                        Municipal de Educação de Alto Longá e SEDUC-PI, trabalha como formador e elaborador de material
+                        de matemática. Possui experiência na área de Matemática, com ênfase em Metodologia do Ensino da
+                        Matemática, Olimpíadas de Matemática e Avaliação da Aprendizagem. <br><br><strong>SILMARA
+                            BEZERRA PAZ CARVALHO:</strong> Mestra em Educação na Universidade Federal do Piauí - UFPI,
+                        especialista em Metodologia do Ensino de Matemática e Física, especialista em
+                        Neuropsicopedagogia Clínica e Institucional, graduada em Pedagogia e Matemática. Tem experiência
+                        como professora de turmas de anos iniciais e finais do ensino fundamental, ensino médio, com
+                        coordenação pedagógica e formação de professores de Matemática e Ensino Superior. É professora
+                        da educação básica da Secretaria Municipal de Educação de Timon (MA), trabalha como formadora e
+                        elaboradora de material de matemática. Possui experiência na área de Matemática, com ênfase em
+                        Metodologia do Ensino da Matemática, Olimpíadas de Matemática, Avaliação da Aprendizagem,
+                        análise de dados educacionais e currículo. É redatora de matemática do Currículo do Estado do
+                        Piauí. Tem experiência como formadora especialista do Currículo do Piauí e das Expedições
+                        Formativas Maranhenses pela Fundação Getúlio Vargas. É integrante do Grupo de Pesquisa
+                        NIPPC/UFPI (Núcleo Interdisciplinar de Pesquisa em Práticas Curriculares e Formação de
+                        Profissionais da Educação). Atua como parecerista da Revista Cenas Educacionais (CEDU). É
+                        articuladora da Undime Piauí pelo Compromisso Nacional "Toda Matemática".</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Guilherme.png" alt="Prof. Dr. Guilherme Luiz de Oliveira Neto">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 2: Parcelado ou à vista? Domine a HP-12C no celular</h3>
+                    <p><strong>Ministrante:</strong> Prof. Dr. Guilherme Luiz de Oliveira Neto</p>
+                    <div class="info-destaque">
+                        <strong>Descrição:</strong> Neste minicurso, você vai aprender a usar a calculadora HP-12C no
+                        celular para comparar compras à vista e parceladas de forma prática. Descubra como decisões
+                        simples no dia a dia podem gerar mais economia do que muitos investimentos. Ideal para quem quer
+                        gastar melhor e fazer o dinheiro render mais desde já!<br>
+                        <strong>Público-alvo:</strong> Professores, técnicos administrativos e estudantes (do Ensino
+                        Médio ao Superior) interessados em transformar decisões cotidianas em economia real.<br>
+                        <strong>Local:</strong> Sala de Aula
+                    </div>
+                    <div class="curriculo-box">
+                        <strong>Currículo:</strong> Graduação em Matemática pela Universidade Federal de Campina Grande
+                        UFCG (2006), Especialização em Ensino de Matemática pela Faculdade Montenegro (2009), Mestrado
+                        em Matemática pela Universidade Federal da Paraíba-UFPB (2012) e Doutorado em Engenharia de
+                        Processos pela Universidade Federal de Campina Grande UFCG (2020).
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; width: 170px;">
+                    <div class="card-foto-espaco" style="width: 75px; height: 150px;"><img src="Rosymeire.png"
+                            alt="Rosymeire"
+                            style="object-fit: cover; object-position: center top; transform: scale(1.15);"></div>
+                    <div class="card-foto-espaco" style="width: 75px; height: 170px;"><img src="Ana Thatila.png"
+                            alt="Ana Thatila"></div>
+                    <div class="card-foto-espaco" style="width: 75px; height: 170px;"><img src="Francisco.png"
+                            alt="Antonio Francisco"></div>
+                    <div class="card-foto-espaco" style="width: 75px; height: 170px;"><img src="Letícia Soares.png"
+                            alt="Letícia Soares"></div>
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 3: Matemática e direitos humanos: transformando situações do cotidiano em problemas
+                        matemáticos</h3>
+                    <p><strong>Ministrantes:</strong> Profª. Drª. Rosimeyre Vieira da Silva, Licencianda Ana Thatila de
+                        Lima Rodrigues, Licenciando Antonio Francisco da Costa Rodrigues e Licencianda Letícia Soares
+                        Chaves</p>
+                    <div class="info-destaque"><strong>Objetivo Geral:</strong> Vivenciar e elaborar atividades práticas
+                        que articulem conteúdos matemáticos a situações reais relacionadas aos Direitos Humanos,
+                        possibilitando aos professores desenvolver propostas de ensino fundamentadas na Educação
+                        Matemática Crítica. <br><strong>Recursos Didáticos Necessários:</strong> Data show, aparelho de
+                        som.</div>
+                    <div class="curriculo-box"><strong>PROFA. DRÃ. ROSIMEYRE VIEIRA DA SILVA:</strong> Licenciatura em
+                        Pedagogia pela Universidade Federal do Piauí (1999), mestrado em Educação pela Universidade
+                        Federal do Piauí (2016), doutorado em Educação pela Universidade Federal do Piauí (2022).
+                        Atualmente é professor titular do Instituto Federal do Piauí em atuação nos cursos de formação
+                        de professores da IES e no curso de Bacharelado em Administração e Análise e Desenvolvimento de
+                        Sistemas. Faz parte do Núcleo de Pesquisa do PPGEd/UFPI (NUPPED) e tem experiência na área de
+                        Educação, com ênfase em formação de professores, prática docente, alfabetização, Pesquisa em
+                        Educação e ensino de Matemática. <br><br><strong>ANA THATILA DE LIMA RODRIGUES:</strong>
+                        Graduada em Física pela Universidade Estadual do Piauí UESPI (2024). Durante sua graduação em
+                        Licenciatura em Física destacou-se por sua dedicação acadêmica e participação ativa em programas
+                        como Residência Pedagógica RP (2023/2024) e Programa Institucional de Bolsas de Iniciação à
+                        Docência PIBID (2020/2022). Especialista em Ensino de Matemática pela Unicesumar (2025) e
+                        Especialista em Docência no Ensino Superior pela Unicesumar (2026). Atualmente Graduanda em
+                        Matemática pelo Instituto Federal do Piauí IFPI (2024). <br><br><strong>ANTONIO FRANCISCO DA
+                            COSTA RODRIGUES:</strong> Licenciando em Matemática - Instituto Federal de Educação, Ciência
+                        e Tecnologia do Piauí - Campus Piripiri. <br><br><strong>LETÍCIA SOARES CHAVES:</strong>
+                        Licenciando em Matemática - Instituto Federal de Educação, Ciência e Tecnologia do Piauí -
+                        Campus Piripiri.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div style="display: flex; gap: 8px;">
+                    <div class="card-foto-espaco" style="width: 75px; height: 160px;"><img src="RenataeRimena.png"
+                            alt="Rimena"></div>
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 4: Da Geometria ao Cálculo: modelagem de formas, curvas e superfícies aplicada ao Design
+                    </h3>
+                    <p><strong>Ministrantes:</strong> Profa. Dra. Rimena Canuto Oliveira e Profa. Renata Resende
+                        Ibiapina Braga</p>
+                    <div class="info-destaque"><strong>Descrição:</strong> Mostrar como conceitos geométricos e de
+                        cálculo diferencial ajudam a descrever, construir e otimizar formas reais, utilizando exemplos
+                        provenientes do design, da modelagem do vestuário e de objetos tridimensionais. O minicurso
+                        trabalhará três eixos articulados: Geometria (proporção, escala, coordenadas cartesianas,
+                        distâncias, ângulos, áreas, circunferências, curvas e transformações geométricas); Cálculo
+                        diferencial (ideia intuitiva de função, taxa de variação, derivada, crescimento/decrescimento,
+                        máximos e mínimos e inclinação de curvas); Aplicação prática (construção e análise de uma forma,
+                        mostrando como a Matemática interfere no resultado final).</div>
+
+                    <div class="curriculo-box">
+                        <strong>Renata Resende Ibiapina Braga:</strong><br>
+                        Licenciatura em Matemática pela UFPI. Especialista em Estatística pela UFPI. Possui
+                        Especialização pela FAEME em Ensino de Matemática e Matemática Financeira. É professora de
+                        Matemática no Ensino Médio e na Licenciatura. Atualmente Coordena o Proeja de Administração no
+                        IFPI, campus Piripiri. Atualmente é membro do Conselho Superior do IFPI - CONSUP.
+                    </div>
+                    <div class="curriculo-box">
+                        <strong>Rimena Canuto Oliveira:</strong><br>
+                        Doutora em Engenharia de Produção pela Universidade Paulista. Possui graduação em Bacharelado em
+                        Comunicação Social pelo Centro de Ensino Unificado de Teresina - CEUT, e Bacharelado em Design
+                        de Moda pela Faculdade de Desenvolvimento Regional - FADIRE, mestrado em Engenharia de Produção
+                        pela Universidade Paulista (2017) e Especialização em Gestão de Negócios de Moda. Atualmente é
+                        professora efetiva do Instituto Federal do Piauí - IFPI. Com foco de pesquisa nas áreas de Moda,
+                        Sustentabilidade, Economia Circular, Inovação e Inteligência Artificial.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Sergio.png" alt="Prof. Me. Sérgio Adriano Marques da Silva">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 5: Preparando aulas de Matemática do Latex ao GPT: um passeio por ferramentas, métodos e
+                        objetivos</h3>
+                    <p><strong>Ministrante:</strong> Prof. Me. Sérgio Adriano Marques da Silva.</p>
+
+                    <div class="info-destaque"><strong>Objetivo Geral:</strong> Discutir e divulgar métodos e recursos
+                        para preparar uma aula de Matemática no Ensino Médio. <br><strong>Recursos Didáticos
+                            Necessários:</strong> Notebook pessoal.</div>
+                    <div class="curriculo-box">
+                        <strong>Currículo:</strong> Mestre em Matemática pela Universidade Federal do Piauí (UFPI).
+                        Professor de Matemática no IFPI - campus Piripiri, no Ensino Médio e na Licenciatura.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Iallen.png" alt="Prof. Dr. Iallen Gábio Sousa"></div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 6: Harness yourself: como aparelhar modelos de IA para a sua área de atuação</h3>
+                    <p><strong>Ministrante:</strong> Prof. Dr. Iallem Gábio Sousa</p>
+                    <div class="info-destaque">
+                        <strong>Objetivo Geral:</strong> Capacitar estudantes de Análise e Desenvolvimento de Sistemas,
+                        Licenciatura em Matemática, Design de Moda e Administração a compreender o conceito de harness e
+                        a aplicá-lo na configuração de modelos de IA/LLM (instruções, contexto, exemplos, ferramentas e
+                        critérios de qualidade), de modo a obter resultados mais precisos, consistentemente úteis em
+                        tarefas reais de suas áreas de atuação, utilizando a tecnologia de forma crítica, ética e
+                        produtiva.
+                    </div>
+                    <div class="curriculo-box">
+                        <strong>Minidescrição:</strong><br>
+                        Você já percebeu que a mesma IA pode dar respostas brilhantes ou frustrantes dependendo de como
+                        é usada? A diferença está no harness: o conjunto de instruções, contexto, exemplos, ferramentas
+                        e critérios de qualidade que "aparelha" o modelo para uma tarefa real.<br><br>
+                        Nesta oficina prática de 2 a 3 horas, estudantes de ADS, Licenciatura em Matemática, Design de
+                        Moda e Administração vão aprender a sair do prompt solto e montar um harness próprio para a sua
+                        área, seja apoiando código e testes, planejando aulas e atividades, descrevendo coleções e
+                        fichas técnicas ou elaborando relatórios e análises. Você sai com um modelo de trabalho pronto
+                        para adaptar ao seu dia a dia acadêmico e profissional, usando a IA de forma mais precisa,
+                        crítica e produtiva.<br><br>
+                        <em>Recursos / Local:</em> LAB 2 ou LAB 03 (com internet). Não é obrigatório o uso de máquinas;
+                        o aluno pode levar seu notebook ou apenas um bloquinho e caneta para anotar os conceitos
+                        fundamentais.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Cleyciane.png" alt="Profa. Esp. Cleyciane de Oliveira Melo">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 7: Matemática além dos números: lendo, interpretando e transformando o mundo</h3>
+                    <p><strong>Ministrante:</strong> Profa. Esp. Cleyciane de Oliveira Melo</p>
+                    <div class="info-destaque">
+                        <strong>Resumo da Oficina:</strong> Destina-se a acadêmicos de licenciatura em Matemática que
+                        atuarão nos anos finais do Ensino Fundamental (6º ao 9º ano). Com duração de 90 minutos, o
+                        objetivo é desenvolver o Letramento Matemático como uma competência essencial para que futuros
+                        professores capacitem seus alunos a compreender, interpretar, argumentar e tomar decisões
+                        informadas em situações reais, utilizando a Matemática de forma crítica e consciente. A
+                        atividade principal será uma situação-problema contextualizada que permite múltiplas estratégias
+                        e estimula o pensamento crítico. Recursos didáticos simples e acessíveis serão utilizados, e a
+                        avaliação será formativa, focando na participação, raciocínio, argumentação e trabalho
+                        colaborativo.
+                    </div>
+                    <div class="curriculo-box">
+                        <strong>Currículo:</strong> Especialista em Educação Matemática. Professora premiada na 20ª
+                        OBMEP e atua na escola pública de maior IDEB do Ensino Fundamental de Piripiri - CETI
+                        Desembargador José de Arimathéa Tito.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Pedro.png" alt="Prof. Me. Pedro Alves da Silva"></div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 8: Alfabetização Matemática na Prática: experiências, estratégias e aprendizagens no
+                        Ciclo de Alfabetização</h3>
+                    <p><strong>Ministrante:</strong> Prof. Me. Pedro Alves da Silva</p>
+                    <div class="info-destaque"><strong>Objetivo Geral:</strong> Promover práticas pedagógicas para o
+                        desenvolvimento da Alfabetização Matemática no Ciclo de Alfabetização, por meio de situações
+                        significativas que envolvam números, cálculos, resolução de problemas, grandezas, medidas e
+                        geometria, em consonância com as orientações do CNCA/PPAIC. <br><strong>Recursos Didáticos
+                            Necessários:</strong> Projetor multimídia, computador, quadro e pincéis, folhas A4, material
+                        dourado, fichas numéricas, jogos matemáticos e materiais manipuláveis.</div>
+                    <div class="curriculo-box"><strong>MINICURRÍCULO:</strong> Mestre em Educação Profissional e
+                        Tecnológica pelo Instituto Federal do Piauí (IFPI). Especialista em Ensino de Matemática e em
+                        Gestão Escolar, licenciado em Ciências Biológicas pela UESPI. Professor da Educação Básica e
+                        Formador de Gestão do Programa Piauiense de Alfabetização na Idade Certa (PPAIC), no âmbito da
+                        18ª Gerência Regional de Educação/SEDUC-PI. Atua na formação continuada de professores, gestão
+                        educacional, alfabetização, avaliação da aprendizagem, recomposição das aprendizagens e
+                        desenvolvimento de práticas pedagógicas voltadas à melhoria dos resultados educacionais.</div>
+                </div>
+            </div>
+
+            <div class="card-conteudo">
+                <div class="card-foto-espaco"><img src="Joselma.png" alt="Profa. Dra. Joselma Ferreira Lima e Silva">
+                </div>
+                <div class="card-info-detalhada">
+                    <h3>Oficina 9: Aprendendo a pesquisar e produzindo conhecimento científico</h3>
+                    <p><strong>Ministrante:</strong> Profa. Dra. Joselma Ferreira Lima e Silva</p>
+                    <div class="info-destaque"><strong>Objetivo Geral:</strong> Orientar os participantes nas técnicas e
+                        ferramentas essenciais de investigação, para o desenvolvimento de habilidades necessárias para
+                        transformar ideias e problemas do cotidiano em projetos e produções científicas estruturadas.
+                        Nessa direção serão oportunizadas atividades e reflexões que estimulem o pensamento científico e
+                        a autonomia dos participantes na busca por fontes confiáveis, instrumentalizando-os para a
+                        construção e a divulgação de conhecimentos acadêmicos relevantes. Assim, esperamos que possam
+                        compreender as etapas essenciais do método científico, desenvolvendo habilidades práticas para
+                        planejar, executar pesquisas e produzir textos acadêmicos com autonomia. <br><strong>Recursos
+                            Didáticos Necessários:</strong> Data show, papel A4, fita gomada.</div>
+                    <div class="curriculo-box"><strong>MINICURRÍCULO:</strong> Doutora em Educação pela Universidade
+                        Estadual do Ceará UECE. Mestre em Educação pela UFPB - Universidade Federal da Paraíba.
+                        Especialista em PROEJA pelo IFPI. Especialista em Psicologia Aplicada à Educação pela URCA
+                        Universidade Regional do Cariri. Possui graduação em Pedagogia pela Universidade Regional do
+                        Cariri, Ceará. Licenciada nas Ciências da Religião pela Faculdade Integrada de Teologia Viva
+                        FATEV. É graduada em Letras/Português pela Universidade Estadual do Piauí UESPI. Professora do
+                        Instituto Federal de Educação, Ciência e Tecnologia do Piauí, de Disciplinas Pedagógicas, Campus
+                        Piripiri, nos cursos de Licenciatura em Matemática. É docente permanente do Programa de
+                        Pós-Graduação em Educação Profissional e Tecnológica (PROFEPT) - Mestrado Profissional em
+                        Educação Profissional e Tecnológica em Rede Nacional - Linha de Pesquisa 1: Práticas Educativas
+                        em Educação Profissional e Tecnológica (EPT).</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABA 6: MURAL 1ª EDIÇÃO -->
+    <div id="aba-mural" style="display: none;">
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px;">1ª Edição EDUMATEC'S (2025)</h2>
+            <div class="mural-header-container">
+                <div style="flex: 1;">
+                    <p style="font-size: 16px; line-height: 1.7;">
+                        O <strong>EDUMATEC’S</strong> é um evento realizado pelo IFPI – Campus Piripiri, que articula
+                        Educação, Matemática e Tecnologias em contextos formativos contemporâneos.
+                    </p>
+                </div>
+                <img src="assets/images/logos/logo-2025.png" alt="Logo EDUMATEC'S 2025" class="mural-logo" />
+            </div>
+            <h3 style="color: var(--dourado); text-align: center; margin-bottom: 30px; font-size: 24px;">Memórias de
+                2025</h3>
+            <div class="fotos-vertical-container">
+                <div class="item-foto-mural"><img src="assets/images/eventos/1-mural.png" alt="Memória 1"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/2-mural.png" alt="Memória 2"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/3-mural.png" alt="Memória 3"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/4-mural.png" alt="Memória 4"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/5-mural.png" alt="Memória 5"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/6-mural.png" alt="Memória 6"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/7-mural.png" alt="Memória 7"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/8-mural.png" alt="Memória 8"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/9-mural.png" alt="Memória 9"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/10-mural.png" alt="Memória 10"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/11-mural.png" alt="Memória 11"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/12-mural.png" alt="Memória 12"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/13-mural.png" alt="Memória 13"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/14-mural.png" alt="Memória 14"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/15-mural.png" alt="Memória 15"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/16-mural.png" alt="Memória 16"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/17-mural.png" alt="Memória 17"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/18-mural.png" alt="Memória 18"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/19-mural.png" alt="Memória 19"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/20-mural.png" alt="Memória 20"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/21-mural.png" alt="Memória 21"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/22-mural.png" alt="Memória 22"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/23-mural.png" alt="Memória 23"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/24-mural.png" alt="Memória 24"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/25-mural.png" alt="Memória 25"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/26-mural.png" alt="Memória 26"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/27-mural.png" alt="Memória 27"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/28-mural.png" alt="Memória 28"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/29-mural.png" alt="Memória 29"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/30-mural.png" alt="Memória 30"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/31-mural.png" alt="Memória 31"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/32-mural.png" alt="Memória 32"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/33-mural.png" alt="Memória 33"
+                        loading="lazy" /></div>
+                <div class="item-foto-mural"><img src="assets/images/eventos/34-mural.png" alt="Memória 34"
+                        loading="lazy" /></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL DE PEDIDO DE CAMISA -->
+    <div id="modalPedido" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <div id="box-formulario">
+                <h2 style="text-align: center; margin-bottom: 5px; font-size: 26px;">Pedido de Camisa</h2>
+                <form id="formPedidoCamisa" onsubmit="enviarPedido(event)">
+                    <div class="form-group">
+                        <label>Nome Completo*</label>
+                        <input type="text" id="nome_completo" required placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label>Tamanho da Camisa*</label>
+                        <div class="tamanhos-box">
+                            <img src="assets/images/outros/camisa.png" alt="Camisa EDUMATEC'S" />
+                            <div class="radios-tamanho">
+                                <label><input type="radio" name="tamanho" value="PP" required
+                                        onchange="toggleTamanhoOutro()"> PP</label>
+                                <label><input type="radio" name="tamanho" value="P" onchange="toggleTamanhoOutro()">
+                                    P</label>
+                                <label><input type="radio" name="tamanho" value="M" onchange="toggleTamanhoOutro()">
+                                    M</label>
+                                <label><input type="radio" name="tamanho" value="G" onchange="toggleTamanhoOutro()">
+                                    G</label>
+                                <label><input type="radio" name="tamanho" value="GG" onchange="toggleTamanhoOutro()">
+                                    GG</label>
+                                <label><input type="radio" name="tamanho" value="Outro" onchange="toggleTamanhoOutro()">
+                                    Outro</label>
+                            </div>
+                        </div>
+                        <div id="box-tamanho-outro" class="form-group" style="display: none; margin-top: 15px;">
+                            <label style="color: var(--dourado);">Especifique o tamanho*</label>
+                            <input type="text" id="tamanho_outro" placeholder="Ex: XGG">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone*</label>
+                        <input type="text" id="telefone" required placeholder="(86) 90000-0000"
+                            oninput="mascaraTelefone(this)" maxlength="15">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail (Gmail)*</label>
+                        <div class="input-gmail">
+                            <input type="text" id="gmail_user" required placeholder="seuusuario">
+                            <span>@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Forma de Pagamento*</label>
+                        <select id="forma_pagamento" required onchange="alternarPagamento()">
+                            <option value="">Selecione...</option>
+                            <option value="especie">Em espécie</option>
+                            <option value="pix">Pix</option>
+                        </select>
+                        <div id="area-pix" class="info-pix">
+                            <img src="assets/images/outros/qrcode-camisas.png" alt="QR Code Pix" />
+                            <p style="color: var(--dourado); font-weight: bold;">NOME: EMILLY DE CARVALHO SILVA</p>
+                            <p style="color: white; font-weight: bold; font-size: 18px;">VALOR: R$ 35,00</p>
+                            <div class="chave-box" id="chavePixTexto">
+                                00020126430014br.gov.bcb.pix0114+55869999114300203Pix5204000053039865802BR5924EMILLY_DE_CARVALHO_SILVA6007BATALHA62290525MdiUxJKmHhY6LyCB8tWKqF0g163042877
+                            </div>
+                            <button type="button" class="btn" style="width: 100%; font-size: 14px; padding: 10px;"
+                                onclick="copiarPix()">Copiar chave</button>
+                        </div>
+                    </div>
+                    <div class="form-group area-comprovante-box" id="area-comprovante">
+                        <label>Envio do Comprovante*</label>
+                        <input type="file" id="comprovante" accept="image/*,.pdf">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; font-size: 18px; padding: 14px;">Finalizar
+                        Pedido</button>
+                </form>
+            </div>
+            <div id="box-sucesso" class="success-msg">
+                <div class="check-circle">✓</div>
+                <h3 style="color: var(--dourado); font-size: 24px;">Pedido Recebido!</h3>
+                <button type="button" class="btn" style="margin-top: 25px;" onclick="fecharModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE INSCRIÇÃO -->
+    <div id="modalInscricao" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModalInscricao()">&times;</span>
+            <div id="box-formulario-inscricao">
+                <div class="kit-card-box">
+                    <h4 class="kit-card-title">Kit Exclusivo Incluso*</h4>
+                    <img src="assets/images/outros/kit.png" alt="Kit EDUMATEC'S" class="kit-card-img">
+                    <p class="kit-card-sub">Inscrição com Kit EDUMATEC'S Incluso</p>
+                </div>
+
+                <h2 style="text-align: center; margin-bottom: 5px; font-size: 26px;">Ficha de Inscrição</h2>
+
+                <form id="formInscricao" onsubmit="enviarInscricao(event)">
+                    <div class="form-group">
+                        <label>Nome Completo*</label>
+                        <input type="text" id="insc_nome" required placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label>CPF*</label>
+                        <input type="text" id="insc_cpf" required placeholder="000.000.000-00"
+                            oninput="mascaraCPF(this)" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone (WhatsApp)*</label>
+                        <input type="text" id="insc_telefone" required placeholder="(86) 90000-0000"
+                            oninput="mascaraTelefone(this)" maxlength="15">
+                    </div>
+                    <div class="form-group">
+                        <label>Cidade*</label>
+                        <input type="text" id="insc_cidade" required placeholder="Piripiri - PI">
+                    </div>
+                    <div class="form-group">
+                        <label>Vai precisar de alojamento no campus?*</label>
+                        <div class="radio-group-cards">
+                            <label class="card-radio"><input type="radio" name="alojamento" value="Sim" required>
+                                <span>Sim</span></label>
+                            <label class="card-radio"><input type="radio" name="alojamento" value="Não" checked>
+                                <span>Não</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Possui alguma necessidade específica?*</label>
+                        <div class="radio-group-cards">
+                            <label class="card-radio"><input type="radio" name="necessidade" value="Sim" required
+                                    onchange="toggleNecessidade()"> <span>Sim</span></label>
+                            <label class="card-radio"><input type="radio" name="necessidade" value="Não" checked
+                                    onchange="toggleNecessidade()"> <span>Não</span></label>
+                        </div>
+                    </div>
+                    <div id="box-desc-necessidade" class="form-group" style="display: none;">
+                        <label style="color: var(--dourado);">Qual a sua necessidade específica?*</label>
+                        <input type="text" id="desc_necessidade" placeholder="Descreva aqui...">
+                    </div>
+                    <div class="form-group">
+                        <label>Submissão de trabalhos?*</label>
+                        <div class="radio-group-cards">
+                            <label class="card-radio"><input type="radio" name="submissao" value="Sim" required
+                                    onchange="toggleSubmissao()"> <span>Sim</span></label>
+                            <label class="card-radio"><input type="radio" name="submissao" value="Não" checked
+                                    onchange="toggleSubmissao()"> <span>Não</span></label>
+                        </div>
+                    </div>
+
+                    <div id="box-gts-lista" class="box-gts" style="display: none;">
+                        <h4>GRUPOS DE TRABALHO!</h4>
+                        <div class="item-gt"><strong>GT1 - Educação Matemática e múltiplas linguagens</strong>
+                            <div class="gt-email-row"><code>gt1matematica.capir@ifpi.edu.br</code><button type="button"
+                                    class="btn-copiar-peq"
+                                    onclick="copiarTexto('gt1matematica.capir@ifpi.edu.br')">Copiar</button></div>
+                        </div>
+                        <div class="item-gt"><strong>GT2 - Formação, trabalho docente e Didática</strong>
+                            <div class="gt-email-row"><code>gt2educacao.capir@ifpi.edu.br</code><button type="button"
+                                    class="btn-copiar-peq"
+                                    onclick="copiarTexto('gt2educacao.capir@ifpi.edu.br')">Copiar</button></div>
+                        </div>
+                        <div class="item-gt"><strong>GT3 - Tecnologias em contextos diversos</strong>
+                            <div class="gt-email-row"><code>gt3tecnologias.capir@ifpi.edu.br</code><button type="button"
+                                    class="btn-copiar-peq"
+                                    onclick="copiarTexto('gt3tecnologias.capir@ifpi.edu.br')">Copiar</button></div>
+                        </div>
+                        <div class="item-gt"><strong>GT4 - Interdisciplinaridade e Interculturalidade</strong>
+                            <div class="gt-email-row"><code>gt4interdisciplinar.capir@ifpi.edu.br</code><button
+                                    type="button" class="btn-copiar-peq"
+                                    onclick="copiarTexto('gt4interdisciplinar.capir@ifpi.edu.br')">Copiar</button></div>
+                        </div>
+                        <div class="item-gt"><strong>GT5 - Ensino, Pesquisa e Extensão</strong>
+                            <div class="gt-email-row"><code>gt5extensao.capir@ifpi.edu.br</code><button type="button"
+                                    class="btn-copiar-peq"
+                                    onclick="copiarTexto('gt5extensao.capir@ifpi.edu.br')">Copiar</button></div>
+                        </div>
+                    </div>
+
+                    <!-- ESCOLHA DE OFICINAS E MINICURSOS (10 DE DEZEMBRO) -->
+                    <h2 style="color: var(--dourado); font-size: 20px; margin: 25px 0 15px 0; text-align: center;">
+                        Escolha de Oficinas e Minicurso (10 de Dezembro)</h2>
+
+                    <!-- OFICINA 1: 14h às 16h -->
+                    <div class="bloco-atividades">
+                        <h3>Quinta-feira (14h às 16h) - Escolha 1 Oficina</h3>
+                        <label class="card-opcao-ativ" id="label-Oficina 1">
+                            <input type="radio" name="oficina1" value="Oficina 1" required>
+                            <div class="info-ativ">
+                                <strong>Oficina 1: Do Tangram à Sala de Aula</strong>
+                                <p>Ministrantes: Prof. Me. Irismar da Silva Carvalho e Profa. Ma. Silmara Bezerra Paz
+                                    Carvalho</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Oficina 2">
+                            <input type="radio" name="oficina1" value="Oficina 2">
+                            <div class="info-ativ">
+                                <strong>Oficina 2: Parcelado ou à vista? Domine a HP-12C no celular</strong>
+                                <p>Ministrante: Prof. Dr. Guilherme Luiz de Oliveira Neto</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Oficina 3">
+                            <input type="radio" name="oficina1" value="Oficina 3">
+                            <div class="info-ativ">
+                                <strong>Oficina 3: Matemática e direitos humanos</strong>
+                                <p>Ministrantes: Profª. Dra. Rosimeyre Vieira da Silva e equipe</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- OFICINA 2: 16h às 18h -->
+                    <div class="bloco-atividades">
+                        <h3>Quinta-feira (16h às 18h) - Escolha 1 Oficina</h3>
+                        <label class="card-opcao-ativ" id="label-Oficina 4">
+                            <input type="radio" name="oficina2" value="Oficina 4" required>
+                            <div class="info-ativ">
+                                <strong>Oficina 4: Da Geometria ao Cálculo: modelagem de formas, curvas e
+                                    superfícies</strong>
+                                <p>Ministrantes: Profa. Dra. Rimena Canuto Oliveira e Profa. Esp. Renata Resende
+                                    Ibiapina Braga</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Oficina 5">
+                            <input type="radio" name="oficina2" value="Oficina 5">
+                            <div class="info-ativ">
+                                <strong>Oficina 5: Preparando aulas de Matemática do Latex ao GPT</strong>
+                                <p>Ministrante: Prof. Me. Sérgio Adriano Marques da Silva</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Oficina 6">
+                            <input type="radio" name="oficina2" value="Oficina 6">
+                            <div class="info-ativ">
+                                <strong>Oficina 6: Harness yourself: como aparelhar modelos de IA para a sua área de
+                                    atuação</strong>
+                                <p>Ministrante: Prof. Dr. Iallem Gábio Sousa</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- OFICINA 3: 18h às 20h -->
+                    <div class="bloco-atividades">
+                        <h3>Quinta-feira (18h às 20h) - Escolha 1 Oficina</h3>
+                        <label class="card-opcao-ativ" id="label-Oficina 7">
+                            <input type="radio" name="oficina3" value="Oficina 7" required>
+                            <div class="info-ativ">
+                                <strong>Oficina 7: Matemática além dos números</strong>
+                                <p>Ministrante: Profa. Esp. Cleyciane de Oliveira Melo</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Oficina 8">
+                            <input type="radio" name="oficina3" value="Oficina 8">
+                            <div class="info-ativ">
+                                <strong>Oficina 8: Alfabetização Matemática na Prática</strong>
+                                <p>Ministrante: Prof. Me. Pedro Alves da Silva</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Oficina 9">
+                            <input type="radio" name="oficina3" value="Oficina 9">
+                            <div class="info-ativ">
+                                <strong>Oficina 9: Aprendendo a pesquisar e produzindo conhecimento científico</strong>
+                                <p>Ministrante: Profa. Dra. Joselma Ferreira Lima e Silva</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- MINICURSO: 20h às 22h -->
+                    <div class="bloco-atividades">
+                        <h3>Quinta-feira (20h às 22h) - Escolha 1 Minicurso</h3>
+                        <label class="card-opcao-ativ" id="label-Minicurso 1">
+                            <input type="radio" name="minicurso" value="Minicurso 1" required>
+                            <div class="info-ativ">
+                                <strong>Minicurso 1: Otimização Multi-objetivo</strong>
+                                <p>Ministrante: Prof. Dr. Ray Victor Guimarães Serra</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Minicurso 2">
+                            <input type="radio" name="minicurso" value="Minicurso 2">
+                            <div class="info-ativ">
+                                <strong>Minicurso 2: Construção de Instrumentos de Pesquisa: do Planejamento ao
+                                    Campo</strong>
+                                <p>Ministrante: Prof. Dr. Clayton Robson Moreira da Silva</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Minicurso 3">
+                            <input type="radio" name="minicurso" value="Minicurso 3">
+                            <div class="info-ativ">
+                                <strong>Minicurso 3: Modelagem Matemática com Equações Diferenciais</strong>
+                                <p>Ministrante: Prof. Me. Francisco das Chagas Azevedo dos Reis</p>
+                            </div>
+                        </label>
+                        <label class="card-opcao-ativ" id="label-Minicurso 4">
+                            <input type="radio" name="minicurso" value="Minicurso 4">
+                            <div class="info-ativ">
+                                <strong>Minicurso 4: Práticas Extensionistas para a Formação Humana Integral</strong>
+                                <p>Ministrante: Prof. Me. Pablo Dias Paiva</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="secao-pix-fixa"
+                        style="background: #080808; border: 1px dashed var(--dourado); padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+                        <h3
+                            style="color: var(--dourado); margin-bottom: 12px; font-size: 20px; text-transform: uppercase;">
+                            Pagamento via PIX</h3>
+                        <img src="assets/images/outros/qrcode-inscricoes.png" alt="QR Code PIX"
+                            style="width: 180px; height: 180px; object-fit: contain; border-radius: 8px; border: 1px solid var(--dourado); margin-bottom: 12px;">
+                        <div style="font-size: 18px; color: #fff; margin-bottom: 12px;">Valor: <span
+                                style="color: var(--dourado); font-weight: bold; font-size: 22px;">R$ 40,00</span></div>
+                        <div
+                            style="background: #000; border: 1px solid #333; padding: 10px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                            <span id="chaveInscricaoPix"
+                                style="font-size: 13px; color: #fff; font-weight: bold; word-break: break-all;">edumatecs.capir@ifpi.edu.br</span>
+                            <button type="button" class="btn-copiar-peq"
+                                onclick="copiarTexto('edumatecs.capir@ifpi.edu.br')">Copiar</button>
+                        </div>
+                        <p style="font-size: 13px; color: #ccc;">Dúvidas ou espécie: <strong>(86) 99963-4809</strong>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Envio do Comprovante de Pagamento (Obrigatório)*</label>
+                        <input type="file" id="insc_comprovante" accept="image/*,.pdf" required>
+                    </div>
+
+                    <button type="submit" id="btn-submit-insc" class="btn"
+                        style="width: 100%; font-size: 18px; padding: 14px;">Finalizar Inscrição</button>
+                </form>
+            </div>
+
+            <div id="box-sucesso-inscricao" class="success-msg">
+                <div class="check-circle">✓</div>
+                <h3 style="color: var(--dourado); font-size: 24px; margin-bottom: 10px;">Inscrição Realizada com
+                    Sucesso!</h3>
+                <button type="button" class="btn" style="margin-top: 25px;"
+                    onclick="fecharModalInscricao()">Concluir</button>
+            </div>
+        </div>
+    </div>
+
+    <footer
+        style="text-align: center; padding: 20px; background: #000; color: #666; border-top: 1px solid #333; font-size: 14px;">
+        <p>© 2026 EDUMATEC'S - IFPI Piripiri. Todos os direitos reservados.</p>
     </footer>
+    <script src="script.js"></script>
 
 </body>
 

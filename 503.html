@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDUMATEC'S 2026 - Em Manutenção</title>
+
+    <meta name="description"
+        content="O site do EDUMATEC'S 2026 está temporariamente indisponível para manutenção.">
+
+    <style>
+        :root {
+            --preto: #0f0f0f;
+            --preto-puro: #000;
+            --dourado: #FFD700;
+            --branco: #f5f5f5;
+            --cinza: #bdbdbd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at center, #1b1b1b 0%, var(--preto) 45%, #050505 100%);
+            color: var(--branco);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            padding: 18px 40px;
+
+            background: var(--preto-puro);
+            border-bottom: 2px solid var(--dourado);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+
+            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.25));
+
+            animation: aparecer 0.8s ease;
+        }
+
+        main {
+            flex: 1;
+
+            width: 100%;
+            max-width: 900px;
+
+            margin: 0 auto;
+            padding: 60px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .manutencao {
+            width: 100%;
+            max-width: 650px;
+
+            text-align: center;
+
+            background: rgba(15, 15, 15, 0.88);
+
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 18px;
+
+            padding: 55px 40px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.65),
+                0 0 35px rgba(255, 215, 0, 0.05);
+
+            animation: subir 0.8s ease;
+        }
+
+        .icone {
+            width: 90px;
+            height: 90px;
+
+            margin: 0 auto 28px;
+
+            border: 2px solid var(--dourado);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--dourado);
+            font-size: 42px;
+
+            animation: pulsar 2s infinite ease-in-out;
+        }
+
+        .codigo {
+            display: inline-block;
+
+            color: var(--dourado);
+
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 20px;
+
+            padding: 7px 16px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--dourado);
+
+            font-size: clamp(28px, 5vw, 42px);
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+
+            text-transform: uppercase;
+        }
+
+        .mensagem {
+            color: var(--branco);
+
+            font-size: 17px;
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .submensagem {
+            color: var(--cinza);
+
+            font-size: 15px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .linha {
+            width: 80px;
+            height: 2px;
+
+            background: var(--dourado);
+
+            margin: 25px auto;
+
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .evento {
+            color: var(--dourado);
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+
+            background: var(--preto-puro);
+
+            border-top: 1px solid #252525;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 13px;
+        }
+
+        @keyframes pulsar {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(255, 215, 0, 0.18);
+            }
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes subir {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                width: 75px;
+                height: 75px;
+            }
+
+            main {
+                padding: 35px 15px;
+            }
+
+            .manutencao {
+                padding: 40px 22px;
+                border-radius: 14px;
+            }
+
+            .icone {
+                width: 75px;
+                height: 75px;
+                font-size: 34px;
+            }
+
+            .mensagem {
+                font-size: 16px;
+            }
+
+            .submensagem {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img
+            src="assets/images/logos/logo-2026.png"
+            alt="Logo EDUMATEC'S 2026"
+            class="logo"
+        >
+    </header>
+
+    <main>
+
+        <div class="manutencao">
+
+            <div class="icone">
+                ⚙
+            </div>
+
+            <div class="codigo">
+                HTTP 503
+            </div>
+
+            <h1>
+                Site temporariamente indisponível
+            </h1>
+
+            <div class="linha"></div>
+
+            <p class="mensagem">
+                O site do <span class="evento">EDUMATEC'S 2026</span>
+                está temporariamente fora do ar para manutenção.
+            </p>
+
+            <p class="submensagem">
+                Estamos realizando algumas atualizações para melhorar
+                a experiência dos participantes. Em breve, o site estará
+                disponível novamente.
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 EDUMATEC'S - IFPI Piripiri.
+        Todos os direitos reservados.
+    </footer>
+
+</body>
+
+</html>

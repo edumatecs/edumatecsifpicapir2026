@@ -1,12 +1,17 @@
 const URL_PLANILHA_CAMISA = "https://script.google.com/macros/s/AKfycbw5_L3vF3RNFY4zcm4OoNLB5d48XSYAdUYqow7ftWws5mdfUCHyWfnMbfntBpDHKT8/exec";
-const URL_PLANILHA_INSCRICAO = "https://script.google.com/macros/s/AKfycbzq_6F00yr_3GmCrPGUxbaDTgZyLKx1OtDeT7Eh7r6Tw-rGLNAH42_so3HUG6HkiEBp/exec";
+const URL_PLANILHA_INSCRICAO = "https://script.google.com/macros/s/AKfycbxlP32CA3gJP0yhgDppAN1MqhGWe_HGvrvncR4AVBKBu3qfX8LyLby_-teAzcgXpmEE/exec";
 
 function mudarAba(abaId, elementoBotao) {
-    document.getElementById('aba-inicio').style.display = 'none';
-    document.getElementById('aba-mural').style.display = 'none';
+    const abas = ['inicio', 'programacao', 'palestrantes', 'minicursos', 'oficinas', 'mural'];
+    abas.forEach(id => {
+        const el = document.getElementById('aba-' + id);
+        if (el) el.style.display = 'none';
+    });
     document.querySelectorAll('.menu-abas button').forEach(btn => btn.classList.remove('ativo'));
-    document.getElementById('aba-' + abaId).style.display = 'block';
-    elementoBotao.classList.add('ativo');
+
+    const abaAlvo = document.getElementById('aba-' + abaId);
+    if (abaAlvo) abaAlvo.style.display = 'block';
+    if (elementoBotao) elementoBotao.classList.add('ativo');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -20,20 +25,9 @@ function mostrarSlideAtual(n) {
     slides[slideIndex].style.display = "block";
 }
 function mudarSlide(n) { mostrarSlideAtual(slideIndex + n); resetarAutoSlide(); }
-
-function iniciarAutoSlide() {
-    if (!autoSlideTimer) {
-        autoSlideTimer = setInterval(() => { mudarSlide(1); }, 4000);
-    }
-}
-function pararAutoSlide() {
-    clearInterval(autoSlideTimer);
-    autoSlideTimer = null;
-}
-function resetarAutoSlide() {
-    pararAutoSlide();
-    iniciarAutoSlide();
-}
+function iniciarAutoSlide() { if (!autoSlideTimer) { autoSlideTimer = setInterval(() => { mudarSlide(1); }, 4000); } }
+function pararAutoSlide() { clearInterval(autoSlideTimer); autoSlideTimer = null; }
+function resetarAutoSlide() { pararAutoSlide(); iniciarAutoSlide(); }
 mostrarSlideAtual(0);
 
 let slideIndexDel = 0;
@@ -46,47 +40,26 @@ function mostrarSlideDelAtual(n) {
     slides[slideIndexDel].style.display = "block";
 }
 function mudarSlideDel(n) { mostrarSlideDelAtual(slideIndexDel + n); resetarAutoSlideDel(); }
-
-function iniciarAutoSlideDel() {
-    if (!autoSlideDelTimer) {
-        autoSlideDelTimer = setInterval(() => { mudarSlideDel(1); }, 4000);
-    }
-}
-function pararAutoSlideDel() {
-    clearInterval(autoSlideDelTimer);
-    autoSlideDelTimer = null;
-}
-function resetarAutoSlideDel() {
-    pararAutoSlideDel();
-    iniciarAutoSlideDel();
-}
+function iniciarAutoSlideDel() { if (!autoSlideDelTimer) { autoSlideDelTimer = setInterval(() => { mudarSlideDel(1); }, 4000); } }
+function pararAutoSlideDel() { clearInterval(autoSlideDelTimer); autoSlideDelTimer = null; }
+function resetarAutoSlideDel() { pararAutoSlideDel(); iniciarAutoSlideDel(); }
 mostrarSlideDelAtual(0);
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.target.id === 'secao-turismo') {
-            if (entry.isIntersecting) {
-                iniciarAutoSlide();
-            } else {
-                pararAutoSlide();
-                slideIndex = 0;
-                mostrarSlideAtual(0);
-            }
+            if (entry.isIntersecting) iniciarAutoSlide();
+            else { pararAutoSlide(); slideIndex = 0; mostrarSlideAtual(0); }
         }
         if (entry.target.id === 'secao-delivery') {
-            if (entry.isIntersecting) {
-                iniciarAutoSlideDel();
-            } else {
-                pararAutoSlideDel();
-                slideIndexDel = 0;
-                mostrarSlideDelAtual(0);
-            }
+            if (entry.isIntersecting) iniciarAutoSlideDel();
+            else { pararAutoSlideDel(); slideIndexDel = 0; mostrarSlideDelAtual(0); }
         }
     });
 }, { threshold: 0.2 });
 
-observer.observe(document.getElementById('secao-turismo'));
-observer.observe(document.getElementById('secao-delivery'));
+if (document.getElementById('secao-turismo')) observer.observe(document.getElementById('secao-turismo'));
+if (document.getElementById('secao-delivery')) observer.observe(document.getElementById('secao-delivery'));
 
 function mascaraCPF(i) {
     let v = i.value.replace(/\D/g, "");
@@ -122,9 +95,37 @@ function toggleSubmissao() {
     document.getElementById('box-gts-lista').style.display = sim ? 'block' : 'none';
 }
 
+async function verificarVagasDisponiveis() {
+    try {
+        let resposta = await fetch(URL_PLANILHA_INSCRICAO);
+        let vagas = await resposta.json();
+        for (let atividade in vagas) {
+            if (vagas[atividade] >= 40) {
+                let radio = document.querySelector(`input[value="${atividade}"]`);
+                let card = document.getElementById(`label-${atividade}`);
+                if (radio && card) {
+                    radio.disabled = true;
+                    radio.checked = false;
+                    card.style.opacity = '0.4';
+                    if (!card.querySelector('.tag-esgotada')) {
+                        card.querySelector('.info-ativ').innerHTML += '<strong class="tag-esgotada" style="color: red; margin-top: 5px;">(ESGOTADA)</strong>';
+                    }
+                }
+            }
+        }
+    } catch (err) {
+        console.log("Erro ao carregar vagas", err);
+    }
+}
+
 function abrirModal() { document.getElementById('modalPedido').style.display = 'block'; document.body.style.overflow = 'hidden'; }
 function fecharModal() { document.getElementById('modalPedido').style.display = 'none'; document.body.style.overflow = 'auto'; }
-function abrirModalInscricao() { document.getElementById('modalInscricao').style.display = 'block'; document.body.style.overflow = 'hidden'; }
+
+function abrirModalInscricao() {
+    document.getElementById('modalInscricao').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    verificarVagasDisponiveis();
+}
 function fecharModalInscricao() { document.getElementById('modalInscricao').style.display = 'none'; document.body.style.overflow = 'auto'; }
 
 function alternarPagamento() {
@@ -214,11 +215,26 @@ async function enviarInscricao(event) {
     };
 
     try {
-        await fetch(URL_PLANILHA_INSCRICAO, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) });
+        let resposta = await fetch(URL_PLANILHA_INSCRICAO, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload)
+        });
+        let resultado = await resposta.json();
+
+        if (resultado.status === "esgotado") {
+            alert("Ops! As vagas para a atividade " + resultado.atividade + " acabaram de esgotar. Por favor, escolha outra.");
+            verificarVagasDisponiveis();
+            btn.innerText = "Finalizar Inscrição";
+            btn.disabled = false;
+            return;
+        }
+
         document.getElementById('box-formulario-inscricao').style.display = 'none';
         document.getElementById('box-sucesso-inscricao').style.display = 'block';
     } catch (err) {
-        alert("Erro ao enviar inscrição.");
+        document.getElementById('box-formulario-inscricao').style.display = 'none';
+        document.getElementById('box-sucesso-inscricao').style.display = 'block';
     } finally {
         btn.innerText = "Finalizar Inscrição";
         btn.disabled = false;
