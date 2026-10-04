@@ -12,7 +12,7 @@ import Programacao from './pages/Programacao/Programacao'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/edumatecsifpicapir2026">
       <Header />
 
       <Routes>
