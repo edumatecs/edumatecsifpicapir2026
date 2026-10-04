@@ -1,0 +1,476 @@
+.registration-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 10px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(6px);
+}
+
+.registration-modal-content {
+    position: relative;
+    width: 92%;
+    max-width: 700px;
+    max-height: none;
+    margin: 30px auto;
+    padding: 35px;
+    background: #121212;
+    border: 2px solid var(--dourado);
+    border-radius: 14px;
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.15);
+}
+
+.registration-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: 0;
+    background: transparent;
+    color: var(--dourado);
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.registration-modal-close:hover {
+    color: var(--branco);
+    transform: scale(1.1);
+}
+
+.registration-kit {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #080808;
+    border: 1px solid #222;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.registration-kit h4 {
+    margin: 0 0 15px;
+    color: var(--dourado);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.registration-kit img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.registration-kit p {
+    margin: 0;
+    color: var(--dourado);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.registration-modal-content>h2 {
+    margin: 0 0 5px;
+    color: var(--branco);
+    font-size: 26px;
+    text-align: center;
+}
+
+.registration-form {
+    margin-top: 30px;
+}
+
+.registration-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.registration-form-group label {
+    margin-bottom: 8px;
+    color: var(--dourado);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.registration-form-group input[type='text'],
+.registration-form-group input[type='file'] {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #050505;
+    color: var(--branco);
+    font-size: 15px;
+}
+
+.registration-form-group input[type='text']:focus {
+    outline: none;
+    border-color: var(--dourado);
+}
+
+.registration-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.registration-radio-card {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 !important;
+    padding: 12px;
+    background: #080808;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.registration-radio-card:has(input:checked) {
+    border-color: var(--dourado);
+}
+
+.registration-radio-card input[type='radio'] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--dourado);
+    cursor: pointer;
+}
+
+.registration-radio-card span {
+    color: var(--branco);
+    font-weight: bold;
+}
+
+.registration-activities {
+    margin-top: 25px;
+}
+
+.registration-activities>h2 {
+    margin: 25px 0 15px;
+    color: var(--dourado);
+    font-size: 20px;
+    text-align: center;
+}
+
+.registration-activity-block {
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #080808;
+    border: 1px solid var(--dourado);
+    border-radius: 10px;
+}
+
+.registration-activity-block h3 {
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    color: var(--dourado);
+    font-size: 17px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #222;
+}
+
+.registration-activity-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 12px;
+    background: #050505;
+    border: 1px solid #222;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.registration-activity-card:last-child {
+    margin-bottom: 0;
+}
+
+.registration-activity-card:hover {
+    border-color: var(--dourado);
+    background: #0d0d0d;
+}
+
+.registration-activity-card input[type='radio'] {
+    flex-shrink: 0;
+    margin-top: 4px;
+    accent-color: var(--dourado);
+    transform: scale(1.2);
+}
+
+.registration-activity-info {
+    min-width: 0;
+}
+
+.registration-activity-info strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--dourado);
+    font-size: 14px;
+}
+
+.registration-activity-info p {
+    margin: 0;
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.registration-payment {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #080808;
+    border: 1px dashed var(--dourado);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.registration-payment h3 {
+    margin: 0 0 12px;
+    color: var(--dourado);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.registration-payment img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 12px;
+    object-fit: contain;
+    border: 1px solid var(--dourado);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.registration-payment-value {
+    margin-bottom: 12px;
+    color: var(--branco);
+    font-size: 18px;
+}
+
+.registration-payment-value strong {
+    color: var(--dourado);
+    font-size: 22px;
+}
+
+.registration-pix-key {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.registration-pix-key span {
+    flex: 1;
+    color: var(--branco);
+    font-size: 13px;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.registration-copy-button {
+    flex-shrink: 0;
+    padding: 5px 12px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--dourado);
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registration-copy-button:hover {
+    background: var(--preto);
+    color: var(--dourado);
+}
+
+.registration-payment p {
+    margin: 0;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.registration-submit-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.registration-success {
+    padding: 40px 10px;
+    text-align: center;
+}
+
+.registration-success .check-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 45px;
+}
+
+.registration-success h3 {
+    margin: 0 0 10px;
+    color: var(--dourado);
+    font-size: 24px;
+}
+
+.registration-success .btn {
+    margin-top: 25px;
+}
+
+.registration-section {
+    margin-bottom: 28px;
+}
+
+.registration-section-title {
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    color: var(--dourado);
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid #252525;
+}
+
+.registration-groups {
+    margin-top: 18px;
+    padding: 18px;
+    background: #080808;
+    border: 1px solid #252525;
+    border-radius: 10px;
+}
+
+.registration-groups-header {
+    margin-bottom: 16px;
+}
+
+.registration-groups-header strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--dourado);
+    font-size: 15px;
+}
+
+.registration-groups-header span {
+    color: #888;
+    font-size: 13px;
+}
+
+.registration-gt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.registration-gt-card {
+    padding: 12px 14px;
+    background: #050505;
+    border: 1px solid #222;
+    border-radius: 7px;
+}
+
+.registration-gt-card>strong {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--dourado);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.registration-gt-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.registration-gt-email code {
+    flex: 1;
+    min-width: 0;
+    padding: 7px 9px;
+    overflow-wrap: anywhere;
+    background: #101010;
+    border: 1px solid #222;
+    border-radius: 5px;
+    color: #ccc;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.registration-gt-copy-button {
+    flex-shrink: 0;
+    padding: 7px 14px;
+    border: 2px solid var(--dourado);
+    border-radius: 5px;
+    background: var(--dourado);
+    color: var(--preto);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.registration-gt-copy-button:hover {
+    background: var(--preto);
+    color: var(--dourado);
+}
+
+@media (max-width: 600px) {
+    .registration-gt-email {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .registration-gt-copy-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .registration-modal {
+        padding: 10px;
+    }
+
+    .registration-modal-content {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .registration-radio-group {
+        flex-direction: column;
+    }
+
+    .registration-pix-key {
+        flex-direction: column;
+    }
+
+    .registration-copy-button {
+        width: 100%;
+    }
+}

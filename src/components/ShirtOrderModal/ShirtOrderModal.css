@@ -1,0 +1,312 @@
+.shirt-order-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 10px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(6px);
+}
+
+.shirt-order-modal-content {
+    position: relative;
+    width: 92%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 35px;
+    background: #121212;
+    border: 2px solid var(--dourado);
+    border-radius: 14px;
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.15);
+}
+
+.shirt-order-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: 0;
+    background: transparent;
+    color: var(--dourado);
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shirt-order-modal-close:hover {
+    color: var(--branco);
+    transform: scale(1.1);
+}
+
+.shirt-order-modal-content>h2 {
+    margin: 0 0 25px;
+    color: var(--branco);
+    font-size: 26px;
+    text-align: center;
+}
+
+.shirt-order-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.shirt-order-form-group>label {
+    margin-bottom: 8px;
+    color: var(--dourado);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.shirt-order-form-group input[type='text'],
+.shirt-order-form-group input[type='file'],
+.shirt-order-form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #050505;
+    color: var(--branco);
+    font-size: 15px;
+}
+
+.shirt-order-form-group input[type='text']:focus,
+.shirt-order-form-group select:focus {
+    outline: none;
+    border-color: var(--dourado);
+}
+
+.shirt-order-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto 18px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.shirt-order-size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.shirt-order-size-option {
+    flex: 1;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 12px;
+    background: #080808;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: var(--branco);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shirt-order-size-option:hover {
+    border-color: var(--dourado);
+}
+
+.shirt-order-size-option:has(input:checked) {
+    border-color: var(--dourado);
+}
+
+.shirt-order-size-option input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--dourado);
+    cursor: pointer;
+}
+
+.shirt-order-gmail {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.shirt-order-gmail input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #333;
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+    background: #050505;
+    color: var(--branco);
+    font-size: 15px;
+}
+
+.shirt-order-gmail input:focus {
+    outline: none;
+    border-color: var(--dourado);
+}
+
+.shirt-order-gmail span {
+    padding: 13px;
+    border: 1px solid #333;
+    border-radius: 0 8px 8px 0;
+    background: #080808;
+    color: #aaa;
+    font-size: 15px;
+}
+
+.shirt-order-pix {
+    margin-bottom: 22px;
+    padding: 20px;
+    background: #080808;
+    border: 1px dashed var(--dourado);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.shirt-order-pix img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 15px;
+    object-fit: contain;
+    border: 1px solid var(--dourado);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.shirt-order-pix p {
+    margin: 0 0 8px;
+    color: var(--dourado);
+    font-weight: bold;
+}
+
+.shirt-order-pix>strong {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--branco);
+    font-size: 18px;
+}
+
+.shirt-order-pix code {
+    display: block;
+    margin-bottom: 15px;
+    padding: 12px;
+    overflow-wrap: anywhere;
+    background: #050505;
+    border: 1px solid #222;
+    border-radius: 7px;
+    color: #ccc;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.shirt-order-pix .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.shirt-order-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.shirt-order-success {
+    padding: 40px 10px;
+    text-align: center;
+}
+
+.shirt-order-success .check-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 45px;
+}
+
+.shirt-order-success h3 {
+    margin: 0 0 10px;
+    color: var(--dourado);
+    font-size: 24px;
+}
+
+.shirt-order-success .btn {
+    margin-top: 25px;
+}
+
+.shirt-order-custom-size {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.shirt-order-custom-size label {
+    margin-bottom: 8px;
+    color: var(--dourado);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.shirt-order-custom-size input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #050505;
+    color: var(--branco);
+    font-size: 15px;
+}
+
+.shirt-order-custom-size input:focus {
+    outline: none;
+    border-color: var(--dourado);
+}
+
+@media (max-width: 768px) {
+    .shirt-order-modal {
+        padding: 10px;
+    }
+
+    .shirt-order-modal-content {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .shirt-order-size-options {
+        flex-direction: column;
+    }
+
+    .shirt-order-gmail {
+        align-items: stretch;
+    }
+
+    .shirt-order-gmail {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .shirt-order-gmail input {
+        border-right: 1px solid #333;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .shirt-order-gmail span {
+        border-radius: 0 0 8px 8px;
+    }
+
+}

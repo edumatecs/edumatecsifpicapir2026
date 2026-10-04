@@ -1,0 +1,66 @@
+.carrossel-delivery {
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid var(--dourado);
+    background-color: #000;
+}
+
+.slide-del {
+    position: relative;
+    width: 100%;
+}
+
+.slide-del img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.btn-foto {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dourado);
+    color: var(--preto);
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid var(--preto);
+    z-index: 5;
+    white-space: nowrap;
+}
+
+.btn-carrossel {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: var(--dourado);
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    z-index: 10;
+}
+
+.btn-carrossel.prev {
+    left: 0;
+}
+
+.btn-carrossel.next {
+    right: 0;
+}
+
+.btn-carrossel:hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+}

@@ -1,0 +1,90 @@
+.memorias {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.memorias > h2 {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.memorias > h3 {
+  color: var(--dourado);
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 24px;
+}
+
+.mural-header-container {
+  background: rgba(5, 13, 24, 0.85);
+  padding: 35px;
+  border-radius: 12px;
+  border: 2px solid var(--dourado);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.mural-header-container p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.mural-logo {
+  width: 260px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+}
+
+.fotos-vertical-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.item-foto-mural {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.35);
+  overflow: hidden;
+  background-color: #050d18;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: 0.4s;
+}
+
+.item-foto-mural img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.item-foto-mural:hover {
+  border-color: var(--dourado);
+  transform: scale(1.02);
+  box-shadow: 0 0 25px var(--dourado);
+}
+
+@media (max-width: 768px) {
+  .memorias {
+    padding: 40px 15px;
+  }
+
+  .mural-header-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .mural-logo {
+    width: 220px;
+  }
+}

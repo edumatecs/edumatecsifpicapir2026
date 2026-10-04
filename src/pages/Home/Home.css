@@ -1,0 +1,215 @@
+.hero-evento {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #333;
+}
+
+.hero-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-logo-col {
+    flex: 0 0 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-col img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.35));
+}
+
+.hero-text-col {
+    flex: 1;
+}
+
+.hero-text-col h1 {
+    color: #ffd700;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    letter-spacing: 1px;
+}
+
+.hero-text-col p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.badge-tema {
+    display: inline-block;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.home-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #333;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.imagem {
+    flex: 1 1 52%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imagem img {
+    max-width: 100%;
+    height: auto;
+}
+
+.texto h2 {
+    color: var(--dourado);
+    font-size: 32px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.texto p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--dourado);
+    color: var(--preto);
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 2px solid var(--dourado);
+    cursor: pointer;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--dourado);
+}
+
+.kit-img {
+    width: min(100%, 690px);
+    max-height: 570px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.camisa-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.certificado-img {
+    width: min(100%, 300px);
+    height: auto;
+    max-height: 210px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#secao-turismo {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #333;
+}
+
+#secao-turismo h2,
+#secao-turismo p {
+    text-align: center;
+}
+
+#secao-turismo p {
+    margin-bottom: 25px;
+}
+
+#secao-delivery {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #333;
+}
+
+#secao-delivery h2,
+#secao-delivery p {
+    text-align: center;
+}
+
+#secao-delivery p {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .hero-evento {
+        padding: 40px 15px;
+    }
+
+    .hero-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-logo-col img {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .kit-img {
+        max-width: 320px;
+    }
+}
