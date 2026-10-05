@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import logo2026 from '../../assets/images/logos/logo-2026.webp'
+import logoHeader from '../../assets/images/logos/logo-header.webp'
 import './Header.css'
 
 function Header() {
@@ -8,7 +8,7 @@ function Header() {
       <div className="logo">
         <NavLink to="/" aria-label="Ir para a página inicial">
           <img
-            src={logo2026}
+            src={logoHeader}
             alt="Logo EDUMATEC'S 2026"
           />
         </NavLink>
