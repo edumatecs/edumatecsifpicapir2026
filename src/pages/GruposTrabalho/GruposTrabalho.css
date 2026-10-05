@@ -59,10 +59,15 @@ article a:hover {
 }
 
 .template-download {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
     width: fit-content;
     margin: 0 auto 30px;
     padding: 12px 20px;
+
     background: #ffd700;
     color: #0f0f0f;
     border-radius: 6px;

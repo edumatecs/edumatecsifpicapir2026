@@ -12,7 +12,8 @@ function GruposTrabalho() {
                     href="/edumatecsifpicapir2026/template-comunicacao-oral-2026.pptx"
                     download
                 >
-                    Baixar template oficial
+                    Baixar template oficial<br />
+                    (Paraa apresentação oral)
                 </a>
 
                 {workGroups.map((group) => (
