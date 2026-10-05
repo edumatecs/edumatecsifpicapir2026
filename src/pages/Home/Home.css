@@ -179,6 +179,38 @@
     margin-bottom: 25px;
 }
 
+.submissao-trabalhos {
+    width: 100%;
+}
+
+.cronograma-submissao {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255, 215, 0, 0.05);
+    border-left: 3px solid #ffd700;
+}
+
+.cronograma-submissao h3 {
+    margin-top: 0;
+    color: #ffd700;
+}
+
+.cronograma-submissao p {
+    margin: 10px 0;
+}
+
+.submissao-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.submissao-botoes .btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .hero-evento {
         padding: 40px 15px;
@@ -212,4 +244,13 @@
     .kit-img {
         max-width: 320px;
     }
+
+    .submissao-botoes {
+        flex-direction: column;
+    }
+
+    .submissao-botoes .btn {
+        width: 100%;
+    }
+
 }

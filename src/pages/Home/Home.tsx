@@ -107,6 +107,72 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="home-section">
+        <div className="flex-container">
+          <div className="texto submissao-trabalhos">
+            <h2>Submissão de Trabalhos</h2>
+
+            <p>
+              Estão abertas as submissões de trabalhos para o EDUMATEC'S 2026.
+              Consulte o edital e confira os modelos oficiais antes de enviar seu
+              trabalho.
+            </p>
+
+            <div className="cronograma-submissao">
+              <h3>Cronograma</h3>
+
+              <p>
+                <strong>Início das submissões:</strong> 02/10/2026
+              </p>
+
+              <p>
+                <strong>Fim das submissões:</strong> 13/11/2026
+              </p>
+
+              <p>
+                <strong>Avaliação dos trabalhos:</strong> 14/11 a 30/11/2026
+              </p>
+
+              <p>
+                <strong>Reavaliação:</strong> 23/11 a 29/11/2026
+              </p>
+
+              <p>
+                <strong>Lista de trabalhos aprovados e local de apresentação:</strong>{' '}
+                04/12/2026
+              </p>
+            </div>
+
+            <div className="submissao-botoes">
+              <a
+                href="/edumatecsifpicapir2026/documentos/edumatecs-2026-chamada-para-submissao-de-trabalhos.docx"
+                download
+                className="btn"
+              >
+                Baixar Edital
+              </a>
+
+              <a
+                href="/edumatecsifpicapir2026/documentos/edumatecs-2026-modelo-resumo-expandido.docx"
+                download
+                className="btn"
+              >
+                Modelo de Resumo Expandido
+              </a>
+
+              <a
+                href="/edumatecsifpicapir2026/documentos/edumatecs-2026-template-artigo-completo-edumatecs.docx"
+                download
+                className="btn"
+              >
+                Template de Artigo Completo
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="home-section">
         <div className="flex-container">
           <div className="imagem">
