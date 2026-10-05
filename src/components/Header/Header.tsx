@@ -26,6 +26,7 @@ function Header() {
       >
         <NavLink to="/">Início</NavLink>
         <NavLink to="/programacao">Programação</NavLink>
+        <NavLink to="/grupos-trabalho">Grupos de Trabalho</NavLink>
         <NavLink to="/palestrantes">Palestrantes</NavLink>
         <NavLink to="/minicursos">Minicursos</NavLink>
         <NavLink to="/oficinas">Oficinas</NavLink>
