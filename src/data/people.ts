@@ -171,4 +171,10 @@ export const people: Person[] = [
         curriculum:
             'Doutora em Educação pela Universidade Estadual do Ceará UECE. Mestre em Educação pela UFPB - Universidade Federal da Paraíba. Especialista em PROEJA pelo IFPI. Especialista em Psicologia Aplicada à Educação pela URCA Universidade Regional do Cariri. Possui graduação em Pedagogia pela Universidade Regional do Cariri, Ceará. Licenciada nas Ciências da Religião pela Faculdade Integrada de Teologia Viva FATEV. É graduada em Letras/Português pela Universidade Estadual do Piauí UESPI. Professora do Instituto Federal de Educação, Ciência e Tecnologia do Piauí, de Disciplinas Pedagógicas, Campus Piripiri, nos cursos de Licenciatura em Matemática. É docente permanente do Programa de Pós-Graduação em Educação Profissional e Tecnológica (PROFEPT) - Mestrado Profissional em Educação Profissional e Tecnológica em Rede Nacional - Linha de Pesquisa 1: Práticas Educativas em Educação Profissional e Tecnológica (EPT).',
     },
+    {
+        id: 'francisco-teixeira-esteves',
+        name: 'Francisco Teixeira Esteves',
+        academicTitle: 'Prof. Me.',
+        image: 'francisco-teixeira-esteves.webp',
+    },
 ]

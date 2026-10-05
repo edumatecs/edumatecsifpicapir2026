@@ -42,7 +42,7 @@ export const workGroups: WorkGroup[] = [
         id: 'gt5',
         title: 'Ensino, Pesquisa e Extensão',
         coordinators: [
-            'Profa. Dra. Joselma Ferreira Lima e Silva',
+            'Prof. Me. Francisco Teixeira Esteves',
             'Prof. Dr. Cristiano Coelho do Nascimento',
             'Prof. Me. Bruno Santos Silva',
         ],
