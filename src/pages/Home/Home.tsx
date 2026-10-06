@@ -168,6 +168,15 @@ function Home() {
               >
                 Template de Artigo Completo
               </a>
+
+              <a
+                href="/edumatecsifpicapir2026/template-comunicacao-oral-2026.pptx"
+                download
+                className="btn"
+              >
+                Baixar template oficial<br />
+                (Para a apresentação oral)
+              </a>
             </div>
           </div>
         </div>
