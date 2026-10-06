@@ -13,7 +13,7 @@ function GruposTrabalho() {
                     download
                 >
                     Baixar template oficial<br />
-                    (Paraa apresentação oral)
+                    (Para a apresentação oral)
                 </a>
 
                 {workGroups.map((group) => (
