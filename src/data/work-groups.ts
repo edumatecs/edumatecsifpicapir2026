@@ -24,7 +24,7 @@ export const workGroups: WorkGroup[] = [
         id: 'gt3',
         title: 'Tecnologias em contextos diversos',
         coordinators: [
-            'Prof. Dr. Iallen Gábio Sousa',
+            'Prof. Dr. Iallen Gábio de Sousa Santos',
             'Prof. Me. Lívio Sampaio Vieira Santos',
         ],
         email: 'gt3tecnologias.capir@ifpi.edu.br',
