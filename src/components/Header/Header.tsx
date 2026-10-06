@@ -8,10 +8,18 @@ import './Header.css'
 function Header() {
   const [menuAberto, setMenuAberto] = useState(false)
 
+  function handleNavClick() {
+    setMenuAberto(false)
+  }
+
   return (
     <header>
       <div className="logo">
-        <NavLink to="/" aria-label="Ir para a página inicial">
+        <NavLink
+          to="/"
+          aria-label="Ir para a página inicial"
+          onClick={handleNavClick}
+        >
           <img
             src={logoHeader}
             alt="Logo EDUMATEC'S 2026"
@@ -24,14 +32,35 @@ function Header() {
         className={menuAberto ? 'menu-aberto' : ''}
         aria-label="Navegação principal"
       >
-        <NavLink to="/">Início</NavLink>
-        <NavLink to="/programacao">Programação</NavLink>
-        <NavLink to="/grupos-trabalho">Grupos de Trabalho</NavLink>
-        <NavLink to="/palestrantes">Palestrantes</NavLink>
-        <NavLink to="/minicursos">Minicursos</NavLink>
-        <NavLink to="/oficinas">Oficinas</NavLink>
-        <NavLink to="/memorias/2025">1ª Edição EDUMATEC'S</NavLink>
+        <NavLink to="/" onClick={handleNavClick}>
+          Início
+        </NavLink>
+
+        <NavLink to="/programacao" onClick={handleNavClick}>
+          Programação
+        </NavLink>
+
+        <NavLink to="/grupos-trabalho" onClick={handleNavClick}>
+          Grupos de Trabalho
+        </NavLink>
+
+        <NavLink to="/palestrantes" onClick={handleNavClick}>
+          Palestrantes
+        </NavLink>
+
+        <NavLink to="/minicursos" onClick={handleNavClick}>
+          Minicursos
+        </NavLink>
+
+        <NavLink to="/oficinas" onClick={handleNavClick}>
+          Oficinas
+        </NavLink>
+
+        <NavLink to="/memorias/2025" onClick={handleNavClick}>
+          1ª Edição EDUMATEC'S
+        </NavLink>
       </nav>
+
       <button
         className="menu-toggle"
         type="button"
