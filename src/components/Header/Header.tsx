@@ -56,6 +56,10 @@ function Header() {
           Oficinas
         </NavLink>
 
+        <NavLink to="/anais" onClick={handleNavClick}>
+          Anais
+        </NavLink>
+
         <NavLink to="/memorias/2025" onClick={handleNavClick}>
           1ª Edição EDUMATEC'S
         </NavLink>

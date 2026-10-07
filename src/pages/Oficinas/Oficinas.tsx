@@ -2,7 +2,7 @@ import { activities } from '../../data/activities'
 
 import anaThatilaImage from '../../assets/images/professores/ana-thatila-de-lima-rodrigues.webp'
 import cleycianeImage from '../../assets/images/professores/cleyciane-de-oliveira-melo.webp'
-import franciscoImage from '../../assets/images/professores/francisco-das-chagas-azevedo-dos-reis.webp'
+import franciscoImage from '../../assets/images/professores/antonio-francisco-da-costa-rodrigues.webp'
 import guilhermeImage from '../../assets/images/professores/guilherme-luiz-de-oliveira-neto.webp'
 import iallenImage from '../../assets/images/professores/iallen-gabio-de-sousa-santos.webp'
 import irismarImage from '../../assets/images/professores/irismar-da-silva-carvalho.webp'

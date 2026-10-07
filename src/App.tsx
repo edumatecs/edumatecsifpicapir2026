@@ -4,12 +4,14 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 
 import Home from './pages/Home/Home'
-import Memorias from './pages/Memorias/Memorias'
+import Programacao from './pages/Programacao/Programacao'
+import GruposTrabalho from './pages/GruposTrabalho/GruposTrabalho'
+import Palestrantes from './pages/Palestrantes/Palestrantes'
 import Minicursos from './pages/Minicursos/Minicursos'
 import Oficinas from './pages/Oficinas/Oficinas'
-import Palestrantes from './pages/Palestrantes/Palestrantes'
-import GruposTrabalho from './pages/GruposTrabalho/GruposTrabalho'
-import Programacao from './pages/Programacao/Programacao'
+import Anais from './pages/Anais/Anais'
+import Memorias from './pages/Memorias/Memorias'
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/palestrantes" element={<Palestrantes />} />
         <Route path="/minicursos" element={<Minicursos />} />
         <Route path="/oficinas" element={<Oficinas />} />
+        <Route path="/anais" element={<Anais />} />
         <Route path="/memorias/2025" element={<Memorias />} />
       </Routes>
 

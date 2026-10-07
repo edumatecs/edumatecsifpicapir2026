@@ -105,6 +105,12 @@ function Palestrantes() {
                 <p>
                   <strong>{participant.role}:</strong> {theme}
                 </p>
+
+                {person.curriculum && (
+                  <div className="curriculo-box">
+                    <strong>Currículo:</strong> {person.curriculum}
+                  </div>
+                )}
               </div>
             </article>
           )
@@ -135,7 +141,7 @@ function Palestrantes() {
                 </p>
 
                 <div className="info-destaque">
-                  Homens na Matemática: compartilhando saberes profissionais.
+                  Homens na Matemática: compartilhando saberes profissionais e da formação.
                 </div>
 
                 {person.curriculum && (

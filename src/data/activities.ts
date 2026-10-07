@@ -41,7 +41,7 @@ export const activities: Activity[] = [
         id: 'roda-de-conversa-homens-na-matematica',
         type: 'roda-de-conversa',
         title:
-            'Homens na Matemática: compartilhando saberes profissionais.',
+            'Homens na Matemática: compartilhando saberes profissionais e da formação.',
         participants: [
             {
                 person: findPerson('alberto-cunha-alves'),

@@ -14,8 +14,7 @@ export const people: Person[] = [
         name: 'Sandoel de Brito Vieira',
         academicTitle: 'Prof. Dr.',
         image: 'sandoel-de-brito-vieira.webp',
-        curriculum:
-            'Possui Graduação em Licenciatura Plena e Mestrado em Matemática pela Universidade Federal do Piauí (2014 e 2016) e Doutorado em Matemática pelo Instituto Nacional de Matemática Pura e Aplicada(2020).Tem experiência na área de Matemática, com ênfase em Sistemas Dinâmicos.',
+        curriculum: 'Possui Graduação em Licenciatura Plena e Mestrado em Matemática pela Universidade Federal do Piauí (2014 e 2016) e Doutorado em Matemática pelo Instituto Nacional de Matemática Pura e Aplicada (2020). Tem experiência na área de Matemática, com ênfase em Sistemas Dinâmicos.',
     },
     {
         id: 'alberto-cunha-alves',
@@ -30,24 +29,28 @@ export const people: Person[] = [
         name: 'Alexsandro de Sousa Santos',
         academicTitle: 'Prof. Me.',
         image: 'alexsandro-de-sousa-santos.webp',
+        curriculum: 'Mestre em Matemática pelo PROFMAT/UESPI, especialista em Matemática, suas Tecnologias e o Mundo do Trabalho (UFPI) e em Matemática no Ensino Médio (UESPI), licenciado em Matemática pelo IFPI/Campus Piripiri. Experiência como professor formador e coordenador do projeto OBMEP – Lapidando talentos na rede municipal de Piripiri. Atualmente, é professor efetivo das redes municipal de Piripiri e estadual do Ceará.',
     },
     {
         id: 'cicero-dos-santos-teixeira',
         name: 'Cícero dos Santos Teixeira',
         academicTitle: 'Prof.',
         image: 'cicero-dos-santos-teixeira.webp',
+        curriculum: 'Mestrando em Processos e Tecnologias Educação Educacionais (UVA), Mediador Pedagógico da Especialização Ciência é 10! pela UAB/IFSP e Professor da Rede Municipal de Sobral-CE .',
     },
     {
         id: 'gerson-misael-sousa-oliveira',
         name: 'Gerson Misael Sousa Oliveira',
         academicTitle: 'Prof.',
         image: 'gerson-misael-sousa-oliveira.webp',
+        curriculum: 'Mestre em Matemática,  Medalha de Ouro na Olimpíada Brasileira de Professores de Matemática e Coordenador dos Projetos Olímpicos da SEMED/ Batalha-PI. Professor de Matamática em atuação na rede Municipal de Batalha e na rede Estadual/SEDUC – PI',
     },
     {
         id: 'jackson-de-oliveira',
         name: 'Jackson de Oliveira',
         academicTitle: 'Prof.',
         image: 'jackson-de-oliveira.webp',
+        curriculum: 'Professor de Matemática, formado pelo IFPI - Campus Piripiri, Especialista no Ensino de Empreendedorismo e Propriedade Intelectual pela UFPI e Mestre em Matemática pelo PROFMAT/UESPI. Tenho experiência na área de docência desde 2013. Atualmente sou professor efetivo da Prefeitura de Teresina - PI e da Prefeitura de Timon - MA e também possuo experiência com treinamento para Olimpíadas de Matemática.',
     },
     {
         id: 'ray-victor-guimaraes-serra',
@@ -165,6 +168,8 @@ export const people: Person[] = [
         name: 'Iallen Gábio de Sousa Santos',
         academicTitle: 'Prof. Dr.',
         image: 'iallen-gabio-de-sousa-santos.webp',
+        curriculum:
+            'Bacharel em Ciência da Computação pela Universidade Federal do Piauí (UFPI), Mestre em Ciência da Computação pela Universidade Federal do Piauí, integrante do Distributed System and Network Laboratory(DisNeL). Doutor em Ciência da Computação no Centro de Informática da Universidade Federal do Pernambuco. Atualmente integra o Laboratório de Pesquisas em Computação (LAPEC) no Instituto Federal de Educação Ciência e Tecnologia do Piauí (IFPI). Tem experiência na área de Ciência da Computação, com ênfase em Teleinformática, atuando principalmente nos seguintes temas: Redes Veiculares e Redes Ópticas. Além disso seus interesses de pesquisa também incluem Simulação de Eventos Discretos, Interface Humano Computador, Jogos Educacionais, Inteligência Artificial Aplicada, Avaliação de Desempenho de Sistemas e Desenvolvimento Mobile',
     },
     {
         id: 'cleyciane-de-oliveira-melo',
@@ -208,28 +213,31 @@ export const people: Person[] = [
         name: 'Maykol Lívio Sampaio Vieira Santos',
         academicTitle: 'Prof. Me.',
         image: 'maykol-livio-sampaio-vieira-santos.webp',
-        curriculum: '',
+        curriculum: 'Atualmente é professor de Informática no Instituto Federal do Piauí (IFPI). Possui graduação em Sistemas de Informação pela Faculdade Integral Diferencial (FACID-PI), especialização em Docência do Ensino Superior pela FAEME e mestrado em Tecnologias em Educação a Distância pela Universidade Federal Rural de Pernambuco (UFRPE). Tem experiência na área de Computação e Sistemas de Informação, com atuação em Desenvolvimento Web Frontend e Backend, Desenvolvimento Mobile, Gamificação com ênfase em Educação e Sistemas Operacionais Linux.',
     },
     {
         id: 'marcos-vinicius-pereira-oliveira',
         name: 'Marcos Vinicius Pereira Oliveira',
         academicTitle: 'Prof. Dr.',
         image: 'marcos-vinicius-pereira-oliveira.webp',
-        curriculum: '',
+        curriculum: 
+            'Doutorado em Sociologia pela Universidade Federal do Ceará - UFC. Mestrado em Antropologia e Arqueologia pela Universidade Federal do Piaui - UFPI. Graduação em Ciências Sociais também pela Universidade Federal do Piauí - UFPI. Professor efetivo de Sociologia do Instituto Federal de Educação, Ciência e Tecnologia do estado do Piauí - IFPI/Campus Piripiri. Coordenou o Núcleo de Estudos Afro-brasileiros e Indígenas - NEABI/Piripiri (2020-2023), PORTARIA N 789, DE 11 DE MARÇO DE 2020. É presidente da Comissão Local de Heteroidentificação do IFPI/Piripiri, além de membro do Laboratório de Humanidades, no referido campus. Coordenou o Programa Ação Saberes Indígenas na Escola - IFPI/SECADI/MEC, conforme Portaria 1210/2024 - GAB/REI/IFPI de 12/04/2024. Atualmente é Coordenador de Curso da Licenciatura Intercultural Indígena do IFPI, no âmbito do PARFOR EQUIDADE. Áreas de interesse: cultura; memória; identidades; territorialidades; ruralidades; sertão; povos tradicionais; imaginário social; métodos e técnicas de pesquisa em Ciências Sociais.',
     },
     {
         id: 'marcelo-batista-gomes',
         name: 'Marcelo Batista Gomes',
         academicTitle: 'Prof. Me.',
         image: 'marcelo-batista-gomes.webp',
-        curriculum: '',
+        curriculum: 
+            'Possui Bacharelado em Ciências Sociais (2008), Licenciatura em Sociologia (2010) e Mestrado em Políticas Públicas (2013) pela Universidade Federal do Piauí. Tem experiência na área de Educação, com ênfase em Educação Superior, atuando principalmente nos seguintes temas: sociologia da educação, sociologia, democratização do ensino superior, implementação e avaliação de políticas públicas. Atualmente é docente no Instituto Federal de Educação, Ciência e Tecnologia do Piauí - IFPI - Campus Piripiri, atuando na docência do Ensino Médio e Superior.',
     },
     {
         id: 'cristiano-coelho-do-nascimento',
         name: 'Cristiano Coelho do Nascimento',
         academicTitle: 'Prof. Dr.',
         image: 'cristiano-coelho-do-nascimento.webp',
-        curriculum: '',
+        curriculum: 
+            'É Professor EBTT (D3-IV) do Instituto Federal de Educação, Ciência e Tecnologia do Piauí (IFPI), com doutorado em Biodiversidade Vegetal e Meio Ambiente pelo Instituto de Pesquisas Ambientais (IPA - São Paulo), mestre em Biologia de Fungos pela Universidade Federal de Pernambuco (UFPE - Recife), especialista em Docência do Ensino Superior pela Faculdade Latino-Americana de Educação (FLATED) e graduado em Ciências Biológicas (Licenciatura) pela Universidade Federal do Piauí (UFPI - Parnaíba); também graduado em enfermagem (bacharelado) pela Universidade Estadual do Piauí (UESPI - Parnaíba). Exerce atividades no ensino superior e na educação básica, acumulando experiência também nas áreas de comunicação científica, desenho digital e design gráfico. Como pesquisador atua nas áreas de taxonomia, etnomicologia e micologia aplicada, com foco em filogenia molecular e no levantamento da diversidade de fungos formadores de cogumelos (macrofungos), incluindo espécies silvestres comestíveis com potencial de cultivo.',
     },
     {
         id: 'bruno-santos-silva',
