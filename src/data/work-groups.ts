@@ -15,7 +15,7 @@ export const workGroups: WorkGroup[] = [
         id: 'gt2',
         title: 'Formação, trabalho docente e Didática',
         coordinators: [
-            'Profª. Dra. Rosimeyre Vieira da Silva',
+            'Profa. Dra. Rosimeyre Vieira da Silva',
             'Prof. Me. Alberto Cunha Alves',
         ],
         email: 'gt2educacao.capir@ifpi.edu.br',
@@ -25,7 +25,7 @@ export const workGroups: WorkGroup[] = [
         title: 'Tecnologias em contextos diversos',
         coordinators: [
             'Prof. Dr. Iallen Gábio de Sousa Santos',
-            'Prof. Me. Lívio Sampaio Vieira Santos',
+            'Prof. Me. Maykol Lívio Sampaio Vieira Santos',
         ],
         email: 'gt3tecnologias.capir@ifpi.edu.br',
     },

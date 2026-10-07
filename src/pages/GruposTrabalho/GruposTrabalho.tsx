@@ -1,5 +1,18 @@
 import { workGroups } from '../../data/work-groups'
+import { people } from '../../data/people'
+import ProfessorPhoto from '../../components/ProfessorPhoto'
 import './GruposTrabalho.css'
+
+
+const professorImages = import.meta.glob(
+    '../../assets/images/professores/*.webp',
+    {
+        eager: true,
+        import: 'default',
+        query: '?url',
+    },
+)
+
 
 function GruposTrabalho() {
     return (
@@ -24,11 +37,49 @@ function GruposTrabalho() {
 
                         <h3>Coordenação</h3>
 
-                        <ul>
-                            {group.coordinators.map((coordinator) => (
-                                <li key={coordinator}>{coordinator}</li>
-                            ))}
-                        </ul>
+                        <div className="coordinators">
+                            {group.coordinators.map((coordinator) => {
+                                const person = people.find(
+                                    (person) =>
+                                        `${person.academicTitle ?? ''} ${person.name}`.trim() === coordinator
+                                )
+
+                                const imagePath = person?.image
+                                    ? `../../assets/images/professores/${person.image}`
+                                    : null
+
+                                const image = imagePath
+                                    ? professorImages[imagePath]
+                                    : undefined
+
+                                return (
+                                    <div className="coordinator" key={coordinator}>
+                                        {image && (
+                                            <ProfessorPhoto
+                                                src={image}
+                                                alt={coordinator}
+                                            />
+                                        )}
+
+                                        <div className="coordinator-info">
+                                            <h3>
+                                                {coordinator}
+                                            </h3>
+
+                                            <p>
+                                                <strong>Coordenação</strong>
+                                            </p>
+
+                                            {person?.curriculum && (
+                                                <div className="curriculo-box">
+                                                    <strong>Currículo:</strong> {person.curriculum}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
 
                         <p>
                             E-mail:{' '}

@@ -14,6 +14,8 @@ export const people: Person[] = [
         name: 'Sandoel de Brito Vieira',
         academicTitle: 'Prof. Dr.',
         image: 'sandoel-de-brito-vieira.webp',
+        curriculum:
+            'Possui Graduação em Licenciatura Plena e Mestrado em Matemática pela Universidade Federal do Piauí (2014 e 2016) e Doutorado em Matemática pelo Instituto Nacional de Matemática Pura e Aplicada(2020).Tem experiência na área de Matemática, com ênfase em Sistemas Dinâmicos.',
     },
     {
         id: 'alberto-cunha-alves',
@@ -160,7 +162,7 @@ export const people: Person[] = [
     },
     {
         id: 'iallen-gabio-de-sousa-santos',
-        name: 'Iallen Gabio de Sousa Santos',
+        name: 'Iallen Gábio de Sousa Santos',
         academicTitle: 'Prof. Dr.',
         image: 'iallen-gabio-de-sousa-santos.webp',
     },
@@ -193,5 +195,47 @@ export const people: Person[] = [
         name: 'Francisco Teixeira Esteves',
         academicTitle: 'Prof. Me.',
         image: 'francisco-teixeira-esteves.webp',
+    },
+    {
+        id: 'francisco-ivan-assis-de-araujo',
+        name: 'Francisco Ivan Assis de Araújo',
+        academicTitle: 'Prof. Me.',
+        image: 'francisco-ivan-assis-de-araujo.webp',
+        curriculum: '',
+    },
+    {
+        id: 'maykol-livio-sampaio-vieira-santos',
+        name: 'Maykol Lívio Sampaio Vieira Santos',
+        academicTitle: 'Prof. Me.',
+        image: 'maykol-livio-sampaio-vieira-santos.webp',
+        curriculum: '',
+    },
+    {
+        id: 'marcos-vinicius-pereira-oliveira',
+        name: 'Marcos Vinicius Pereira Oliveira',
+        academicTitle: 'Prof. Dr.',
+        image: 'marcos-vinicius-pereira-oliveira.webp',
+        curriculum: '',
+    },
+    {
+        id: 'marcelo-batista-gomes',
+        name: 'Marcelo Batista Gomes',
+        academicTitle: 'Prof. Me.',
+        image: 'marcelo-batista-gomes.webp',
+        curriculum: '',
+    },
+    {
+        id: 'cristiano-coelho-do-nascimento',
+        name: 'Cristiano Coelho do Nascimento',
+        academicTitle: 'Prof. Dr.',
+        image: 'cristiano-coelho-do-nascimento.webp',
+        curriculum: '',
+    },
+    {
+        id: 'bruno-santos-silva',
+        name: 'Bruno Santos Silva',
+        academicTitle: 'Prof. Me.',
+        image: 'bruno-santos-silva.webp',
+        curriculum: '',
     },
 ]

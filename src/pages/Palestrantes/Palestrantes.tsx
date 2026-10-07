@@ -8,6 +8,8 @@ import ciceroImage from '../../assets/images/professores/cicero-dos-santos-teixe
 import gersonImage from '../../assets/images/professores/gerson-misael-sousa-oliveira.webp'
 import jacksonImage from '../../assets/images/professores/jackson-de-oliveira.webp'
 
+import ProfessorPhoto from '../../components/ProfessorPhoto'
+
 import './Palestrantes.css'
 
 
@@ -56,14 +58,10 @@ function Palestrantes() {
 
           return (
             <article className="card-conteudo" key={person.id}>
-              <div className="card-foto-espaco">
-                {image && (
-                  <img
-                    src={image}
-                    alt={getPersonName(person.academicTitle, person.name)}
-                  />
-                )}
-              </div>
+              <ProfessorPhoto
+                src={image}
+                alt={getPersonName(person.academicTitle, person.name)}
+              />
 
               <div className="card-info-detalhada">
                 <h3>
@@ -94,14 +92,10 @@ function Palestrantes() {
 
           return (
             <article className="card-conteudo" key={person.id}>
-              <div className="card-foto-espaco">
-                {image && (
-                  <img
-                    src={image}
-                    alt={getPersonName(person.academicTitle, person.name)}
-                  />
-                )}
-              </div>
+              <ProfessorPhoto
+                src={image}
+                alt={getPersonName(person.academicTitle, person.name)}
+              />
 
               <div className="card-info-detalhada">
                 <h3>
@@ -126,14 +120,10 @@ function Palestrantes() {
 
           return (
             <article className="card-conteudo" key={person.id}>
-              <div className="card-foto-espaco">
-                {image && (
-                  <img
-                    src={image}
-                    alt={getPersonName(person.academicTitle, person.name)}
-                  />
-                )}
-              </div>
+              <ProfessorPhoto
+                src={image}
+                alt={getPersonName(person.academicTitle, person.name)}
+              />
 
               <div className="card-info-detalhada">
                 <h3>
