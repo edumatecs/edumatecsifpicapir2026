@@ -25,6 +25,12 @@
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.35));
+    transition: 0.4s;
+}
+
+.hero-logo-col img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.45));
 }
 
 .hero-text-col {
@@ -145,6 +151,13 @@
     object-fit: contain;
     border-radius: 10px;
     transition: 0.3s;
+}
+
+.kit-img:hover,
+.camisa-img:hover,
+.certificado-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.45));
 }
 
 #secao-turismo {
