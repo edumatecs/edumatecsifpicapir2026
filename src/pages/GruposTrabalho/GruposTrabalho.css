@@ -1,68 +1,80 @@
-main {
-    padding: 120px 40px 60px;
-}
-
-section {
-    max-width: 1100px;
+.grupos-trabalho {
+    padding: 100px 20px 60px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-section>h1 {
-    margin-bottom: 40px;
-    color: #ffd700;
+.grupos-trabalho>h2 {
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.grupos-trabalho>div>h2 {
+    text-align: center;
+    color: var(--dourado);
+    margin: 50px 0 10px;
+    font-size: 24px;
+}
+
+.email-gt {
+    color: #ccc;
+    font-size: 14px;
+    margin: 0 0 25px;
     text-align: center;
 }
 
-article {
+.email-gt a {
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+.email-gt a:hover {
+    text-decoration: underline;
+}
+
+.card-conteudo {
     background: #141414;
     border: 1px solid #333;
-    border-left: 4px solid #ffd700;
     border-radius: 12px;
     padding: 25px;
     margin-bottom: 25px;
-
+    display: flex;
+    gap: 25px;
+    align-items: center;
     transition: 0.3s;
 }
 
-article:hover {
+.card-conteudo:hover {
     border-color: var(--dourado);
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
 }
 
-article h2 {
-    margin-top: 0;
-    color: #ffd700;
-    font-size: 22px;
+.card-info-detalhada {
+    flex: 1;
 }
 
-article h3 {
-    margin-bottom: 10px;
-    color: #f5f5f5;
-    font-size: 16px;
+.card-info-detalhada h3 {
+    color: var(--dourado);
+    font-size: 20px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
 }
 
-article ul {
-    margin-top: 0;
-    padding-left: 25px;
+.card-info-detalhada p {
+    color: #ccc;
+    font-size: 14px;
+    margin: 0 0 6px;
 }
 
-article li {
-    margin-bottom: 6px;
-    color: #ddd;
-}
-
-article p {
-    margin-bottom: 0;
-    color: #ddd;
-}
-
-article a {
-    color: #ffd700;
-    text-decoration: none;
-}
-
-article a:hover {
-    text-decoration: underline;
+.curriculo-box {
+    background: #050505;
+    border: 1px solid #222;
+    padding: 12px 15px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #ccc;
+    line-height: 1.5;
 }
 
 .template-download {
@@ -72,7 +84,7 @@ article a:hover {
     text-align: center;
 
     width: fit-content;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
     padding: 12px 20px;
 
     background: #ffd700;
@@ -88,70 +100,19 @@ article a:hover {
     color: #0f0f0f;
 }
 
-.coordinators {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.coordinator {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.coordinator-info {
-    flex: 1;
-}
-
-.coordinator-info h3 {
-    color: var(--dourado);
-    font-size: 20px;
-    margin: 0 0 8px;
-    text-transform: uppercase;
-}
-
-.coordinator-info p {
-    color: #ccc;
-    font-size: 14px;
-    margin: 0 0 10px;
-}
-
-.curriculo-box {
-    background: #050505;
-    border: 1px solid #222;
-    padding: 12px 15px;
-    margin-top: 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    color: #ccc;
-    line-height: 1.5;
-}
-
-.coordinator span {
-    color: #ddd;
-    font-size: 14px;
-    line-height: 1.5;
-}
 
 @media (max-width: 768px) {
-    main {
-        padding: 100px 16px 40px;
+    .grupos-trabalho {
+        padding: 80px 15px 40px;
     }
 
-    article {
-        padding: 20px;
+    .card-conteudo {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
-    article h2 {
-        font-size: 19px;
-    }
-
-    .coordinator {
-        align-items: flex-start;
-    }
-
-    .coordinator-info h3 {
-        font-size: 18px;
+    .curriculo-box {
+        text-align: left;
     }
 }

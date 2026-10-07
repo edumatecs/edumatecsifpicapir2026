@@ -17,8 +17,8 @@ const professorImages = import.meta.glob(
 function GruposTrabalho() {
     return (
         <main>
-            <section>
-                <h1>Grupos de Trabalho (GTs)</h1>
+            <section className="grupos-trabalho">
+                <h2>Grupos de Trabalho (GTs)</h2>
 
                 <a
                     className="template-download"
@@ -30,64 +30,60 @@ function GruposTrabalho() {
                 </a>
 
                 {workGroups.map((group) => (
-                    <article key={group.id}>
+                    <div key={group.id}>
                         <h2>
                             {group.id.toUpperCase()}: {group.title}
                         </h2>
 
-                        <h3>Coordenação</h3>
-
-                        <div className="coordinators">
-                            {group.coordinators.map((coordinator) => {
-                                const person = people.find(
-                                    (person) =>
-                                        `${person.academicTitle ?? ''} ${person.name}`.trim() === coordinator
-                                )
-
-                                const imagePath = person?.image
-                                    ? `../../assets/images/professores/${person.image}`
-                                    : null
-
-                                const image = imagePath
-                                    ? professorImages[imagePath]
-                                    : undefined
-
-                                return (
-                                    <div className="coordinator" key={coordinator}>
-                                        {image && (
-                                            <ProfessorPhoto
-                                                src={image}
-                                                alt={coordinator}
-                                            />
-                                        )}
-
-                                        <div className="coordinator-info">
-                                            <h3>
-                                                {coordinator}
-                                            </h3>
-
-                                            <p>
-                                                <strong>Coordenação</strong>
-                                            </p>
-
-                                            {person?.curriculum && (
-                                                <div className="curriculo-box">
-                                                    <strong>Currículo:</strong> {person.curriculum}
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-
-                        <p>
-                            E-mail:{' '}
+                        <p className="email-gt">
+                            <strong>E-mail:</strong>{' '}
                             <a href={`mailto:${group.email}`}>
                                 {group.email}
                             </a>
                         </p>
-                    </article>
+
+                        {group.coordinators.map((coordinator) => {
+                            const person = people.find(
+                                (person) =>
+                                    `${person.academicTitle ?? ''} ${person.name}`.trim() === coordinator,
+                            )
+
+                            const imagePath = person?.image
+                                ? `../../assets/images/professores/${person.image}`
+                                : null
+
+                            const image = imagePath
+                                ? professorImages[imagePath]
+                                : undefined
+
+                            return (
+                                <article
+                                    className="card-conteudo"
+                                    key={coordinator}
+                                >
+                                    <ProfessorPhoto
+                                        src={image}
+                                        alt={coordinator}
+                                    />
+
+                                    <div className="card-info-detalhada">
+                                        <h3>{coordinator}</h3>
+
+                                        <p>
+                                            <strong>Coordenação do GT</strong>
+                                        </p>
+
+                                        {person?.curriculum && (
+                                            <div className="curriculo-box">
+                                                <strong>Currículo:</strong>{' '}
+                                                {person.curriculum}
+                                            </div>
+                                        )}
+                                    </div>
+                                </article>
+                            )
+                        })}
+                    </div>
                 ))}
             </section>
         </main>
