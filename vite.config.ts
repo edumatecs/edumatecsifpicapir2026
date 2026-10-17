@@ -1,8 +1,17 @@
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'vite'
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, lazyPlugins } from "vite-plus";
 
 export default defineConfig({
-  base: '/edumatecsifpicapir2026/',
-  plugins: [react(), tailwindcss()],
-})
+  check: {
+    fmt: false,
+  },
+  fmt: {},
+  lint: {
+    jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
+    rules: { "vite-plus/prefer-vite-plus-imports": "error" },
+    options: { typeAware: true, typeCheck: true },
+  },
+  base: "/edumatecsifpicapir2026/",
+  plugins: lazyPlugins(() => [react(), tailwindcss()]),
+});

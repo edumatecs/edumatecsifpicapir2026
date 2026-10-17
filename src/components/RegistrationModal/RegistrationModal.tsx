@@ -163,7 +163,6 @@ function RegistrationModal({
                             />
 
                             <RegistrationPayment
-                                receipt={receipt}
                                 onReceiptChange={setReceipt}
                             />
 
