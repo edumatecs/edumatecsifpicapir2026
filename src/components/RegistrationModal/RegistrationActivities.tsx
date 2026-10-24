@@ -40,7 +40,6 @@ function RegistrationActivities({
                     type="radio"
                     name={`oficina${groupIndex + 1}`}
                     value={activity.id}
-                    required
                   />
 
                   <div className="registration-activity-info">
@@ -83,7 +82,6 @@ function RegistrationActivities({
                 type="radio"
                 name="minicurso"
                 value={activity.id}
-                required
               />
 
               <div className="registration-activity-info">
