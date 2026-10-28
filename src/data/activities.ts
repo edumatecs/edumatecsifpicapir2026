@@ -70,7 +70,7 @@ export const activities: Activity[] = [
         id: 'minicurso-ray-victor',
         type: 'minicurso',
         title:
-            'Da Otimização Clássica à Otimização Multiobjetivo: Teoria, Algoritmos e Aplicações',
+            'Do Cálculo à Otimização: Uma Introdução às Condições de Otimalidade',
         participants: [
             {
                 person: findPerson('ray-victor-guimaraes-serra'),
@@ -79,7 +79,7 @@ export const activities: Activity[] = [
         ],
         vacancies: 40,
         description:
-            'A otimização matemática está presente em diversas situações nas quais é necessário tomar decisões buscando utilizar da melhor forma possível os recursos disponíveis. Problemas envolvendo minimização de custos, redução de tempo, maximização de desempenho, alocação de recursos e planejamento são exemplos naturais de problemas de otimização. Em muitos desses problemas, entretanto, não existe apenas um objetivo a ser considerado. Frequentemente, diferentes objetivos precisam ser otimizados simultaneamente e podem ser conflitantes entre si. Essa situação conduz aos chamados problemas de otimização multiobjetivo. O objetivo deste minicurso é apresentar uma introdução à otimização matemática, partindo de conceitos familiares do Cálculo Diferencial e chegando aos fundamentos da otimização multiobjetivo. Ao longo do minicurso serão discutidos aspectos teóricos, geométricos, algorítmicos e computacionais.',
+        'Este minicurso tem como objetivo apresentar, de forma introdutória, as principais condições de otimalidade em problemas de otimização matemática, estabelecendo uma conexão entre os conhecimentos de Cálculo Diferencial e Integral e a Programação Não Linear. Inicialmente, serão abordados problemas clássicos de máximos e mínimos de funções sem restrições, destacando as condições de primeira ordem. Em seguida, serão considerados problemas com restrições de igualdade, introduzindo o método dos multiplicadores de Lagrange, amplamente estudado nos cursos de graduação. A partir de exemplos práticos e interpretações geométricas, a discussão será estendida aos problemas com restrições de desigualdade, culminando na apresentação das condições de Karush-Kuhn-Tucker (KKT) para problemas gerais de Programação Não Linear.',
     },
 
     {
