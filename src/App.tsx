@@ -9,6 +9,7 @@ import GruposTrabalho from './pages/GruposTrabalho/GruposTrabalho'
 import Palestrantes from './pages/Palestrantes/Palestrantes'
 import Minicursos from './pages/Minicursos/Minicursos'
 import Oficinas from './pages/Oficinas/Oficinas'
+import Apoiadores from './pages/Apoiadores/Apoiadores'
 import Anais from './pages/Anais/Anais'
 import Memorias from './pages/Memorias/Memorias'
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/palestrantes" element={<Palestrantes />} />
         <Route path="/minicursos" element={<Minicursos />} />
         <Route path="/oficinas" element={<Oficinas />} />
+        <Route path="/apoiadores" element={<Apoiadores />} />
         <Route path="/anais" element={<Anais />} />
         <Route path="/memorias/2025" element={<Memorias />} />
       </Routes>

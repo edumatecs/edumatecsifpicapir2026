@@ -56,6 +56,10 @@ function Header() {
           Oficinas
         </NavLink>
 
+        <NavLink to="/apoiadores" onClick={handleNavClick}>
+          Apoiadores
+        </NavLink>
+
         <NavLink to="/anais" onClick={handleNavClick}>
           Anais
         </NavLink>
