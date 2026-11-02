@@ -2,6 +2,7 @@ import './Apoiadores.css'
 
 import panificadoraGaviao from '../../assets/images/apoiadores/panificadora-gaviao.webp'
 import poupaMoveis from '../../assets/images/apoiadores/poupa-moveis.webp'
+import gutGut from '../../assets/images/apoiadores/gut-gut.webp'
 
 const apoiadores = [
   {
@@ -11,6 +12,10 @@ const apoiadores = [
   {
     nome: 'Poupa Moveis',
     imagem: poupaMoveis,
+  },
+  {
+    nome: 'GUT GUT',
+    imagem: gutGut,
   },
 ]
 
@@ -53,22 +58,6 @@ function Apoiadores() {
       </section>
 
       <section className="apoiadores-secao">
-        <header className="secao-cabecalho">
-          <div className="secao-identificador">
-            <span>01</span>
-            <span className="identificador-linha" />
-            <span>REDE DE APOIO</span>
-          </div>
-
-          <h2>
-            Quem caminha <span>conosco</span>
-          </h2>
-
-          <p>
-            Nosso reconhecimento às empresas que acreditam nesta iniciativa
-            e ajudam a tornar a EDUMATEC'S possível.
-          </p>
-        </header>
 
         <div
           className="apoiadores-grid"
@@ -77,9 +66,6 @@ function Apoiadores() {
           {apoiadores.map((apoiador, index) => (
             <article className="apoiador-card" key={apoiador.nome}>
               <div className="card-topo">
-                <span className="card-numero">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
 
                 <span className="card-categoria">
                   APOIADOR OFICIAL
