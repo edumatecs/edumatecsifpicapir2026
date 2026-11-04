@@ -302,7 +302,7 @@ export const activities: Activity[] = [
         title: 'Aprendendo a pesquisar e produzindo conhecimento científico',
         participants: [
             {
-                person: findPerson('joselma-ferreira-lima-e-silva'),
+                person: findPerson('glairton-cardoso-rocha'),
                 role: 'Ministrante',
             },
         ],

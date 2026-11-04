@@ -249,4 +249,11 @@ export const people: Person[] = [
         image: 'bruno-santos-silva.webp',
         curriculum: '',
     },
+    {
+        id: 'glairton-cardoso-rocha',
+        name: 'Glairton Cardoso Rocha',
+        academicTitle: 'Prof. Dr.',
+        image: 'glairton-cardoso-rocha.webp',
+        curriculum: '',
+    },
 ]

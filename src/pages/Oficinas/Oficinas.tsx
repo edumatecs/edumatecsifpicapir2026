@@ -6,7 +6,7 @@ import franciscoImage from '../../assets/images/professores/antonio-francisco-da
 import guilhermeImage from '../../assets/images/professores/guilherme-luiz-de-oliveira-neto.webp'
 import iallenImage from '../../assets/images/professores/iallen-gabio-de-sousa-santos.webp'
 import irismarImage from '../../assets/images/professores/irismar-da-silva-carvalho.webp'
-import joselmaImage from '../../assets/images/professores/joselma-ferreira-lima-e-silva.webp'
+import glairtonImage from '../../assets/images/professores/glairton-cardoso-rocha.webp'
 import leticiaImage from '../../assets/images/professores/leticia-soares-chaves.webp'
 import renataeRimenaImage from '../../assets/images/professores/renata-resende-ibiapina-braga-e-rimena-canuto-oliveira.webp'
 import rosymeireImage from '../../assets/images/professores/rosimeyre-vieira-da-silva.webp'
@@ -31,7 +31,7 @@ const oficinaImages: Record<string, string[]> = {
   'oficina-harness-yourself': [iallenImage],
   'oficina-matematica-alem-dos-numeros': [cleycianeImage],
   'oficina-alfabetizacao-matematica': [pedroImage],
-  'oficina-pesquisa-conhecimento-cientifico': [joselmaImage],
+  'oficina-pesquisa-conhecimento-cientifico': [glairtonImage],
 }
 
 function getPersonName(
