@@ -200,6 +200,8 @@ export const people: Person[] = [
         name: 'Francisco Teixeira Esteves',
         academicTitle: 'Prof. Me.',
         image: 'francisco-teixeira-esteves.webp',
+        curriculum:
+            'É Professor do Ensino Básico, Técnico e Tecnológico (EBTT) do Instituto Federal de Educação, Ciência e Tecnologia do Piauí (IFPI). É licenciado em Matemática pela Universidade Federal do Piauí (UFPI), onde também concluiu o Mestrado Profissional em Matemática (PROFMAT), em 2015. Possui experiência docente na educação básica, tendo atuado como professor da rede municipal de ensino de Piripiri, no Piauí, entre 2012 e 2014, além de desenvolver atividades no âmbito da educação profissional e tecnológica. Sua formação acadêmica e atuação profissional estão relacionadas principalmente ao ensino de Matemática e à educação matemática, com interesse nas possibilidades de contextualização e aplicação dos conhecimentos matemáticos no cotidiano e no processo de ensino-aprendizagem.',
     },
     {
         id: 'francisco-ivan-assis-de-araujo',
@@ -220,7 +222,7 @@ export const people: Person[] = [
         name: 'Marcos Vinicius Pereira Oliveira',
         academicTitle: 'Prof. Dr.',
         image: 'marcos-vinicius-pereira-oliveira.webp',
-        curriculum: 
+        curriculum:
             'Doutorado em Sociologia pela Universidade Federal do Ceará - UFC. Mestrado em Antropologia e Arqueologia pela Universidade Federal do Piaui - UFPI. Graduação em Ciências Sociais também pela Universidade Federal do Piauí - UFPI. Professor efetivo de Sociologia do Instituto Federal de Educação, Ciência e Tecnologia do estado do Piauí - IFPI/Campus Piripiri. Coordenou o Núcleo de Estudos Afro-brasileiros e Indígenas - NEABI/Piripiri (2020-2023), PORTARIA N 789, DE 11 DE MARÇO DE 2020. É presidente da Comissão Local de Heteroidentificação do IFPI/Piripiri, além de membro do Laboratório de Humanidades, no referido campus. Coordenou o Programa Ação Saberes Indígenas na Escola - IFPI/SECADI/MEC, conforme Portaria 1210/2024 - GAB/REI/IFPI de 12/04/2024. Atualmente é Coordenador de Curso da Licenciatura Intercultural Indígena do IFPI, no âmbito do PARFOR EQUIDADE. Áreas de interesse: cultura; memória; identidades; territorialidades; ruralidades; sertão; povos tradicionais; imaginário social; métodos e técnicas de pesquisa em Ciências Sociais.',
     },
     {
@@ -228,7 +230,7 @@ export const people: Person[] = [
         name: 'Marcelo Batista Gomes',
         academicTitle: 'Prof. Me.',
         image: 'marcelo-batista-gomes.webp',
-        curriculum: 
+        curriculum:
             'Possui Bacharelado em Ciências Sociais (2008), Licenciatura em Sociologia (2010) e Mestrado em Políticas Públicas (2013) pela Universidade Federal do Piauí. Tem experiência na área de Educação, com ênfase em Educação Superior, atuando principalmente nos seguintes temas: sociologia da educação, sociologia, democratização do ensino superior, implementação e avaliação de políticas públicas. Atualmente é docente no Instituto Federal de Educação, Ciência e Tecnologia do Piauí - IFPI - Campus Piripiri, atuando na docência do Ensino Médio e Superior.',
     },
     {
@@ -236,7 +238,7 @@ export const people: Person[] = [
         name: 'Cristiano Coelho do Nascimento',
         academicTitle: 'Prof. Dr.',
         image: 'cristiano-coelho-do-nascimento.webp',
-        curriculum: 
+        curriculum:
             'É Professor EBTT (D3-IV) do Instituto Federal de Educação, Ciência e Tecnologia do Piauí (IFPI), com doutorado em Biodiversidade Vegetal e Meio Ambiente pelo Instituto de Pesquisas Ambientais (IPA - São Paulo), mestre em Biologia de Fungos pela Universidade Federal de Pernambuco (UFPE - Recife), especialista em Docência do Ensino Superior pela Faculdade Latino-Americana de Educação (FLATED) e graduado em Ciências Biológicas (Licenciatura) pela Universidade Federal do Piauí (UFPI - Parnaíba); também graduado em enfermagem (bacharelado) pela Universidade Estadual do Piauí (UESPI - Parnaíba). Exerce atividades no ensino superior e na educação básica, acumulando experiência também nas áreas de comunicação científica, desenho digital e design gráfico. Como pesquisador atua nas áreas de taxonomia, etnomicologia e micologia aplicada, com foco em filogenia molecular e no levantamento da diversidade de fungos formadores de cogumelos (macrofungos), incluindo espécies silvestres comestíveis com potencial de cultivo.',
     },
     {
