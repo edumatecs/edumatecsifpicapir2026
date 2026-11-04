@@ -208,7 +208,8 @@ export const people: Person[] = [
         name: 'Francisco Ivan Assis de Araújo',
         academicTitle: 'Prof. Me.',
         image: 'francisco-ivan-assis-de-araujo.webp',
-        curriculum: '',
+        curriculum:
+            'Licenciado em Pedagogia pela Universidade Federal do Piauí (UFPI) e em História pela Universidade Estadual do Piauí (UESPI). Possui especialização em Docência do Ensino Superior e em Currículo e Prática Docente nos Anos Iniciais do Ensino Fundamental, além de mestrado em Ciência Política pela Universidade Federal do Piauí (2018). Atualmente é professor do Ensino Básico, Técnico e Tecnológico do Instituto Federal do Piauí (IFPI), Campus Piripiri. Possui experiência nas áreas de Educação, História e Ciência Política, com estudos voltados à educação profissional, políticas públicas de educação e formação educacional, destacando-se sua pesquisa sobre as perspectivas de emprego na educação profissional, com análise comparativa dos programas do IFPI e do SENAC.',
     },
     {
         id: 'maykol-livio-sampaio-vieira-santos',
