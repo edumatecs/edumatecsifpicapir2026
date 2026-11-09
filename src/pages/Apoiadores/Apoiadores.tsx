@@ -3,6 +3,7 @@ import './Apoiadores.css'
 import panificadoraGaviao from '../../assets/images/apoiadores/panificadora-gaviao.webp'
 import poupaMoveis from '../../assets/images/apoiadores/poupa-moveis.webp'
 import gutGut from '../../assets/images/apoiadores/gut-gut.webp'
+import paoNosso from '../../assets/images/apoiadores/pao-nosso.webp'
 
 const apoiadores = [
   {
@@ -16,6 +17,10 @@ const apoiadores = [
   {
     nome: 'GUT GUT',
     imagem: gutGut,
+  },
+  {
+    nome: 'Pao Nosso',
+    imagem: paoNosso,
   },
 ]
 
