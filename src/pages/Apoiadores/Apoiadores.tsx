@@ -5,6 +5,7 @@ import poupaMoveis from '../../assets/images/apoiadores/poupa-moveis.webp'
 import gutGut from '../../assets/images/apoiadores/gut-gut.webp'
 import paoNosso from '../../assets/images/apoiadores/pao-nosso.webp'
 import varejaoVerduras from '../../assets/images/apoiadores/varejao-das-verduras.webp'
+import piripiriReporter from '../../assets/images/apoiadores/piripiri-reporter.webp'
 
 const apoiadores = [
   {
@@ -26,6 +27,10 @@ const apoiadores = [
   {
     nome: 'Varejao das Verduras',
     imagem: varejaoVerduras,
+  },
+  {
+    nome: 'Piripiri Repórter',
+    imagem: piripiriReporter,
   },
 ]
 
