@@ -4,6 +4,7 @@ import panificadoraGaviao from '../../assets/images/apoiadores/panificadora-gavi
 import poupaMoveis from '../../assets/images/apoiadores/poupa-moveis.webp'
 import gutGut from '../../assets/images/apoiadores/gut-gut.webp'
 import paoNosso from '../../assets/images/apoiadores/pao-nosso.webp'
+import varejaoVerduras from '../../assets/images/apoiadores/varejao-das-verduras.webp'
 
 const apoiadores = [
   {
@@ -21,6 +22,10 @@ const apoiadores = [
   {
     nome: 'Pao Nosso',
     imagem: paoNosso,
+  },
+  {
+    nome: 'Varejao das Verduras',
+    imagem: varejaoVerduras,
   },
 ]
 
