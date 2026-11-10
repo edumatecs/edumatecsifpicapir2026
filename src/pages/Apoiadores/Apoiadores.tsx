@@ -13,7 +13,7 @@ const apoiadores = [
     imagem: panificadoraGaviao,
   },
   {
-    nome: 'Poupa Moveis',
+    nome: 'Poupa Móveis',
     imagem: poupaMoveis,
   },
   {
@@ -21,11 +21,11 @@ const apoiadores = [
     imagem: gutGut,
   },
   {
-    nome: 'Pao Nosso',
+    nome: 'Pão Nosso',
     imagem: paoNosso,
   },
   {
-    nome: 'Varejao das Verduras',
+    nome: 'Varejão das Verduras',
     imagem: varejaoVerduras,
   },
   {
