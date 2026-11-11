@@ -6,6 +6,7 @@ import gutGut from '../../assets/images/apoiadores/gut-gut.webp'
 import paoNosso from '../../assets/images/apoiadores/pao-nosso.webp'
 import varejaoVerduras from '../../assets/images/apoiadores/varejao-das-verduras.webp'
 import piripiriReporter from '../../assets/images/apoiadores/piripiri-reporter.webp'
+import prefeituraPiripiri from '../../assets/images/apoiadores/prefeitura-de-piripiri.webp'
 
 const apoiadores = [
   {
@@ -31,6 +32,10 @@ const apoiadores = [
   {
     nome: 'Piripiri Repórter',
     imagem: piripiriReporter,
+  },
+  {
+    nome: 'Prefeitura de Piripiri',
+    imagem: prefeituraPiripiri,
   },
 ]
 
