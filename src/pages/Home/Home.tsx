@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import { books } from '../../data/books'
+import { people } from '../../data/people'
+
 import TourismCarousel from '../../components/TourismCarousel/TourismCarousel'
 import ShirtOrderModal from '../../components/ShirtOrderModal/ShirtOrderModal'
 import DeliveryCarousel from '../../components/DeliveryCarousel/DeliveryCarousel'
@@ -10,12 +13,16 @@ import kit from '../../assets/images/outros/kit.webp'
 import camisa from '../../assets/images/outros/camisa.webp'
 import certificado from '../../assets/images/outros/certificado.webp'
 
-import capaLivro from '../../assets/images/lancamento-livros/capa-a-matematica-nos-anos-iniciais-do-ensino-fundamental.webp'
-import autoraLivro from '../../assets/images/lancamento-livros/autora-a-matematica-nos-anos-iniciais-do-ensino-fundamental.webp'
-import qrcodeLivro from '../../assets/images/lancamento-livros/qrcode-a-matematica-nos-anos-iniciais-do-ensino-fundamental.webp'
-
 import './Home.css'
 
+
+const peopleImages = import.meta.glob(
+  '../../assets/images/professores/*',
+  {
+    eager: true,
+    import: 'default',
+  },
+) as Record<string, string>
 
 function Home() {
 
@@ -216,87 +223,87 @@ function Home() {
         </div>
       </section>
 
-
       <section id="secao-lancamento-livros" className="home-section lancamento-livros">
         <h2>Lançamento de Livros</h2>
 
-        <div className="livro-apresentacao">
-          <div className="livro-capa-container">
-            <img
-              src={capaLivro}
-              alt="Capa do livro A Matemática nos Anos Iniciais do Ensino Fundamental"
-              className="livro-capa"
-            />
-          </div>
+        {books.map((book) => {
+          const author = people.find(
+            (person) => person.id === book.authorId,
+          )
 
-          <div className="livro-conteudo">
-            <h3>A Matemática nos Anos Iniciais do Ensino Fundamental</h3>
+          const authorImage = author
+            ? peopleImages[`../../assets/images/professores/${author.image}`]
+            : undefined
 
-            <p className="livro-sinopse">
-              Ensinar Matemática nos anos iniciais do Ensino Fundamental vai
-              muito além da transmissão de conteúdos. Exige compreender a
-              complexidade da prática educativa, reconhecer os desafios da
-              formação docente e construir estratégias que promovam uma
-              aprendizagem significativa, crítica e contextualizada.
-
-              Nessa obra você leitor é convidado a refletir sobre as dimensões
-              estruturantes que sustentam o ensino e a aprendizagem da
-              Matemática, articulando fundamentos teóricos, evidências
-              produzidas em pesquisa de campo e experiências vividas na escola
-              pública.
-
-              Ao dar voz a professores, gestores e coordenadores pedagógicos,
-              a autora revela como a formação continuada, o planejamento, as
-              concepções pedagógicas e o trabalho colaborativo podem transformar
-              a prática docente e fortalecer a aprendizagem dos estudantes.
-
-              Com uma abordagem fundamentada na Educação Matemática e na
-              valorização da escola como espaço de construção do conhecimento,
-              este livro oferece subsídios para professores, formadores,
-              gestores, pesquisadores e estudantes de licenciatura que buscam
-              compreender e aprimorar o ensino da Matemática nos anos iniciais.
-
-              Mais do que analisar desafios, esta obra apresenta caminhos para
-              transformar a prática educativa em uma experiência reflexiva,
-              inovadora e comprometida com a aprendizagem, a equidade e a
-              qualidade da educação pública.
-            </p>
-
-            <div className="livro-acesso">
-              <a
-                href="https://www.amazon.com.br/Matem%C3%A1tica-Anos-Iniciais-Ensino-Fundamental/dp/8547350608?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=211HNRZLGS879&dib=eyJ2IjoiMSJ9.PXw9pDy8Blq9EZ1HRi8yennC3fG-jISRhoeLsmyrK0E1l5OwbEI7m_WLganWXWKZcOtuijlTWECrqZ8Mg6R8xOGx7oGC67MuWZtFPjI2vjf05pQcRmSDv-ky0GMQfshdwpVpGuDppMzu9hxyksBJDSKw1F2jcBADiGzbCmeY6INyXf9Jt71FhN3ImNjBe3yKBDFusCRlqw-on9A9VlvnvQFXEiUZdDxZguNTwvnlPaU8jHhHeeypwwQ_9J0x2Vd1SVeVsTGVulAid66hZGKKVrGyWt8rfvUnnEnj3phWqZk.7u40L-Ux4P5o-ca3krjUMCzAwHJsg7k1kPOpQGjOOK4&dib_tag=se&keywords=A+matem%C3%A1tica+nos+anos+iniciais+do+ensino+fundamental%3A&qid=1787672141&sprefix=entre+deus+e+o+estado+emancipa%C3%A7%C3%B5es+tuteladas+na+teologia+da+liberta%C3%A7%C3%A3o+e+no+programa+bolsa+fam%C3%ADlia%2Caps%2C274&sr=8-4&linkCode=sl2&tag=appriseditora-20&linkId=8c3a61939d0122f5c6a50f23901ffc5a&ref_=as_li_ss_tl_btn_assoc_p-other_o-2_srctok-2948c8335fae7f24_ht-t&ascsubtag=srctok-2948c8335fae7f24&btn_type=ss&btn_ref=srctok-2948c8335fae7f24"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn"
-              >
-                Comprar na Amazon
-              </a>
-
-              <div className="livro-qrcode">
+          return (
+            <article className="livro-card" key={book.id}>
+              <div className="livro-lateral livro-lateral-capa">
                 <img
-                  src={qrcodeLivro}
-                  alt="QR Code para acessar o livro na Amazon"
+                  src={book.cover}
+                  alt={`Capa do livro ${book.title}`}
+                  className="livro-capa"
+                />
+
+                <a
+                  href={book.purchaseUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  Comprar na Amazon
+                </a>
+              </div>
+
+              <div className="livro-conteudo">
+                <h3>{book.title}</h3>
+                <h4>{book.subtitle}</h4>
+
+                <p className="livro-sinopse">
+                  {book.synopsis}
+                </p>
+              </div>
+
+              <div className="livro-lateral livro-lateral-qrcode">
+                <img
+                  src={book.qrCode}
+                  alt={`QR Code para acessar ${book.title}`}
                 />
                 <span>Acesse pelo QR Code</span>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="autora-apresentacao">
-          <img
-            src={autoraLivro}
-            alt="Fotografia da autora do livro"
-            className="autora-foto"
-          />
+              <div className="autora-apresentacao">
+                {author ? (
+                  <>
+                    {authorImage && (
+                      <img
+                        src={authorImage}
+                        alt={author.name}
+                        className="autora-foto"
+                      />
+                    )}
 
-          <div className="autora-biografia">
-            <h3>Silmara Bezerra Paz Carvalho</h3>
-            <p>Biografia da autora em breve.</p>
-          </div>
-        </div>
+                    <div className="autora-biografia">
+                      <h3>
+                        {author.academicTitle
+                          ? `${author.academicTitle} ${author.name}`
+                          : author.name}
+                      </h3>
+
+                      {author.curriculum && (
+                        <div className="curriculo-box">
+                          <strong>Currículo:</strong> {author.curriculum}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p>Informações sobre a autoria em breve.</p>
+                )}
+              </div>
+            </article>
+          )
+        })}
       </section>
-
 
       <section id="secao-turismo">
         <h2>Guia Turístico de Piripiri!</h2>

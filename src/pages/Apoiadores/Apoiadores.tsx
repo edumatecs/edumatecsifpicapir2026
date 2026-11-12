@@ -7,6 +7,7 @@ import paoNosso from '../../assets/images/apoiadores/pao-nosso.webp'
 import varejaoVerduras from '../../assets/images/apoiadores/varejao-das-verduras.webp'
 import piripiriReporter from '../../assets/images/apoiadores/piripiri-reporter.webp'
 import prefeituraPiripiri from '../../assets/images/apoiadores/prefeitura-de-piripiri.webp'
+import chagasMoveisRusticos from '../../assets/images/apoiadores/chagas-moveis-rusticos.webp'
 
 const apoiadores = [
   {
@@ -36,6 +37,10 @@ const apoiadores = [
   {
     nome: 'Prefeitura de Piripiri',
     imagem: prefeituraPiripiri,
+  },
+  {
+    nome: 'Chagas Móveis Rústicos',
+    imagem: chagasMoveisRusticos,
   },
 ]
 

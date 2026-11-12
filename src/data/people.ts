@@ -256,4 +256,11 @@ export const people: Person[] = [
         image: 'glairton-cardoso-rocha.webp',
         curriculum: '',
     },
+    {
+        id: 'jose-nilton-da-silva',
+        name: 'José Nilton da Silva',
+        academicTitle: 'Prof. Me.',
+        image: 'jose-nilton-da-silva.webp',
+        curriculum: 'É Professor e supervisor pedagógico da rede pública municipal de ensino do Piauí, consultor e articulador pedagógico da União Nacional dos Dirigentes Municipais de Educação (Undime-PI). É Mestre em Letras pelo Programa de Mestrado Profissional em Letras (PROFLETRAS), pela Universidade Federal do Norte do Tocantins (UFNT), especialista em Coordenação Pedagógica, Linguagem e Literatura, Educação do Campo e Gestão do Ensino de Língua Portuguesa. Possui experiência na formação continuada de professores, supervisão pedagógica, gestão educacional e desenvolvimento de práticas pedagógicas voltadas à melhoria da qualidade do ensino público. Como pesquisador e formador, desenvolve trabalhos relacionados ao ensino de Língua Portuguesa, à competência leitora, às práticas de leitura e escrita, à educação do campo e à promoção da equidade racial no ambiente escolar, com ênfase no enfrentamento ao racismo e na construção de uma educação inclusiva e antirracista.',
+    },
 ]
