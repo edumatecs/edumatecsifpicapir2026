@@ -8,7 +8,6 @@
     padding: 20px 10px;
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(6px);
 }
 
 .registration-modal-content {
@@ -472,5 +471,134 @@
 
     .registration-copy-button {
         width: 100%;
+    }
+}
+
+.registration-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.registration-availability {
+    display: inline-block;
+    margin-top: 8px;
+    color: #75c98b;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.registration-availability.is-full {
+    color: #ff7777;
+}
+
+.registration-activity-card.is-full {
+    opacity: 0.5;
+    border-color: #555;
+    cursor: not-allowed;
+}
+
+.registration-activity-card.is-full:hover {
+    border-color: #555;
+    background: #050505;
+}
+
+.registration-activity-card.is-full input[type='radio'] {
+    cursor: not-allowed;
+}
+
+.registration-availability-warning {
+    margin-bottom: 18px;
+    padding: 12px;
+    background: #2a2110;
+    border: 1px solid #a87927;
+    border-radius: 8px;
+    color: #f0cf83;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.registration-error-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(4px);
+}
+
+.registration-error-dialog {
+    width: 100%;
+    max-width: 460px;
+    padding: 30px;
+    background: #161616;
+    border: 1px solid #b83232;
+    border-radius: 14px;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.65);
+    color: #fff;
+    text-align: center;
+}
+
+.registration-error-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    border: 1px solid #b83232;
+    border-radius: 50%;
+    background: #3a2020;
+    color: #ff7777;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.registration-error-dialog h3 {
+    margin: 0 0 16px;
+    color: #ff7777;
+    font-size: 21px;
+}
+
+.registration-error-dialog p {
+    margin: 0 0 14px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.registration-error-dialog span {
+    display: block;
+    margin-bottom: 22px;
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.registration-error-button {
+    width: 100%;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #b83232;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.registration-error-button:hover {
+    background: #d04444;
+}
+
+@media (max-width: 480px) {
+    .registration-error-dialog {
+        padding: 24px 20px;
+    }
+
+    .registration-error-dialog h3 {
+        font-size: 19px;
     }
 }
