@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { activities } from '../../data/activities'
 import {
     registrationMinicourses,
@@ -35,6 +37,14 @@ function RegistrationActivities({
     isLoadingAvailability,
     availabilityError,
 }: RegistrationActivitiesProps) {
+    const [selections, setSelections] = useState<Record<string, string>>({})
+    const toggleSelection = (groupName: string, activityId: string) => {
+        setSelections((current) => ({
+            ...current,
+            [groupName]:
+                current[groupName] === activityId ? '' : activityId,
+        }))
+    }
     const renderAvailability = (activityId: string) => {
         const label = activityLabels[activityId]
         const places = availability?.[label]
@@ -53,9 +63,8 @@ function RegistrationActivities({
 
         return (
             <span
-                className={`registration-availability ${
-                    places.esgotada ? 'is-full' : ''
-                }`}
+                className={`registration-availability ${places.esgotada ? 'is-full' : ''
+                    }`}
             >
                 {places.esgotada
                     ? 'Vagas esgotadas'
@@ -100,15 +109,27 @@ function RegistrationActivities({
                             return (
                                 <label
                                     key={activity.id}
-                                    className={`registration-activity-card ${
-                                        isFull ? 'is-full' : ''
-                                    }`}
+                                    className={`registration-activity-card ${isFull ? 'is-full' : ''
+                                        }`}
                                 >
                                     <input
                                         type="radio"
                                         name={`oficina${groupIndex + 1}`}
                                         value={activity.id}
                                         disabled={isFull}
+                                        checked={
+                                            selections[`oficina${groupIndex + 1}`] === activity.id
+                                        }
+                                        onChange={() =>
+                                            toggleSelection(`oficina${groupIndex + 1}`, activity.id)
+                                        }
+                                        onClick={() => {
+                                            if (
+                                                selections[`oficina${groupIndex + 1}`] === activity.id
+                                            ) {
+                                                toggleSelection(`oficina${groupIndex + 1}`, activity.id)
+                                            }
+                                        }}
                                     />
 
                                     <div className="registration-activity-info">
@@ -145,15 +166,21 @@ function RegistrationActivities({
                     return (
                         <label
                             key={activity.id}
-                            className={`registration-activity-card ${
-                                isFull ? 'is-full' : ''
-                            }`}
+                            className={`registration-activity-card ${isFull ? 'is-full' : ''
+                                }`}
                         >
                             <input
                                 type="radio"
                                 name="minicurso"
                                 value={activity.id}
                                 disabled={isFull}
+                                checked={selections.minicurso === activity.id}
+                                onChange={() => toggleSelection('minicurso', activity.id)}
+                                onClick={() => {
+                                    if (selections.minicurso === activity.id) {
+                                        toggleSelection('minicurso', activity.id)
+                                    }
+                                }}
                             />
 
                             <div className="registration-activity-info">

@@ -59,7 +59,7 @@ function RegistrationPayment({
 
             <div className="registration-form-group">
                 <label htmlFor="insc_comprovante">
-                    Envio do Comprovante de Pagamento (Obrigatório)*
+                    Envio do Comprovante de Pagamento (Obrigatório)<span className="required-asterisk">*</span>
                 </label>
 
                 <input
