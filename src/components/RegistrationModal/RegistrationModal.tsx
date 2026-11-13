@@ -1,30 +1,77 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { activities } from '../../data/activities'
 import type { Registration, YesNo } from '../../domain/registration'
-import { submitRegistration } from '../../services/registrationService'
+import {
+    getAvailablePlaces,
+    submitRegistration,
+    type ActivityAvailability,
+} from '../../services/registrationService'
 
 import kit from '../../assets/images/outros/kit.webp'
+
 import RegistrationFicha from './RegistrationFicha'
 import RegistrationActivities from './RegistrationActivities'
 import RegistrationPayment from './RegistrationPayment'
 
 import './RegistrationModal.css'
 
-
 interface RegistrationModalProps {
     isOpen: boolean
     onClose: () => void
 }
 
-
 function RegistrationModal({
     isOpen,
     onClose,
 }: RegistrationModalProps) {
-
     const [receipt, setReceipt] = useState<File | null>(null)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
+    const [submissionError, setSubmissionError] = useState('')
+
+    const [availability, setAvailability] = useState<
+        Record<string, ActivityAvailability> | null
+    >(null)
+
+    const [isLoadingAvailability, setIsLoadingAvailability] = useState(false)
+    const [availabilityError, setAvailabilityError] = useState('')
+
+    useEffect(() => {
+        if (!isOpen) {
+            return
+        }
+
+        let cancelled = false
+
+        setAvailability(null)
+        setAvailabilityError('')
+        setIsLoadingAvailability(true)
+
+        getAvailablePlaces()
+            .then((result) => {
+                if (!cancelled) {
+                    setAvailability(result)
+                }
+            })
+            .catch((error) => {
+                if (!cancelled) {
+                    setAvailabilityError(
+                        error instanceof Error
+                            ? error.message
+                            : 'Não foi possível consultar as vagas.',
+                    )
+                }
+            })
+            .finally(() => {
+                if (!cancelled) {
+                    setIsLoadingAvailability(false)
+                }
+            })
+
+        return () => {
+            cancelled = true
+        }
+    }, [isOpen])
 
     const getActivityById = (id: string) => {
         const activity = activities.find(
@@ -64,17 +111,10 @@ function RegistrationModal({
             hasSubmission:
                 String(formData.get('submissao') ?? 'Não') as YesNo,
 
-            workshop1Id:
-                String(formData.get('oficina1') ?? ''),
-
-            workshop2Id:
-                String(formData.get('oficina2') ?? ''),
-
-            workshop3Id:
-                String(formData.get('oficina3') ?? ''),
-
-            minicourseId:
-                String(formData.get('minicurso') ?? ''),
+            workshop1Id: String(formData.get('oficina1') ?? ''),
+            workshop2Id: String(formData.get('oficina2') ?? ''),
+            workshop3Id: String(formData.get('oficina3') ?? ''),
+            minicourseId: String(formData.get('minicurso') ?? ''),
 
             receipt,
         }
@@ -86,18 +126,37 @@ function RegistrationModal({
         event.preventDefault()
 
         setIsSubmitting(true)
+        setSubmissionError('')
 
-        const formData = new FormData(event.currentTarget)
+        try {
+            const formData = new FormData(event.currentTarget)
 
-        const registration = createRegistration(
-            formData,
-            receipt,
-        )
+            const registration = createRegistration(
+                formData,
+                receipt,
+            )
 
-        await submitRegistration(registration)
+            const result = await submitRegistration(registration)
 
-        setIsSubmitting(false)
-        setIsSuccess(true)
+            if (result.status === 'sucesso') {
+                setIsSuccess(true)
+                return
+            }
+
+            setSubmissionError(
+                result.mensagem ||
+                'Não foi possível concluir sua inscrição.',
+            )
+
+        } catch (error) {
+            setSubmissionError(
+                error instanceof Error
+                    ? error.message
+                    : 'Ocorreu um erro inesperado ao enviar sua inscrição.',
+            )
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     if (!isOpen) {
@@ -160,6 +219,9 @@ function RegistrationModal({
 
                             <RegistrationActivities
                                 getActivityById={getActivityById}
+                                availability={availability}
+                                isLoadingAvailability={isLoadingAvailability}
+                                availabilityError={availabilityError}
                             />
 
                             <RegistrationPayment
@@ -171,12 +233,50 @@ function RegistrationModal({
                                 className="btn registration-submit-button"
                                 disabled={isSubmitting}
                             >
-                                {isSubmitting ? 'Enviando...' : 'Finalizar Inscrição'}
+                                {isSubmitting
+                                    ? 'Enviando e confirmando...'
+                                    : 'Finalizar Inscrição'}
                             </button>
                         </form>
                     </>
                 )}
             </div>
+            {submissionError && (
+                <div className="registration-error-overlay">
+                    <div
+                        className="registration-error-dialog"
+                        role="alertdialog"
+                        aria-modal="true"
+                        aria-labelledby="registration-error-title"
+                        aria-describedby="registration-error-message"
+                    >
+                        <div className="registration-error-icon">
+                            !
+                        </div>
+
+                        <h3 id="registration-error-title">
+                            Não foi possível concluir sua inscrição
+                        </h3>
+
+                        <p id="registration-error-message">
+                            {submissionError}
+                        </p>
+
+                        <span>
+                            Revise a mensagem acima. Se não foi possível confirmar o envio,
+                            consulte a organização antes de tentar novamente.
+                        </span>
+
+                        <button
+                            type="button"
+                            className="registration-error-button"
+                            onClick={() => setSubmissionError('')}
+                        >
+                            Entendi, vou revisar a inscrição
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

@@ -66,7 +66,7 @@ function RegistrationPayment({
                     type="file"
                     id="insc_comprovante"
                     name="comprovante"
-                    accept="image/*,.pdf"
+                    accept=".jpg,.jpeg,.png,.webp,.gif,.pdf"
                     required
                     onChange={(event) => {
                         onReceiptChange(

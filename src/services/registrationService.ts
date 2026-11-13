@@ -1,11 +1,17 @@
 import type { Registration } from '../domain/registration'
 
-
 const URL_PLANILHA_INSCRICAO =
-    'https://script.google.com/macros/s/AKfycbzq_6F00yr_3GmCrPGUxbaDTgZyLKx1OtDeT7Eh7r6Tw-rGLNAH42_so3HUG6HkiEBp/exec'
+    'https://script.google.com/macros/s/AKfycbyRcZM-d5c-dw_INLHMBmpX6FFX5wB3NYTqGu9PXO4JL-ehWepK7ysuIWHiGW3Y3Rxlaw/exec'
 
+export interface ActivityAvailability {
+    limite: number
+    inscritos: number
+    disponiveis: number
+    esgotada: boolean
+}
 
 interface RegistrationPayload {
+    requestId: string
     nome: string
     cpf: string
     telefone: string
@@ -23,6 +29,10 @@ interface RegistrationPayload {
     fileData: string
 }
 
+interface SubmissionStatus {
+    status: 'processando' | 'sucesso' | 'esgotado' | 'erro' | 'nao_encontrado'
+    mensagem: string
+}
 
 const registrationActivityLabels: Record<string, string> = {
     'oficina-tangram-sala-de-aula': 'Oficina 1',
@@ -40,7 +50,6 @@ const registrationActivityLabels: Record<string, string> = {
     'minicurso-francisco-chagas': 'Minicurso 3',
     'minicurso-pablo-dias': 'Minicurso 4',
 }
-
 
 function fileToBase64(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
@@ -72,20 +81,20 @@ function fileToBase64(file: File): Promise<string> {
     })
 }
 
-
 async function createPayload(
     registration: Registration,
 ): Promise<RegistrationPayload> {
     const fileData = await fileToBase64(registration.receipt)
 
     return {
+        requestId: crypto.randomUUID(),
+
         nome: registration.name.trim(),
         cpf: registration.cpf.trim(),
         telefone: registration.phone.trim(),
         cidade: registration.city.trim(),
 
         alojamento: registration.accommodation,
-
         necessidade: registration.hasSpecialNeed,
 
         desc_necessidade:
@@ -96,9 +105,11 @@ async function createPayload(
         oficina1:
             registrationActivityLabels[registration.workshop1Id] ||
             'Não escolheu',
+
         oficina2:
             registrationActivityLabels[registration.workshop2Id] ||
             'Não escolheu',
+
         oficina3:
             registrationActivityLabels[registration.workshop3Id] ||
             'Não escolheu',
@@ -113,24 +124,108 @@ async function createPayload(
     }
 }
 
+function jsonp<T>(url: string): Promise<T> {
+    return new Promise((resolve, reject) => {
+        const callbackName =
+            `edumatecsCallback_${crypto.randomUUID().replace(/-/g, '')}`
 
-export async function getAvailablePlaces(): Promise<
-    Record<string, number>
-> {
-    const response = await fetch(URL_PLANILHA_INSCRICAO)
+        const script = document.createElement('script')
+        const timeout = window.setTimeout(() => {
+            cleanup()
+            reject(new Error('Tempo limite ao consultar o servidor.'))
+        }, 15000)
 
-    if (!response.ok) {
-        throw new Error('Não foi possível consultar as vagas.')
-    }
+        const callbacks = window as unknown as Record<
+            string,
+            (data: T) => void
+        >
 
-    return response.json() as Promise<Record<string, number>>
+        function cleanup() {
+            window.clearTimeout(timeout)
+            delete callbacks[callbackName]
+            script.remove()
+        }
+
+        callbacks[callbackName] = (data: T) => {
+            cleanup()
+            resolve(data)
+        }
+
+        script.onerror = () => {
+            cleanup()
+            reject(new Error('Não foi possível consultar o servidor.'))
+        }
+
+        const separator = url.includes('?') ? '&' : '?'
+
+        script.src =
+            `${url}${separator}callback=${encodeURIComponent(callbackName)}`
+
+        document.head.appendChild(script)
+    })
 }
 
+export async function getAvailablePlaces(): Promise<
+    Record<string, ActivityAvailability>
+> {
+    return jsonp<Record<string, ActivityAvailability>>(
+        URL_PLANILHA_INSCRICAO,
+    )
+}
+
+function wait(milliseconds: number): Promise<void> {
+    return new Promise((resolve) => {
+        window.setTimeout(resolve, milliseconds)
+    })
+}
+
+async function getSubmissionStatus(
+    requestId: string,
+): Promise<SubmissionStatus> {
+    const url = new URL(URL_PLANILHA_INSCRICAO)
+
+    url.searchParams.set('acao', 'status')
+    url.searchParams.set('id', requestId)
+
+    return jsonp<SubmissionStatus>(url.toString())
+}
+
+async function waitForSubmissionResult(
+    requestId: string,
+): Promise<SubmissionStatus> {
+    const timeout = Date.now() + 60000
+
+    while (Date.now() < timeout) {
+        const result = await getSubmissionStatus(requestId)
+
+        if (
+            result.status === 'sucesso' ||
+            result.status === 'esgotado' ||
+            result.status === 'erro'
+        ) {
+            return result
+        }
+
+        await wait(1500)
+    }
+
+    throw new Error(
+        'Não foi possível confirmar o resultado da inscrição. Consulte a organização antes de enviar novamente.',
+    )
+}
 
 export async function submitRegistration(
     registration: Registration,
-): Promise<void> {
+): Promise<SubmissionStatus> {
     const payload = await createPayload(registration)
+
+    if (payload.mimeType === '' || !payload.mimeType) {
+        throw new Error('O comprovante possui um formato inválido.')
+    }
+
+    if (payload.fileData.length * 3 / 4 > 5 * 1024 * 1024) {
+        throw new Error('O comprovante deve ter no máximo 5 MB.')
+    }
 
     await fetch(URL_PLANILHA_INSCRICAO, {
         method: 'POST',
@@ -140,4 +235,6 @@ export async function submitRegistration(
         },
         body: JSON.stringify(payload),
     })
+
+    return waitForSubmissionResult(payload.requestId)
 }
