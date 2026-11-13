@@ -8,6 +8,7 @@ import varejaoVerduras from '../../assets/images/apoiadores/varejao-das-verduras
 import piripiriReporter from '../../assets/images/apoiadores/piripiri-reporter.webp'
 import prefeituraPiripiri from '../../assets/images/apoiadores/prefeitura-de-piripiri.webp'
 import chagasMoveisRusticos from '../../assets/images/apoiadores/chagas-moveis-rusticos.webp'
+import bomboniereDoceSabor from '../../assets/images/apoiadores/bomboniere-doce-sabor.webp'
 
 const apoiadores = [
   {
@@ -41,6 +42,10 @@ const apoiadores = [
   {
     nome: 'Chagas Móveis Rústicos',
     imagem: chagasMoveisRusticos,
+  },
+  {
+    nome: 'Bomboniere Doce Sabor',
+    imagem: bomboniereDoceSabor,
   },
 ]
 
