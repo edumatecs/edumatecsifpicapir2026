@@ -1,7 +1,7 @@
 import type { Registration } from '../domain/registration'
 
 const URL_PLANILHA_INSCRICAO =
-    'https://script.google.com/macros/s/AKfycbwHFijaXRFR2Kjlo9jmlotHGSRF5YKwSCr02-HTx0YA2rG2juS1L8nOvkhxM9TWiVOg2A/exec'
+    'https://script.google.com/macros/s/AKfycbyRcZM-d5c-dw_INLHMBmpX6FFX5wB3NYTqGu9PXO4JL-ehWepK7ysuIWHiGW3Y3Rxlaw/exec'
 
 export interface ActivityAvailability {
     limite: number
