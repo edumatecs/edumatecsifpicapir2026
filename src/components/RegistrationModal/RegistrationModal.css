@@ -602,3 +602,7 @@
         font-size: 19px;
     }
 }
+
+.required-asterisk {
+    color: red;
+}

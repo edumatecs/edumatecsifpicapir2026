@@ -1,8 +1,13 @@
 import { useState } from 'react'
 
 function RegistrationFicha() {
-    const [hasSpecialNeed, setHasSpecialNeed] = useState(false)
-    const [hasSubmission, setHasSubmission] = useState(false)
+    const [alojamento, setAlojamento] = useState<'Sim' | 'Não' | null>(null)
+    const [necessidade, setNecessidade] = useState<'Sim' | 'Não' | null>(null)
+    const [submissao, setSubmissao] = useState<'Sim' | 'Não' | null>(null)
+
+    const hasSpecialNeed = necessidade === 'Sim'
+    const hasSubmission = submissao === 'Sim'
+
     const [copiedEmail, setCopiedEmail] = useState<string | null>(null)
 
     const formatCpf = (value: string): string => {
@@ -56,7 +61,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label htmlFor="insc_nome">
-                        Nome Completo*
+                        Nome Completo<span className="required-asterisk">*</span>
                     </label>
 
                     <input
@@ -70,7 +75,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label htmlFor="insc_cpf">
-                        CPF*
+                        CPF<span className="required-asterisk">*</span>
                     </label>
 
                     <input
@@ -90,7 +95,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label htmlFor="insc_telefone">
-                        Telefone (WhatsApp)*
+                        Telefone (WhatsApp)<span className="required-asterisk">*</span>
                     </label>
 
                     <input
@@ -110,7 +115,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label htmlFor="insc_cidade">
-                        Cidade*
+                        Cidade<span className="required-asterisk">*</span>
                     </label>
 
                     <input
@@ -130,7 +135,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label>
-                        Vai precisar de alojamento no campus?*
+                        Vai precisar de alojamento no campus?<span className="required-asterisk">*</span>
                     </label>
 
                     <div className="registration-radio-group">
@@ -140,6 +145,13 @@ function RegistrationFicha() {
                                 name="alojamento"
                                 value="Sim"
                                 required
+                                checked={alojamento === 'Sim'}
+                                onChange={() => setAlojamento('Sim')}
+                                onClick={() => {
+                                    if (alojamento === 'Sim') {
+                                        setAlojamento(null)
+                                    }
+                                }}
                             />
                             <span>Sim</span>
                         </label>
@@ -149,7 +161,13 @@ function RegistrationFicha() {
                                 type="radio"
                                 name="alojamento"
                                 value="Não"
-                                defaultChecked
+                                checked={alojamento === 'Não'}
+                                onChange={() => setAlojamento('Não')}
+                                onClick={() => {
+                                    if (alojamento === 'Não') {
+                                        setAlojamento(null)
+                                    }
+                                }}
                             />
                             <span>Não</span>
                         </label>
@@ -158,7 +176,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label>
-                        Possui alguma necessidade específica?*
+                        Possui alguma necessidade específica?<span className="required-asterisk">*</span>
                     </label>
 
                     <div className="registration-radio-group">
@@ -168,7 +186,13 @@ function RegistrationFicha() {
                                 name="necessidade"
                                 value="Sim"
                                 required
-                                onChange={() => setHasSpecialNeed(true)}
+                                checked={necessidade === 'Sim'}
+                                onChange={() => setNecessidade('Sim')}
+                                onClick={() => {
+                                    if (necessidade === 'Sim') {
+                                        setNecessidade(null)
+                                    }
+                                }}
                             />
                             <span>Sim</span>
                         </label>
@@ -178,8 +202,13 @@ function RegistrationFicha() {
                                 type="radio"
                                 name="necessidade"
                                 value="Não"
-                                defaultChecked
-                                onChange={() => setHasSpecialNeed(false)}
+                                checked={necessidade === 'Não'}
+                                onChange={() => setNecessidade('Não')}
+                                onClick={() => {
+                                    if (necessidade === 'Não') {
+                                        setNecessidade(null)
+                                    }
+                                }}
                             />
                             <span>Não</span>
                         </label>
@@ -189,7 +218,7 @@ function RegistrationFicha() {
                 {hasSpecialNeed && (
                     <div className="registration-form-group">
                         <label htmlFor="desc_necessidade">
-                            Qual a sua necessidade específica?*
+                            Qual a sua necessidade específica?<span className="required-asterisk">*</span>
                         </label>
 
                         <input
@@ -210,7 +239,7 @@ function RegistrationFicha() {
 
                 <div className="registration-form-group">
                     <label>
-                        Deseja submeter um trabalho?*
+                        Deseja submeter um trabalho?<span className="required-asterisk">*</span>
                     </label>
 
                     <div className="registration-radio-group">
@@ -220,7 +249,13 @@ function RegistrationFicha() {
                                 name="submissao"
                                 value="Sim"
                                 required
-                                onChange={() => setHasSubmission(true)}
+                                checked={submissao === 'Sim'}
+                                onChange={() => setSubmissao('Sim')}
+                                onClick={() => {
+                                    if (submissao === 'Sim') {
+                                        setSubmissao(null)
+                                    }
+                                }}
                             />
                             <span>Sim</span>
                         </label>
@@ -230,8 +265,13 @@ function RegistrationFicha() {
                                 type="radio"
                                 name="submissao"
                                 value="Não"
-                                defaultChecked
-                                onChange={() => setHasSubmission(false)}
+                                checked={submissao === 'Não'}
+                                onChange={() => setSubmissao('Não')}
+                                onClick={() => {
+                                    if (submissao === 'Não') {
+                                        setSubmissao(null)
+                                    }
+                                }}
                             />
                             <span>Não</span>
                         </label>
@@ -271,7 +311,7 @@ function RegistrationFicha() {
                                         }
                                     >
                                         {copiedEmail ===
-                                        'gt1matematica.capir@ifpi.edu.br'
+                                            'gt1matematica.capir@ifpi.edu.br'
                                             ? 'Copiado!'
                                             : 'Copiar'}
                                     </button>
@@ -298,7 +338,7 @@ function RegistrationFicha() {
                                         }
                                     >
                                         {copiedEmail ===
-                                        'gt2educacao.capir@ifpi.edu.br'
+                                            'gt2educacao.capir@ifpi.edu.br'
                                             ? 'Copiado!'
                                             : 'Copiar'}
                                     </button>
@@ -325,7 +365,7 @@ function RegistrationFicha() {
                                         }
                                     >
                                         {copiedEmail ===
-                                        'gt3tecnologias.capir@ifpi.edu.br'
+                                            'gt3tecnologias.capir@ifpi.edu.br'
                                             ? 'Copiado!'
                                             : 'Copiar'}
                                     </button>
@@ -352,7 +392,7 @@ function RegistrationFicha() {
                                         }
                                     >
                                         {copiedEmail ===
-                                        'gt4interdisciplinar.capir@ifpi.edu.br'
+                                            'gt4interdisciplinar.capir@ifpi.edu.br'
                                             ? 'Copiado!'
                                             : 'Copiar'}
                                     </button>
@@ -379,7 +419,7 @@ function RegistrationFicha() {
                                         }
                                     >
                                         {copiedEmail ===
-                                        'gt5extensao.capir@ifpi.edu.br'
+                                            'gt5extensao.capir@ifpi.edu.br'
                                             ? 'Copiado!'
                                             : 'Copiar'}
                                     </button>
