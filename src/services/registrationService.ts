@@ -196,14 +196,21 @@ async function waitForSubmissionResult(
     const timeout = Date.now() + 60000
 
     while (Date.now() < timeout) {
-        const result = await getSubmissionStatus(requestId)
+        try {
+            const result = await getSubmissionStatus(requestId)
 
-        if (
-            result.status === 'sucesso' ||
-            result.status === 'esgotado' ||
-            result.status === 'erro'
-        ) {
-            return result
+            if (
+                result.status === 'sucesso' ||
+                result.status === 'esgotado' ||
+                result.status === 'erro'
+            ) {
+                return result
+            }
+        } catch (error) {
+            console.warn(
+                'Falha temporária ao consultar o status da inscrição. Nova tentativa será realizada.',
+                error,
+            )
         }
 
         await wait(1500)
