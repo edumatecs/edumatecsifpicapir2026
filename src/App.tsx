@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import AnnouncementModal from './components/AnnouncementModal/AnnouncementModal'
 
 import Home from './pages/Home/Home'
 import Programacao from './pages/Programacao/Programacao'
@@ -18,6 +19,8 @@ function App() {
   return (
     <BrowserRouter basename="/edumatecsifpicapir2026">
       <Header />
+
+      <AnnouncementModal />
 
       <Routes>
         <Route path="/" element={<Home />} />
