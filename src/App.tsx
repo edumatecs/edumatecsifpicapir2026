@@ -17,7 +17,7 @@ import Memorias from './pages/Memorias/Memorias'
 
 function App() {
   return (
-    <BrowserRouter basename="/edumatecsifpicapir2026">
+    <BrowserRouter basename="/edumatecsifpicapir2026/">
       <Header />
 
       <AnnouncementModal />
