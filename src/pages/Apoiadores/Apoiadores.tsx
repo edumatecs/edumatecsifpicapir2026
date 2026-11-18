@@ -9,6 +9,8 @@ import piripiriReporter from '../../assets/images/apoiadores/piripiri-reporter.w
 import prefeituraPiripiri from '../../assets/images/apoiadores/prefeitura-de-piripiri.webp'
 import chagasMoveisRusticos from '../../assets/images/apoiadores/chagas-moveis-rusticos.webp'
 import bomboniereDoceSabor from '../../assets/images/apoiadores/bomboniere-doce-sabor.webp'
+import estampariaSuaIdeiaConfeccoes from '../../assets/images/apoiadores/estamparia-a-sua-ideia-e-confeccoes.webp'
+import realPapelaria from '../../assets/images/apoiadores/real-papelaria.webp'
 
 const apoiadores = [
   {
@@ -46,6 +48,14 @@ const apoiadores = [
   {
     nome: 'Bomboniere Doce Sabor',
     imagem: bomboniereDoceSabor,
+  },
+  {
+    nome: 'Estamparia a sua ideia e confecções',
+    imagem: estampariaSuaIdeiaConfeccoes,
+  },
+  {
+    nome: 'Real Papelaria',
+    imagem: realPapelaria,
   },
 ]
 
