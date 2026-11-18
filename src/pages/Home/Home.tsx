@@ -138,7 +138,7 @@ function Home() {
               </p>
 
               <p>
-                <strong>Fim das submissões:</strong> 13/11/2026
+                <strong>Fim das submissões:</strong> 20/11/2026
               </p>
 
               <p>
