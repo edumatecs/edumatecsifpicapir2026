@@ -11,6 +11,9 @@ import chagasMoveisRusticos from '../../assets/images/apoiadores/chagas-moveis-r
 import bomboniereDoceSabor from '../../assets/images/apoiadores/bomboniere-doce-sabor.webp'
 import estampariaSuaIdeiaConfeccoes from '../../assets/images/apoiadores/estamparia-a-sua-ideia-e-confeccoes.webp'
 import realPapelaria from '../../assets/images/apoiadores/real-papelaria.webp'
+import lumiart from '../../assets/images/apoiadores/lumiart.webp'
+
+// lumiart
 
 const apoiadores = [
   {
@@ -56,6 +59,10 @@ const apoiadores = [
   {
     nome: 'Real Papelaria',
     imagem: realPapelaria,
+  },
+  {
+    nome: 'Lumi\'art',
+    imagem: lumiart,
   },
 ]
 
